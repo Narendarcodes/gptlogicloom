@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
   <body>
-0
    {% for message in messages  %} 
     <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
       <strong>Message : </strong> {{ message }}
@@ -37,6 +36,7 @@
         </a>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="/logout">Logout</a></li>
+          <li><a class="dropdown-item" href="/profile">View Profile</a></li>
         </ul>
       </li>
       
@@ -69,9 +69,15 @@
                   <input type="password" name="password" class="form-control" id="Password" placeholder="Enter Password" required>
               </div>
             </div>
+            <div class="mb-3">
+              <input class="form-check-input" type="checkbox" value="" id="remember" required>
+              <label class="form-check-label" for="remember">Remember Me</label>
+              <a href="#" class="float-end">Forgot Password</a>
+          </div>
             <div class="modal-footer pt-4">                  
               <button type="submit" class="btn btn-success mx-auto w-100">Login</button>
             </div>
+            
             <p class="text-center">Not yet account, <a href="#">Signup</a></p> 
         </form>
       </div>
