@@ -1,5 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 
-# Create your views here.
+from .models import Profile
+
+@login_required
 def profile(request):
-    return render(request,'profile/userprofile.html')
+    user_profile = Profile.objects.filter(user=request.user).first()
+    if user_profile is None:
+        return redirect('home')
+    else:
+        context = {'user_profile': user_profile}
+        return render(request, 'profile/userprofile.html', context)
+
+
+    
