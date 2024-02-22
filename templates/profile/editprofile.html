@@ -40,8 +40,8 @@
     <div class="container">
         <nav aria-label="breadcrumb" class="main-breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../../">Home</a></li>
-                <li class="breadcrumb-item "><a href="../">User Profile</a></li>
+                <li class="breadcrumb-item"><a href="{% url  'home' %}">Home</a></li>
+                <li class="breadcrumb-item "><a href="{% url 'profile' %}">User Profile</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
             </ol>
         </nav>
@@ -74,7 +74,7 @@
                                     <h6 class="mb-0">Full Name</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form-control" value="{{ user_profile.name }}">
+                                    <input type="text" class="form-control" value="{{ user_profile.name }}" name="changedName">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -90,7 +90,7 @@
                                     <h6 class="mb-0">Email</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="email" class="form-control" value="{{ user_profile.user.email }}">
+                                    <input type="email" class="form-control" value="{{ user_profile.user.email }}" name="changedEmail">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -98,7 +98,7 @@
                                     <h6 class="mb-0">HackerRank Username</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form-control" value="HackerRank Username">
+                                    <input type="text" class="form-control" value="HackerRank Username" name="changedHackId">
                                 </div>
                             </div>
                             <div class="row mb-3">

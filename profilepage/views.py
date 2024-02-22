@@ -21,7 +21,13 @@ def editprofile(request):
     else:
         context = {'user_profile': user_profile}
         return render(request, 'profile/editprofile.html', context)
-
+    
+@login_required
+def profileedithandle(request):
+    if request.method=="POST":
+        chngedName = request.POST['changedName']
+        chngedEmail = request.POST['changedEmail']
+        chngedHackId = request.POST['changedHackId']
 
 
     
