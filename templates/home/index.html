@@ -50,65 +50,91 @@
   </button>
   
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
       <div class="modal-content">
-        <form action="/loginhandle" method='post'> {% csrf_token %}
-            <div class="modal-header">
-              <h5 class="modal-title">Modal Login Form</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="mb-3">
-                  <label for="Username">Username<span class="text-danger">*</span></label>
-                  <input type="text" name="username" class="form-control" id="Username" placeholder="Enter Username" required>
+          <form action="/loginhandle" method='post'> 
+              {% csrf_token %}
+              <div class="modal-header">
+                  <h5 class="modal-title">Login</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-  
-              <div class="mb-3">
-                  <label for="Password">Password<span class="text-danger">*</span></label>
-                  <input type="password" name="password" class="form-control" id="Password" placeholder="Enter Password" required>
+              <div class="modal-body">
+                  <div class="mb-3">
+                      <label for="Username">Username<span class="text-danger">*</span></label>
+                      <input type="text" name="username" class="form-control" id="Username" placeholder="Enter Username" required>
+                  </div>
+
+                  <div class="mb-3">
+                      <label for="Password">Password<span class="text-danger">*</span></label>
+                      <input type="password" name="password" class="form-control" id="Password" placeholder="Enter Password" required>
+                  </div>
+
+                  <div class="text-end mb-3"> <!-- Align "Forgot Password" link to the right -->
+                      <a href="#" class="text-decoration-none">Forgot Password</a>
+                  </div>
               </div>
-            </div>
-            <div class="mb-3">
-              <a href="#" class="float-end">Forgot Password</a>
-          </div>
-            <div class="modal-footer pt-4">                  
-              <button type="submit" class="btn btn-success mx-auto w-100">Login</button>
-            </div>
-            
-            <p class="text-center">Not yet account, <a href="#">Signup</a></p> 
-        </form>
+              <div class="modal-footer"> <!-- Removed pt-4 class from modal-footer -->
+                  <button type="submit" class="btn btn-success w-100">Login</button> <!-- Centered the login button -->
+              </div>
+
+              <p class="text-center">Not yet account, <a href="#">Signup</a></p>
+          </form>
       </div>
-    </div>
   </div>
+</div>
+
   {% endif %}
         
             
           </div>
         </div>
       </nav>
-      <div id="carouselExample" class="carousel slide">
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000" data-bs-duration="1000">    
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            {%load static %}
-            <img src="{% static 'home/images/pic1.jpg' %}" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="{% static 'home/images/pic2.jpg' %}" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="{% static 'home/images/pic3.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-item active">
+                {% load static %}
+                <img src="{% static 'home/images/pic1.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'home/images/pic2.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'home/images/pic3.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
+    <div class='container-fluid'style='margin:50px;'>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
+    </div>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
       
 
 

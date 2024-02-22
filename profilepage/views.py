@@ -12,6 +12,16 @@ def profile(request):
     else:
         context = {'user_profile': user_profile}
         return render(request, 'profile/userprofile.html', context)
+    
+@login_required
+def editprofile(request):
+    user_profile = Profile.objects.filter(user=request.user).first()
+    if user_profile is None:
+        return redirect('home')
+    else:
+        context = {'user_profile': user_profile}
+        return render(request, 'profile/editprofile.html', context)
+
 
 
     
