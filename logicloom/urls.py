@@ -23,7 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('home.urls')),
     path('profile/',include('profilepage.urls')),
-    path('course/',include('course.urls'))
+    path('course/',include('course.urls')),
+    path('contenst/',include('contestapp.urls'))
 ]
 
 # Serving media files only during development
