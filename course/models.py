@@ -5,7 +5,7 @@ class Answers(models.Model):
     topic = models.CharField(max_length=10, primary_key=True)
     que1 = models.CharField(max_length=2)
     que2 = models.CharField(max_length=2)
-    submission = models.BooleanField(default=False)
+    prgrscontribution = models.FloatField(default='0.0')
     
     
     def __str__(self):
