@@ -22,7 +22,7 @@ def course2(request,slug):
 
 
 #
-def checkanswer(request, slug):
+def checkanswerc2(request, slug):
     if request.method == 'POST':
         option1 = request.POST.get("q1")
         option2 = request.POST.get("q2")
@@ -45,7 +45,7 @@ def checkanswer(request, slug):
            return redirect(request,"home/error404.html")
         
  #increasing progress for the first courese       
-def checkanswer(request, slug):
+def checkanswerc1(request, slug):
     if request.method == 'POST':
         option1 = request.POST.get("q1")
         option2 = request.POST.get("q2")
