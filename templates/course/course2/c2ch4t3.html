@@ -5,13 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C Programming</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="../course2.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
     <style>
         body {
             font-family: 'Boogaloo', cursive;
@@ -39,8 +35,7 @@
         }
 
         .navbar-brand {
-            margin-right: 0;
-            margin-bottom: 0;
+            margin-left: 10px;
         }
 
         @media (max-width: 768px) {
@@ -81,12 +76,19 @@
             margin-top: 20px;
         }
 
-        .custom-list {
-            margin-top: 20px;
+        .fluid-yt {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
         }
 
-        .fluid-yt {
-            margin-top: 20px;
+        .fluid-yt iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
         .code-container {
     width: 100%; /* Ensure it takes the full width of its container */
@@ -207,70 +209,108 @@
                 
             </ul>
         </div>
-    </div>    <div class="container">
-        <!-- Your existing code for content, including letters, digits, special characters, etc. -->
+    </div>
+    <!-- Your existing content goes here -->
 
-        <h2 class="mt-4">One-Dimensional Arrays</h2>
-        <div class="topicstart">
-            <p>One-Dimensional Arrays</p>
-        </div>
+    <!-- The modified content for the second HTML code is added below -->
+
+    <div class="container">
+        <h1>Initialisation of one-dimensional array</h1>
         <ul class="custom-list">
-            <li>A one-dimensional array in C contains a series of elements of the same datatype.</li>
-            <li>The elements are zero-indexed, meaning the first element is in position or index 0, and the last element is in position or index (array size) - 1.</li>
-        </ul>
-        
-        <h1>Declaration of one dimensional array</h1>
-            <ul class="custom-list">
-                <li>To declare a one-dimensional array in C, you specify the data type of the elements and the name of the array followed by the size of the array in square brackets.</li>
-                <li>Here's a basic example:</li>
-        <div class="card">
-            <div class="header">
-              <div class="top">
-                <div class="circle">
-                  <span class="red circle2"></span>
+            <li>In C, you can initialize a one-dimensional array at the time of declaration or later in your program.</li>
+            <li>Here's how you can initialize an array:</li>
+            <!-- Your existing card code for array initialization -->
+            <div class="card">
+                <div class="header">
+                  <div class="top">
+                    <div class="circle">
+                      <span class="red circle2"></span>
+                    </div>
+                    <div class="circle">
+                      <span class="yellow circle2"></span>
+                    </div>
+                    <div class="circle">
+                      <span class="green circle2"></span>
+                    </div>
+                    <div class="title">
+                      <p id="title2">Program.c</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="circle">
-                  <span class="yellow circle2"></span>
-                </div>
-                <div class="circle">
-                  <span class="green circle2"></span>
-                </div>
-                <div class="title">
-                  <p id="title2">Program.c</p>
-                </div>
-              </div>
-            </div>
-            <div class="code-container">
-                <textarea readonly="" name="code" id="code" class="area">
+                <div class="code-container">
+                 <textarea readonly="" name="code" id="code" class="area">
                     #include <stdio.h>
                     int main() {
-                    // Declare an integer array with a size of 5
-                    int numbers[5];
-
-                    // You can also declare and initialize the array at the same time
-                    // For example, initializing an array of integers with specific values
-                    int initializedArray[5] = {1, 2, 3, 4, 5};
+                    // Initializing an integer array at the time of declaration
+                    int numbers[5] = {1, 2, 3, 4, 5};
+                    // Accessing and printing array elements
+                    for (int i = 0; i < 5; ++i) {
+                    printf("Element at index %d: %d\n", i, numbers[i]);
+                   }   
                     return 0;
-                     }
-                 </textarea>
+                    }
+                  </textarea>
+                </div>
             </div>
-         </div>
-                <li>In the above example, numbers is an integer array with a size of 5, and initializedArray is another integer array initialized with specific values.</li>
-                <li> Remember that the size of the array determines how many elements it can store.</li>
-                <li> The indices of the array range from 0 to size-1.</li>
-            </ul>
+            <p>Output:<br>
+                Element at index 0: 1<br>
+                Element at index 1: 2<br>
+                Element at index 2: 3<br>
+                Element at index 3: 4<br>
+                Element at index 4: 5<br>
+            </p>
+            <li>In this example, the array numbers is declared and initialized with values {1, 2, 3, 4, 5}.</li>
+            <li>Here's how you can initialize an array in another method:</li>
+            <!-- Your existing card code for array initialization -->
+            <div class="card">
+                <div class="header">
+                  <div class="top">
+                    <div class="circle">
+                      <span class="red circle2"></span>
+                    </div>
+                    <div class="circle">
+                      <span class="yellow circle2"></span>
+                    </div>
+                    <div class="circle">
+                      <span class="green circle2"></span>
+                    </div>
+                    <div class="title">
+                      <p id="title2">Program.c</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="code-container">
+                  <textarea readonly="" name="code" id="code" class="area">
+                     #include <stdio.h>
+                    int main() {
+                    // Declaring an integer array
+                    int numbers[5];
+                    // Initializing array elements later in the program
+                    numbers[0] = 10;
+                    numbers[1] = 20;
+                    numbers[2] = 30;
+                    numbers[3] = 40;
+                    numbers[4] = 50;
+                    // Accessing and printing array elements
+                    for (int i = 0; i < 5; ++i) {
+                    printf("Element at index %d: %d\n", i, numbers[i]);
+                    }   
+                    return 0;
+                    }
+    
+                  </textarea>
+                </div>
+            </div>
+            <li>In this second example, the array numbers is declared first, and then its elements are initialized later in the program. The loop is used to print the array elements.</li>
+        </ul>
 
- 
-        
         <div>
-            <h2>Resources :</h2>
-            <div class="fluid-yt">
-                <!-- Replace YouTube link -->
+            <h2 class="mt-4">Resources :</h2>
+            <div class="embed-responsive embed-responsive-16by9">
+                <!-- Replace with your YouTube video iframe -->
                 <iframe src="https://www.youtube.com/embed/CIRGjwYgdT4?si=Q43Rt9vXbAbJsYX8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-         </div>
-
-        <!-- Your existing code for MCQs -->
+        </div>
 
         <div class="card" style="margin-top:20px;">
             <div class="card-header">
@@ -281,73 +321,73 @@
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <div class="mcqs mt-5">
               
-                    <form action="{% url 'checkanswerc2' slug='c2ch4t2' %}" method='post'>{% csrf_token %}
-                        <p><span>Q1. </span>In C, can the size of a 1D array be changed dynamically during runtime?</p>
+                    <form action="{% url 'checkanswerc2' slug='c2ch4t3' %}" method='post'>{% csrf_token %}
+                        <p><span>Q1. </span>How can you find the number of rows in a 2D array in C?</p>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
                             <label class="form-check-label" for="q1_option1">
-                                A. Yes
+                                A. rows(array)   
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
                             <label class="form-check-label" for="q1_option2">
-                                B. No
+                                B. sizeof(array) / sizeof(array[0])  
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
                             <label class="form-check-label" for="q1_option3">
-                                C. Depends on the compiler    
+                                C. length(array)    
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option4">
                             <label class="form-check-label" for="q1_option4">
-                                D. Only for character arrays  
+                                D. array.rows 
                             </label>
                         </div>
                     
-                        <p><span>Q2. </span>How can you find the number of elements in a 1D array in C?</p>
+                        <p><span>Q2. </span>What is the size of a 2D array declared as int array[3][4];?</p>
                         
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
                             <label class="form-check-label" for="q2_option1">
-                                A. elements(array);  
+                                A. 7
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
                             <label class="form-check-label" for="q2_option2">
-                                B. count(array); 
+                                B. 12
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
                             <label class="form-check-label" for="q2_option3">
-                                C. sizeof(array) / sizeof(array[0]); 
+                                C. 24
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
                             <label class="form-check-label" for="q2_option4">
-                                D. length(array);
+                                D. 48
                             </label>
                         </div>
                         <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
                     </form>
                 </div>       
             </div>
-          </div>
+        </div>
        
         
           
 
-           <div id="navigation" class="mt-4 text-center">
-            <a href="{% url 'course2' slug='c2ch4t1'%}" class="btn btn-secondary">Prev</a>
-            <a href="{% url 'course2' slug='c2ch4t3'%}" class="btn btn-secondary">Next</a>
-            </div>
+        <div id="navigation" class="mt-4 text-center">
+            <a href="{% url 'course2' slug='c2ch4t2'%}" class="btn btn-secondary">Prev</a>
+            <a href="{% url 'course2' slug='c2ch4t4'%}" class="btn btn-secondary">Next</a>
         </div>
+    </div>
 
     </div>
 
