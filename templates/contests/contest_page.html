@@ -4,20 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contest Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS styles can be added here */
+        body {
+            background-color: #f0f0f0; /* Light Grey */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff; /* White */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px; /* Limit container width */
+            width: 100%; /* Ensure container takes full width */
+        }
+
+        .contest-card {
+            background-color: #fff; /* White */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .contest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contest-link {
+            color: black;
+            text-decoration: none;
+        }
+
+        .contest-link:hover {
+            color: #333;
+        }
+
+        .contest-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .list-group-item {
+            border: none;
+            padding: 5px 0;
+        }
+
+        .logic-loom-contest {
+            margin-top: 30px; /* Adjust margin-top as needed */
+        }
+    </style>
 </head>
 <body>
-    <h1>Upcoming Contests</h1>
-    <ul>
-        {% for contest in upcoming_contests %}
-            <li>{{ contest.hackerrank_link}}</li>
-        {% endfor %}
-    </ul>
+   
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 text-center logic-loom-contest">
+                <h2>LOGIC LOOM CONTEST</h2>
+                {% include 'contests/leaderboard1.html' %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="contest-card">
+                    <h2 class="contest-title">Upcoming Contests</h2>
+                    <ul class="list-group">
+                        <!-- Add upcoming contests here -->
+                        {% for contest in upcoming_contests %}
+                            <li class="list-group-item">
+                                <a href="{{ contest.hackerrank_link }}" class="contest-link">{{ contest.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <a href="{% url 'contest_page' %}"></a>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12 text-center">
+                <div class="contest-card">
+                    <h2 class="contest-title">Previous Contests</h2>
+                    <ul class="list-group">
+                        {% for contest in previous_contests %}
+                            <li class="list-group-item">
+                                <a href="{{ contest.hackerrank_link }}" class="contest-link">{{ contest.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <a href="{% url 'contest_page' %}"></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <h1>Previous Contests</h1>
-    <ul>
-        {% for contest in previous_contests %}
-            <li>{{ contest.hackerrank_link}}</li>
-        {% endfor %}
-    </ul>
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
