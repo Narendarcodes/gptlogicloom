@@ -5,6 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LogicLoom</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    /* Footer design */
+:root {
+  --theme-col: #2d4bf0;
+}
+
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+footer {
+  background-color: #1d1240;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  list-style: none;
+  text-decoration: none;
+  padding-top: 60px;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.f-item-con {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  color: white;
+}
+
+footer .app-name {
+  color: white;
+  border-left: 4px solid var(--theme-col);
+  padding-left: 1.5rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.app-name .app-initial {
+  color: var(--theme-col);
+}
+
+footer .app-info p {
+  color: white;
+  padding-left: 1.65rem;
+}
+
+footer .footer-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: white;
+  border-left: 4px solid var(--theme-col);
+  padding-left: 1.5rem;
+  height: fit-content;
+}
+
+footer ul {
+  padding-left: 1.75rem;
+  color: white;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem;
+  margin-top: .5rem;
+  text-align: center; /* Align content center */
+}
+
+footer ul li {
+  margin: .25rem 0;
+  cursor: pointer;
+  color: #d4d4d4;
+  width: fit-content;
+}
+
+footer ul li:hover {
+  color: white;
+}
+
+/* Subscribe form */
+input[type="text"].form-control {
+  border-radius: 0;
+}
+
+button.btn-primary {
+  border-radius: 0;
+}
+
+/* Social media icons */
+ul.list-unstyled.d-flex li {
+  margin-left: 10px;
+}
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-form .form-group {
+  margin-bottom: 1rem; /* Adjust as needed */
+}
+
+.feedback-form button[type="submit"] {
+  align-self: flex-end;
+}
+
+  </style>
   </head>
   <body>
    {% for message in messages  %} 
@@ -51,36 +156,34 @@
   
   <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-      <div class="modal-content">
-          <form action="/loginhandle" method='post'> 
-              {% csrf_token %}
-              <div class="modal-header">
-                  <h5 class="modal-title">Login</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                  <div class="mb-3">
-                      <label for="Username">Username<span class="text-danger">*</span></label>
-                      <input type="text" name="username" class="form-control" id="Username" placeholder="Enter Username" required>
-                  </div>
-
-                  <div class="mb-3">
-                      <label for="Password">Password<span class="text-danger">*</span></label>
-                      <input type="password" name="password" class="form-control" id="Password" placeholder="Enter Password" required>
-                  </div>
-
-                  <div class="text-end mb-3"> <!-- Align "Forgot Password" link to the right -->
-                      <a href="#" class="text-decoration-none">Forgot Password</a>
-                  </div>
-              </div>
-              <div class="modal-footer"> <!-- Removed pt-4 class from modal-footer -->
-                  <button type="submit" class="btn btn-success w-100">Login</button> <!-- Centered the login button -->
-              </div>
-
-              <p class="text-center">Not yet account, <a href="#">Signup</a></p>
-          </form>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header p-5 pb-4 border-bottom-0">
+        <h1 class="fw-bold mb-0 fs-2">Login</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+
+      <div class="modal-body p-5 pt-0">
+        <form action="/loginhandle" method='post'> 
+          {% csrf_token %}
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control rounded-3" name="username" id="floatingInput" placeholder="Enter Your Pin Number" required>
+            <label for="floatingInput">Pin Number</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control rounded-3" name="password" id="floatingPassword" placeholder=" Enter Your Password" required>
+            <label for="floatingPassword">Password</label>
+          </div>
+          <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Login</button>
+          <hr class="my-4">
+          <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
+          <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
+            <svg class="bi me-1" width="16" height="16"><use xlink:href="#twitter"></use></svg>
+            Login with Google
+          </button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -90,7 +193,7 @@
           </div>
         </div>
       </nav>
-      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000" data-bs-duration="1000">    
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000" data-bs-duration="2000">    
         <div class="carousel-inner">
             <div class="carousel-item active">
                 {% load static %}
@@ -136,7 +239,61 @@
       </div>
     </div>
   </div>
-    
+<footer class="bg-dark text-white py-5">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4">
+              <div class="app-info">
+                  <span class="app-name">
+                      <span class="app-initial">Logic</span>Loom
+                  </span>
+                  <p>Scripting the unconventional</p>
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+              <div class="useful-links">
+                  <div class="footer-title">About Us</div>
+                  <ul class="list-unstyled">
+                      <li>Narendar</li>
+                      <li>Lohitha</li>
+                      <li>Mokshith</li>
+                      <li>Pranitha</li>
+                      <li>Anjali</li>
+                      <li>Ganesh</li>
+                      <li>Yamini</li>
+                      <li>Sindhu</li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-md-12 col-lg-4 mb-4">
+            <form class="feedback-form">
+                <h5 class="text-uppercase">Feedback</h5>
+                <p>Give Your valuable Feedback on this website</p>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Email address" aria-label="Email address" aria-describedby="button-addon2">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Your Feedback</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+        
+      <hr class="my-4">
+      <div class="d-flex justify-content-between align-items-center">
+          <p class="m-0">© 2024 Logic Loom. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+              <li class="ms-3"><a href="#"><svg class="bi text-white" width="24" height="24" fill="currentColor"><use xlink:href="#twitter"></use></svg></a></li>
+              <li class="ms-3"><a href="#"><svg class="bi text-white" width="24" height="24" fill="currentColor"><use xlink:href="#instagram"></use></svg></a></li>
+              <li class="ms-3"><a href="#"><svg class="bi text-white" width="24" height="24" fill="currentColor"><use xlink:href="#facebook"></use></svg></a></li>
+          </ul>
+      </div>
+  </div>
+</footer>
+
+
+
       
 
 

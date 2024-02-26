@@ -10,6 +10,7 @@ class Profile(models.Model):
     c1progress = models.FloatField(default='0')
     c2progress = models.FloatField(default='0')
     name = models.CharField(max_length=50)
+    imguploadlimit = models.PositiveSmallIntegerField(default='10')
     image = models.ImageField(upload_to='profile_images/', default='profile_images/default.jpg')
 
     def __str__(self):
