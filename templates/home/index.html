@@ -12,19 +12,6 @@
         :root {
             --theme-col: #2d4bf0;
         }
-
-        body {
-                {
-                % comment %
-            }
-
-            background-color: #1d1240;
-
-                {
-                % endcomment %
-            }
-        }
-
         .space-y-2> :not([hidden])~ :not([hidden]) {
             --tw-space-y-reverse: 0;
             margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -153,7 +140,7 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="#">About us</a>
                         </li>
 
                         {% if user.is_authenticated %}
@@ -238,46 +225,6 @@
                 </div>
             </div>
         </div> 
-        
-
-        {% comment %} <div class="container bodycontainer">
-
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-
-                            <a href="{% url 'course2' slug='c2ch2t1' %}">
-                                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small>
-                                </p>
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> {% endcomment %}
         <div class="p-4"></div>
         <div class="container px-1 py-1" id="hanging-icons">
           <h2 class="pb-2 border-bottom">Courses Offered</h2>
