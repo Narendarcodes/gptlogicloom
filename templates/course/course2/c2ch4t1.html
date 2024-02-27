@@ -4,14 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C Programming</title>
-    <link rel="stylesheet" href="../course2.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <title>C programming</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
         body {
             font-family: 'Boogaloo', cursive;
@@ -92,7 +88,48 @@
         .mcqs {
             margin-top: 20px; /* Add margin at the top */
         }
+        .relimg{
+         width : 100%;
+        }
+        .eg{
+          width : 100%;
+        }
+        #img3 {
+          max-width: 100%;
+          max-height : 30vh;
+        
+        }
+        .relimg,.eg {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 250px; /* Adjust the height of the container as needed */
+          border: 1px solid #ccc; /* Optional: border for visualization */
+        }
+        
+.flow{
+    width:100%;
+    height:100%;
+  }
+
+.code-container {
+  margin-top: 10px;
+}
+
+.area {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: 'SMontserrat', sans-serif; 
+  font-size: 14px;
+  resize: none;
+}
+
+
     </style>
+
 </head>
 
 <body>
@@ -201,6 +238,7 @@
             </ul>
         </div>
     </div>
+    <div class="container">
         <ul class="custom-list">
             <li>In C, an array is a collection of elements of the same data type stored in contiguous memory locations.</li>
             <li>It provides a way to store and manipulate a fixed-size sequence of elements.</li>
@@ -212,15 +250,18 @@
                 myArray[0] = 10;<br>
                 myArray[1] = 20;</li>
         </ul>
+    
+    <div class="container">
+   
 
-        <div>
-            <h2>Resources :</h2>
-            <div class="fluid-yt">
-                <iframe src="https://www.youtube.com/embed/CIRGjwYgdT4?si=Q43Rt9vXbAbJsYX8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+
+        <h2 class="mt-4">Resources :</h2>
+        <div class="fluid-yt">
+            <!--replace youtube link-->
+            <iframe src="https://www.youtube.com/embed/LA2LIBZGink?si=xUBD2PzjaelEfcLO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-
-        <div class="card" style="margin-top:20px;">
+    </div>
+        <div class="card" >
             <div class="card-header">
               Test Your Knowledge
             </div>
@@ -296,7 +337,7 @@
             <a href="{% url 'course2' slug='c2ch4t2'%}" class="btn btn-secondary">Next</a>
         </div>
     </div>
-
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

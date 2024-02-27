@@ -238,58 +238,21 @@
             </ul>
         </div>
     </div>
-    <!-- Your existing content goes here -->
-
-    <!-- The modified content for the second HTML code is added below -->
-
     <div class="container">
-        <h1>Initialisation of one-dimensional array</h1>
+        
+        <h2 class="mt-4">Dynamic Arrays</h2>
+        <div class="topicstart">
+            <p>Dynamic Arrays</p>
+        </div>
         <ul class="custom-list">
-            <li>In C, you can initialize a one-dimensional array at the time of declaration or later in your program.</li>
-            <li>Here's how you can initialize an array:</li>
-            <!-- Your existing card code for array initialization -->
-            <div class="card">
-                <div class="header">
-                  <div class="top">
-                    <div class="circle">
-                      <span class="red circle2"></span>
-                    </div>
-                    <div class="circle">
-                      <span class="yellow circle2"></span>
-                    </div>
-                    <div class="circle">
-                      <span class="green circle2"></span>
-                    </div>
-                    <div class="title">
-                      <p id="title2">Program.c</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="code-container">
-                 <textarea readonly="" name="code" id="code" class="area">
-                    #include <stdio.h>
-                    int main() {
-                    // Initializing an integer array at the time of declaration
-                    int numbers[5] = {1, 2, 3, 4, 5};
-                    // Accessing and printing array elements
-                    for (int i = 0; i < 5; ++i) {
-                    printf("Element at index %d: %d\n", i, numbers[i]);
-                   }   
-                    return 0;
-                    }
-                  </textarea>
-                </div>
-            </div>
-            <p>Output:<br>
-                Element at index 0: 1<br>
-                Element at index 1: 2<br>
-                Element at index 2: 3<br>
-                Element at index 3: 4<br>
-                Element at index 4: 5<br>
-            </p>
-            <li>In this example, the array numbers is declared and initialized with values {1, 2, 3, 4, 5}.</li>
-            <li>Here's how you can initialize an array in another method:</li>
-            <!-- Your existing card code for array initialization -->
+            <li><b>Definition:</b><br>A dynamic array is a data structure that allows you to resize the array during runtime.</li>
+            <li><b>Memory Allocation:</b><br>Dynamic arrays are allocated memory on the heap, allowing them to grow or shrink as needed.</li>
+            <li><b>Flexibility:</b><br>Unlike static arrays, dynamic arrays can change their size dynamically, making them more versatile in handling varying amounts of data.</li>
+            <li><b>Efficiency:</b><br>Dynamic arrays offer better efficiency in terms of memory usage, as they allocate only the required amount of memory.</li>
+            <li><b>Access Time:</b><br>Access time to elements in a dynamic array is constant, similar to static arrays.</li>
+            <li><b>Dynamic Array vs. Linked List:</b><br>Dynamic arrays provide better random access time compared to linked lists, but they may not perform as well for insertions and deletions in the middle.</li>
+            <li><b>Array Doubling:</b><br>Common implementation involves doubling the array size when it reaches capacity, ensuring amortized constant time for append operations.</li>
+            <li>Example Program in C:</li>
             <div class="card">
                 <div class="header">
                   <div class="top">
@@ -309,33 +272,72 @@
                 </div>
                 <div class="code-container">
                   <textarea readonly="" name="code" id="code" class="area">
-                     #include <stdio.h>
-                    int main() {
-                    // Declaring an integer array
-                    int numbers[5];
-                    // Initializing array elements later in the program
-                    numbers[0] = 10;
-                    numbers[1] = 20;
-                    numbers[2] = 30;
-                    numbers[3] = 40;
-                    numbers[4] = 50;
-                    // Accessing and printing array elements
-                    for (int i = 0; i < 5; ++i) {
-                    printf("Element at index %d: %d\n", i, numbers[i]);
-                    }   
-                    return 0;
-                    }
+            #include <stdio.h>
+    #include <stdlib.h>
     
-                  </textarea>
+    int main() {
+        // Declare a dynamic array of integers
+        int *dynamicArray;
+        
+        // Allocate memory for an initial size (e.g., 5 elements)
+        dynamicArray = (int *)malloc(5 * sizeof(int));
+        
+        if (dynamicArray == NULL) {
+            printf(“Memory allocation failed.\n”);
+            return 1; // Exit with an error code
+        }
+        
+        // Assign values to the dynamic array
+        for (int i = 0; i < 5; i++) {
+            dynamicArray[i] = i * 2;
+        }
+        
+        // Print the elements of the dynamic array
+        printf(“Dynamic Array Elements: “);
+        for (int i = 0; i < 5; i++) {
+            printf(“%d “, dynamicArray[i]);
+        }
+        
+        // Resize the dynamic array (e.g., double the size)
+        dynamicArray = (int *)realloc(dynamicArray, 10 * sizeof(int));
+        
+        if (dynamicArray == NULL) {
+            printf(“Memory reallocation failed.\n”);
+            return 1; // Exit with an error code
+        }
+        
+        // Assign values to the additional elements
+        for (int i = 5; i < 10; i++) {
+            dynamicArray[i] = i * 2;
+        }
+        
+        // Print the updated dynamic array
+        printf(“\nUpdated Dynamic Array Elements: “);
+        for (int i = 0; i < 10; i++) {
+            printf(“%d “, dynamicArray[i]);
+        }
+        
+        // Free the allocated memory
+        free(dynamicArray);
+        
+        return 0; // Exit successfully
+    }
+    
+               </textarea
+                  >
                 </div>
-            </div>
-            <li>In this second example, the array numbers is declared first, and then its elements are initialized later in the program. The loop is used to print the array elements.</li>
-        </ul>
-
+              </div>
+    <p>Output:<br>
+    Dynamic Array Elements: 0 2 4 6 8 <br>
+    Updated Dynamic Array Elements: 0 2 4 6 8 10 12 14 16 18 
+    </p>
+     </ul>
+    
+        
         <div>
             <h2 class="mt-4">Resources :</h2>
             <div class="embed-responsive embed-responsive-16by9">
-                <!-- Replace with your YouTube video iframe -->
+                <!--replace youtube link-->
                 <iframe src="https://www.youtube.com/embed/CIRGjwYgdT4?si=Q43Rt9vXbAbJsYX8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
@@ -349,57 +351,58 @@
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <div class="mcqs mt-5">
               
-                    <form action="{% url 'checkanswerc2' slug='c2ch4t3' %}" method='post'>{% csrf_token %}
-                        <p><span>Q1. </span>How can you find the number of rows in a 2D array in C?</p>
+                    <form action="{% url 'checkanswerc2' slug='c2ch4t7' %}" method='post'>{% csrf_token %}
+                        <p><span>Q1. </span>Which function is used to deallocate memory allocated for a dynamic array in C?</p>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
                             <label class="form-check-label" for="q1_option1">
-                                A. rows(array)   
+                                A.  free()    
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
                             <label class="form-check-label" for="q1_option2">
-                                B. sizeof(array) / sizeof(array[0])  
+                                B. delete[]  
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
                             <label class="form-check-label" for="q1_option3">
-                                C. length(array)    
+                                C. dealloc()   
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option4">
                             <label class="form-check-label" for="q1_option4">
-                                D. array.rows 
+                                D. remove() 
                             </label>
                         </div>
                     
-                        <p><span>Q2. </span>What is the size of a 2D array declared as int array[3][4];?</p>
+                        <p><span>Q2. </span>What does the sizeof operator return in the context of dynamic arrays?
+                            </p>
                         
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
                             <label class="form-check-label" for="q2_option1">
-                                A. 7
+                                A. Size of the pointer
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
                             <label class="form-check-label" for="q2_option2">
-                                B. 12
+                                B.  Size of the data type
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
                             <label class="form-check-label" for="q2_option3">
-                                C. 24
+                                C.  Size of the allocated memory block
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
                             <label class="form-check-label" for="q2_option4">
-                                D. 48
+                                D. Size of the array index
                             </label>
                         </div>
                         <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
@@ -412,12 +415,13 @@
           
 
         <div id="navigation" class="mt-4 text-center">
-            <a href="{% url 'course2' slug='c2ch4t2'%}" class="btn btn-secondary">Prev</a>
-            <a href="{% url 'course2' slug='c2ch4t4'%}" class="btn btn-secondary">Next</a>
+            <a href="{% url 'course2' slug='c2ch4t6'%}" class="btn btn-secondary">Prev</a>
+            <a href="{% url 'course2' slug='c2ch4t8'%}" class="btn btn-secondary">Next</a>
         </div>
     </div>
 
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
