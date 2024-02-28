@@ -242,11 +242,14 @@
 
 <div class="container">
     
-    <h1>Arithmetic Operations on Characters</h1>
+    <h1>Putting Strings Together</h1>
     <ul class="custom-list">
-        <li>In C, we can perform arithmetic operations on characters because each character is represented by its ASCII value.</li>
-        <li>For example, if you have a character 'A', its ASCII value is 65.</li>
-        <li>Here's a simple example:</li>
+        <li>The strcat() function is a useful tool in C programming for concatenating strings.</li>
+        <li>It allows joining two or more strings together, which are useful in various programming tasks.</li>
+        <li>In C, you can concatenate strings using the strcat function from the <string.h> library.</li>
+        <li> Ensure the destination string has enough space to accommodate the combined strings. </li>
+        <li>Here's a basic example:</li>
+
         
     <div class="card1">
                 <div class="header">
@@ -268,27 +271,29 @@
                 <div class="code-container">
                   <textarea readonly="" name="code" id="code" class="area">
                     #include <stdio.h>
+                        #include <string.h>
                         int main() {
-                            char char1 = 'A';
-                            char char2 = 'B';
-                            int result = char2 - char1; // Subtracting ASCII values
-                            printf("Result: %d\n", result);
+                            char str1[50] = "Hello, ";
+                            char str2[] = "world!";
+                            strcat(str1, str2);
+                            printf("Concatenated string: %s\n", str1);
                             return 0;
                         }
+                        
                     </textarea>
                                       
                                     </div>
                                   </div>
                         <p>Output:<br>
-                        Result: 1
+                        Concatenated string: Hello, world!
                         </p>
-                        <li>In this example, subtracting the ASCII values of 'A' and 'B' will give you the result of 1. </li>
-                        <li>You can perform addition, subtraction, multiplication, or division on characters based on their ASCII values. </li>
-                        <li>Keep in mind that the result will be an integer.</li>
+                        <li>This program initializes str1 with "Hello, " and then concatenates str2 ("world!") using strcat. 
+                        </li>
+                        <li>Make sure the destination string (str1 in this case) has enough space to hold both strings.</li>
                          </ul>
-                       
-            
-
+                        
+                         </ul>
+                        
      <div class="container">
    
 
@@ -308,58 +313,58 @@
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <div class="mcqs mt-5">
         
-                <form action="{% url 'checkanswer' slug='c2ch4t9' %}" method='post'>{% csrf_token %}
-                    <p><span>Q1. </span><p>What is the ASCII value of NULL or \0.?
-                                            </p>
+                <form action="{% url 'checkanswer' slug='c2ch4t14' %}" method='post'>{% csrf_token %}
+                    <p><span>Q1. </span><p>Which operator is used for concatenating strings in C?</p>
+
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
                         <label class="form-check-label" for="q1_option1">
-                             A. 0 
+                             A. + 
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
                         <label class="form-check-label" for="q1_option2">
-                          B. 1 
+                          B. & 
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
                         <label class="form-check-label" for="q1_option3">
-                           C. 10   
+                           C. ||   
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option4">
                         <label class="form-check-label" for="q1_option4">
-                            D. 49 
+                            D. . 
                         </label>
                     </div>
                 
-                    <p><span>Q2. </span>What is actually passed to printf or scanf functions.?</p>
+                    <p><span>Q2. </span>What does the strncat() function do in C?</p>
                     
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
                         <label class="form-check-label" for="q2_option1">
-                            A. Value of String 
+                            A. Compares two strings up to a specified number of characters 
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
                         <label class="form-check-label" for="q2_option2">
-                           B. Address of String  
+                           B. Concatenates two strings up to a specified number of characters  
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
                         <label class="form-check-label" for="q2_option3">
-                             C. End address of String  
+                             C. Copies a substring from one string to another   
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
                         <label class="form-check-label" for="q2_option4">
-                           D. Integer equivalent value of String 
+                           D. Finds the length of a string up to a specified number of characters 
                         </label>
                     </div>
                     <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
@@ -372,8 +377,8 @@
       
 
     <div id="navigation" class="mt-4 text-center">
-        <a href="{% url 'course2' slug='c2ch4t8'%}" class="btn btn-secondary">Prev</a>
-        <a href="{% url 'course2' slug='c2ch4t10'%}" class="btn btn-secondary">Next</a>
+        <a href="{% url 'course2' slug='c2ch4t13'%}" class="btn btn-secondary">Prev</a>
+        <a href="{% url 'course2' slug='c2ch4t15'%}" class="btn btn-secondary">Next</a>
     </div>
 </div>
 

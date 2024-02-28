@@ -308,58 +308,70 @@
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <div class="mcqs mt-5">
         
-                <form action="{% url 'checkanswer' slug='c2ch4t9' %}" method='post'>{% csrf_token %}
-                    <p><span>Q1. </span><p>What is the ASCII value of NULL or \0.?
+                <form action="{% url 'checkanswer' slug='c2ch4t12' %}" method='post'>{% csrf_token %}
+                    <p><span>Q1. </span><p>What is the output of C Program with Strings.?<br>
+                        int main()<br>
+                        {<br>
+                            char ary[]=”Discovery Channel”;<br>
+                            printf(“%s”,ary);<br>
+                            return 0;<br>
+                        }<br>
                                             </p>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
                         <label class="form-check-label" for="q1_option1">
-                             A. 0 
+                             A. D 
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
                         <label class="form-check-label" for="q1_option2">
-                          B. 1 
+                          B. Discovery Channel  
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
                         <label class="form-check-label" for="q1_option3">
-                           C. 10   
+                           C. Discovery   
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option4">
                         <label class="form-check-label" for="q1_option4">
-                            D. 49 
+                            D. Discovery 
                         </label>
                     </div>
                 
-                    <p><span>Q2. </span>What is actually passed to printf or scanf functions.?</p>
+                    <p><span>Q2. </span>What is the output of C Program with Strings.?<br>
+                        int main()<br>
+                        {<br>
+                            char str[]={'g','l','o','b','e'};<br>
+                            printf("%s",str);<br>
+                            return 0;<br>
+                        }</p>
                     
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
                         <label class="form-check-label" for="q2_option1">
-                            A. Value of String 
+                            A. g 
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
                         <label class="form-check-label" for="q2_option2">
-                           B. Address of String  
+                           B. globe  
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
                         <label class="form-check-label" for="q2_option3">
-                             C. End address of String  
+                             C. globe\0   
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
                         <label class="form-check-label" for="q2_option4">
-                           D. Integer equivalent value of String 
+                           D. None of the above  
                         </label>
                     </div>
                     <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
@@ -372,8 +384,8 @@
       
 
     <div id="navigation" class="mt-4 text-center">
-        <a href="{% url 'course2' slug='c2ch4t8'%}" class="btn btn-secondary">Prev</a>
-        <a href="{% url 'course2' slug='c2ch4t10'%}" class="btn btn-secondary">Next</a>
+        <a href="{% url 'course2' slug='c2ch4t11'%}" class="btn btn-secondary">Prev</a>
+        <a href="{% url 'course2' slug='c2ch4t13'%}" class="btn btn-secondary">Next</a>
     </div>
 </div>
 

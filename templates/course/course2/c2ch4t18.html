@@ -242,11 +242,18 @@
 
 <div class="container">
     
-    <h1>Arithmetic Operations on Characters</h1>
+    <h1>Other Features of Strings </h1>
     <ul class="custom-list">
-        <li>In C, we can perform arithmetic operations on characters because each character is represented by its ASCII value.</li>
-        <li>For example, if you have a character 'A', its ASCII value is 65.</li>
-        <li>Here's a simple example:</li>
+        <li>In C, strings are represented as arrays of characters, and there are several features and functions associated with working with strings.</li>
+        <li> Here are some key aspects:</li>
+        <li><b>Null-terminated:</b><br>C strings are null-terminated, meaning they end with a null character ('\0'). This character is used to indicate the end of the string. </li>
+        <li><b>String functions:</b><br>C provides standard library functions for string manipulation, such as strlen (to find the length), strcpy (to copy strings), strcat (to concatenate strings), and many more.</li>
+        <li><b>Array of characters:</b><br>Strings are essentially arrays of characters, and individual characters in a string can be accessed using array notation.</li>
+        <li><b>String input/output: </b><br>You can use printf and scanf functions to input and output strings. The %s format specifier is commonly used for strings.</li>
+        <li><b>String literals:</b><br>Strings can be represented as string literals, enclosed in double quotes. For example: "Hello, World!".</li>
+        <li>Here's a simple example demonstrating some of these features:</li>
+
+        
         
     <div class="card1">
                 <div class="header">
@@ -268,31 +275,51 @@
                 <div class="code-container">
                   <textarea readonly="" name="code" id="code" class="area">
                     #include <stdio.h>
+                        #include <string.h>
                         int main() {
-                            char char1 = 'A';
-                            char char2 = 'B';
-                            int result = char2 - char1; // Subtracting ASCII values
-                            printf("Result: %d\n", result);
+                            // String literal
+                            char greeting[] = "Hello, World!";
+                            // Output the string
+                            printf("String: %s\n", greeting);
+                            // Find the length of the string
+                            int length = strlen(greeting);
+                            printf("Length: %d\n", length);
+                            // Accessing individual characters
+                            for (int i = 0; i < length; ++i) {
+                                printf("Character at index %d: %c\n", i, greeting[i]);
+                            }
                             return 0;
                         }
+                                
                     </textarea>
                                       
                                     </div>
                                   </div>
                         <p>Output:<br>
-                        Result: 1
+                        String: Hello, World!<br>
+                        Length: 13<br>
+                        Character at index 0: H<br>
+                        Character at index 1: e<br>
+                        Character at index 2: l<br>
+                        Character at index 3: l<br>
+                        Character at index 4: o<br>
+                        Character at index 5: ,<br>
+                        Character at index 6:  <br>
+                        Character at index 7: W<br>
+                        Character at index 8: o<br>
+                        Character at index 9: r<br>
+                        Character at index 10: l<br>
+                        Character at index 11: d<br>
+                        Character at index 12: !<br>
                         </p>
-                        <li>In this example, subtracting the ASCII values of 'A' and 'B' will give you the result of 1. </li>
-                        <li>You can perform addition, subtraction, multiplication, or division on characters based on their ASCII values. </li>
-                        <li>Keep in mind that the result will be an integer.</li>
                          </ul>
-                       
-            
+                        
+                        
+                        
+                             
 
-     <div class="container">
+    <div class="container">
    
-
-
         <h2 class="mt-4">Resources :</h2>
         <div class="fluid-yt">
             <!--replace youtube link-->
@@ -308,58 +335,58 @@
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <div class="mcqs mt-5">
         
-                <form action="{% url 'checkanswer' slug='c2ch4t9' %}" method='post'>{% csrf_token %}
-                    <p><span>Q1. </span><p>What is the ASCII value of NULL or \0.?
-                                            </p>
+                <form action="{% url 'checkanswer' slug='c2ch4t18' %}" method='post'>{% csrf_token %}
+                    <p><span>Q1. </span><p>Choose a correct statement about C String.<br>
+                                            char ary[] = "Hello......!";</p>
+
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
                         <label class="form-check-label" for="q1_option1">
-                             A. 0 
+                             A. Character array, ary is a string   
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
                         <label class="form-check-label" for="q1_option2">
-                          B. 1 
+                          B. ary has no Null character at the end   
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
                         <label class="form-check-label" for="q1_option3">
-                           C. 10   
+                           C. String size is not mentioned     
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option4">
                         <label class="form-check-label" for="q1_option4">
-                            D. 49 
+                            D. String can not contain special characters    
                         </label>
                     </div>
-                
-                    <p><span>Q2. </span>What is actually passed to printf or scanf functions.?</p>
+                    <p><span>Q2. </span>Which of the following is the variable type defined in header string.h?</p>
                     
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
                         <label class="form-check-label" for="q2_option1">
-                            A. Value of String 
+                            A. sizet   
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
                         <label class="form-check-label" for="q2_option2">
-                           B. Address of String  
+                           B. size  
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
                         <label class="form-check-label" for="q2_option3">
-                             C. End address of String  
+                             C. size_t      
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
                         <label class="form-check-label" for="q2_option4">
-                           D. Integer equivalent value of String 
+                           D. size-t    
                         </label>
                     </div>
                     <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
@@ -372,8 +399,8 @@
       
 
     <div id="navigation" class="mt-4 text-center">
-        <a href="{% url 'course2' slug='c2ch4t8'%}" class="btn btn-secondary">Prev</a>
-        <a href="{% url 'course2' slug='c2ch4t10'%}" class="btn btn-secondary">Next</a>
+        <a href="{% url 'course2' slug='c2ch4t17'%}" class="btn btn-secondary">Prev</a>
+        <a href="{% url 'course2' slug='c2ch5t'%}" class="btn btn-secondary">Next</a>
     </div>
 </div>
 
