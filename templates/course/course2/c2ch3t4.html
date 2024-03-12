@@ -1,0 +1,507 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>C programming</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <style>
+         :root {
+                --theme-col: #2d4bf0;
+            }
+            .app-name .app-initial {
+                color: var(--theme-col);
+               
+            }
+            body {
+              font-family: 'Boogaloo', cursive;
+              background-color: #f8f9fa;
+              /* Light gray background color */
+              color: #495057;
+              /* Darker gray text color for the entire website */
+              margin: 0;
+              /* Remove default margin */
+              padding: 0;
+              /* Remove default padding */
+            }
+        
+            .main-header {
+              background-color: #007bff;
+              /* Bootstrap primary color */
+              color: #fff;
+              /* White text color */
+              padding: 15px;
+            }
+        
+            .navbar-text {
+              font-size: 1.5em;
+              color: #007bff;
+              /* Bootstrap primary color */
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100%;
+              text-align: center;
+              /* Center the text horizontally */
+              flex-grow: 1;
+        
+              /* Responsive styles */
+              @media (max-width: 768px) {
+                font-size: 1.2em;
+                /* Adjust font size for smaller screens */
+              }
+        
+              @media (max-width: 576px) {
+                font-size: 1em;
+                /* Further adjust font size for even smaller screens */
+              }
+            }
+        
+            /* Add responsive styles for the header */
+            .navbar-brand {
+              margin-right: 0;
+              margin-bottom: 0;
+            }
+        
+            /* Adjust padding for smaller screens */
+            @media (max-width: 768px) {
+              .main-header {
+                padding: 10px;
+              }
+        
+              .navbar-text {
+                font-size: 1.2em;
+              }
+            }
+        
+            /* Adjust offcanvas styles for low-resolution devices */
+            @media (min-width: 992px) {
+              .offcanvas {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                z-index: 1050;
+                /* Make sure offcanvas is above other content */
+                padding-right: 0;
+                padding-left: 0;
+                overflow-y: auto;
+                background-color: #fff;
+                border-right: 1px solid rgba(0, 0, 0, .2);
+                transform: translateX(0);
+                transition: transform .3s ease-in-out;
+              }
+            }
+        
+            h2 {
+              color: #007bff;
+            }
+        
+            /* Adjust margin for messages */
+            .alert {
+              margin-bottom: 0;
+              /* Remove bottom margin */
+            }
+        
+            /* Add margin between YouTube video and MCQ's card */
+            .mcqs {
+              margin-top: 20px;
+              /* Add margin at the top */
+            }
+        
+            .card1 {
+              background-color: #333;
+              color: #fff;
+              /* Set text color to white */
+              border-radius: 10px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              padding: 20px;
+              margin: 20px;
+            }
+        
+            .header {
+              padding-bottom: 10px;
+            }
+        
+            .top {
+              display: flex;
+              align-items: center;
+            }
+        
+            .circle {
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              margin-right: 10px;
+            }
+        
+            .circle .red {
+              background-color: red;
+            }
+        
+            .circle .yellow {
+              background-color: yellow;
+            }
+        
+            .circle .green {
+              background-color: green;
+            }
+        
+            .title {
+              flex-grow: 1;
+            }
+        
+            #title2 {
+              font-size: 18px;
+              font-weight: bold;
+              font-family: Arial, sans-serif;
+              /* Change font to Arial */
+            }
+        
+            .code-container {
+              margin-top: 10px;
+            }
+        
+            .area {
+              width: 100%;
+              height: 300px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              padding: 10px;
+              font-family: 'SMontserrat', sans-serif;
+              font-size: 14px;
+              resize: none;
+            }
+    
+    
+        </style>
+    </head>
+    
+    <body>
+        {% for message in messages  %} 
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+          <strong>Message : </strong> {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {%endfor%}
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="{% url 'home' %}" style=" font-family: Arial, Helvetica, sans-serif;"><span class="app-name">
+              <strong><span class="app-initial">Logic</span>Loom</strong>
+          </span></a>
+            
+            <!-- Text for desktop resolutions -->
+            <span class="navbar-text mx-auto d-lg-block">
+              Nesting of if..else statements
+            </span>
+            
+            <!-- Offcanvas Trigger Button for Low-resolution devices -->
+            <button class="btn btn-primary ms-auto" type="button" data-bs-toggle="offcanvas"  data-bs-target="#offcanvasWithBothOptions">
+                Open Menu
+            </button>
+        </nav>
+    
+        <!-- Offcanvas Body -->
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" 
+        aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h2 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Getting Started With C</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" style="color:black">Home</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                            chapter 1 Name
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">topic1name</a></li>
+                            <li><a class="dropdown-item" href="#">topic2name</a></li>
+                           
+                            <li><a class="dropdown-item" href="#">topic3name</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                            chapter 2 Name
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">topic1name</a></li>
+                            <li><a class="dropdown-item" href="#">topic2name</a></li>
+                            
+                            <li><a class="dropdown-item" href="#">topic3name</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                            chapter 3 Name
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">topic1name</a></li>
+                            <li><a class="dropdown-item" href="#">topic2name</a></li>
+                          
+                            <li><a class="dropdown-item" href="#">topic3name</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                            chapter 4 Name
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">topic1name</a></li>
+                            <li><a class="dropdown-item" href="#">topic2name</a></li>
+                            
+                            <li><a class="dropdown-item" href="#">topic3name</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                            chapter 5 Name
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">topic1name</a></li>
+                            <li><a class="dropdown-item" href="#">topic2name</a></li>
+                            
+                            <li><a class="dropdown-item" href="#">topic3name</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                            chapter 6 Name
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">topic1name</a></li>
+                            <li><a class="dropdown-item" href="#">topic2name</a></li>
+                            
+                            <li><a class="dropdown-item" href="#">topic3name</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    <!--Algorithm and its Characteristics.-->
+    <!--Matrix operations-->
+    
+    <div class="container">
+      <div class="topicstart">
+        <h2> Nested ifelse statements </h2><!--topic name between p tag-->
+      </div>
+      <img src="c2ch3t4img1.png" class="img-fluid">
+     <h2>Syntax:</h2>
+     <p>
+      if (condition1) {<br>
+          // code block for condition1 <br>
+          if (condition2) {<br>
+              // code block for condition2 inside condition1<br>
+          } else {<br>
+              // code block for else inside condition1<br>
+          }<br>
+      } else {<br>
+          // code block for else outside condition1<br>
+      }
+      
+     </p>
+     <h2>
+      Explanation:
+     </h2>
+     <ul class="custom-list">
+              <li> Including numerous if-else statements inside an if and else statement is called nesting. The second if and else statements are said to be nested inside the first if and else statement.</li>
+              <li>When we enter the if block, the else block is ignored and if we enter the else block, the if block is ignored. Nested if else follow the same working. </li>
+              <li>C language allows nesting of if-else statements to facilitate better decision making. </li>
+                </ul>
+    <h3>Sample code:</h3>
+    <div class="card1">
+      <div class="header">
+        <div class="top">
+          <div class="circle">
+            <span class="red circle2"></span>
+          </div>
+          <div class="circle">
+            <span class="yellow circle2"></span>
+          </div>
+          <div class="circle">
+            <span class="green circle2"></span>
+          </div>
+          <div class="title">
+            <p id="title2">Program.c</p>
+          </div>
+        </div>
+      </div>
+      <div class="code-container">
+        <textarea readonly="" name="code" id="code" class="area">
+         
+          #include <stdio.h>
+          int main() {
+              int x = 10;
+              int y = 20;
+              if (x == 10) {
+                  if (y == 20) {
+                      printf("x is 10 and y is 20\n");
+                  }
+              }
+              return 0;
+          }
+          
+              
+  
+     </textarea >
+      </div>
+    </div>
+    <h3>Output:</h3>
+    <div class="card1">
+      <div class="header">
+        <div class="top">
+          <div class="circle">
+            <span class="red circle2"></span>
+          </div>
+          <div class="circle">
+            <span class="yellow circle2"></span>
+          </div>
+          <div class="circle">
+            <span class="green circle2"></span>
+          </div>
+          <div class="title">
+            <p id="title2">output.c</p>
+          </div>
+        </div>
+      </div>
+      <div class="code-container">
+        <textarea readonly="" name="code" id="code" class="area">
+          x is 10 and y is 20
+
+  
+     </textarea
+        >
+      </div>
+    </div>
+        <div>
+          <h2>Resources :</h2>
+          
+          <div class="fluid-yt">
+              <!--replace youtube link-->
+            <iframe 
+              src="https://www.youtube.com/embed/CIRGjwYgdT4?si=Q43Rt9vXbAbJsYX8"   
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      
+    
+    
+        <div class="card">
+            <div class="card-header">
+              Featured
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <div class="mcqs mt-5">
+            
+                    <form action="{% url 'checkanswerc2' slug='c2ch4t10' %}" method='post'>{% csrf_token %}
+                        <p><span>Q1. </span>What is the output of C Program.? <pre>
+                          int main()
+                          {
+                              if( 10 > 9 )
+                                  printf("Singapore\n");
+                              else if(4%2 == 0)
+                                  printf("England\n");
+                                  printf("Poland");
+                              return 0;
+                          }</pre>
+                          
+                          </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
+                            <label class="form-check-label" for="q1_option1">
+                                 A.  Singapore
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
+                            <label class="form-check-label" for="q1_option2">
+                              B.  Singapore Poland
+                            </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option1" required>
+                          <label class="form-check-label" for="q1_option1">
+                               C.  Singapore England Poland
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option2">
+                          <label class="form-check-label" for="q1_option2">
+                            D.England Poland
+                          </label>
+                      </div>
+                    
+                        <p><span>Q2. </span>Determine output:<pre>
+                          int main() {
+                              int p = 8, q = 10;
+                          
+                              if (p > q) {
+                                  if (p < 15)
+                                      printf("M");
+                              } else {
+                                  printf("N");
+                              }
+                          
+                              return 0;
+                          }</pre>
+                          What will be the output of this code?
+                          
+                          </p>
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
+                            <label class="form-check-label" for="q2_option1">
+                                A. M
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
+                            <label class="form-check-label" for="q2_option2">
+                               B.N
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
+                            <label class="form-check-label" for="q2_option3">
+                                 C.Compilation error
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
+                            <label class="form-check-label" for="q2_option4">
+                               D.No output
+                            </label>
+                        </div>
+                        <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
+                    </form>
+                </div>  
+            
+          </div>
+       
+        </div>
+          
+    
+        <div id="navigation" class="mt-4 text-center">
+          <a href="{% url 'course2' slug='c2ch2t3'%}" class="btn btn-secondary">Prev</a>
+          <a href="{% url 'course2' slug='c2ch3t5'%}" class="btn btn-secondary">Next</a>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
