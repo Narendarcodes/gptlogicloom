@@ -164,46 +164,43 @@
                         login
                     </button>
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal" role="document">
-                            <div class="modal-content rounded-4 shadow">
-                                <div class="modal-header p-5 pb-4 border-bottom-0">
-                                    <h1 class="fw-bold mb-0 fs-2">Login</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
+             <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content rounded-4 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h1 class="fw-bold mb-0 fs-2">Login</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
 
-                                <div class="modal-body p-5 pt-0">
-                                    <form action="/loginhandle" method='post'>
-                                        {% csrf_token %}
-                                        <div class="form-floating mb-3">
-                                            <input type="text" class="form-control rounded-3" name="username"
-                                                id="floatingInput" placeholder="Enter Your Pin Number" required>
-                                            <label for="floatingInput">Pin Number</label>
-                                        </div>
-                                        <div class="form-floating mb-3">
-                                            <input type="password" class="form-control rounded-3" name="password"
-                                                id="floatingPassword" placeholder=" Enter Your Password" required>
-                                            <label for="floatingPassword">Password</label>
-                                        </div>
-                                        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
-                                            type="submit">Login</button>
-                                        <hr class="my-4">
-                                        <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
-                                        <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3"
-                                            type="submit">
-                                            <svg class="bi me-1" width="16" height="16">
-                                                <use xlink:href="#twitter"></use>
-                                            </svg>
-                                            Login with Google
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+            <div class="modal-body p-5 pt-0">
+                <form action="/loginhandle" method='post'>
+                    {% csrf_token %}
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control rounded-3" name="username" id="floatingInput"
+                            placeholder="Enter Your Pin Number" required>
+                        <label for="floatingInput">Pin Number</label>
                     </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control rounded-3" name="password" id="floatingPassword"
+                            placeholder=" Enter Your Password" required>
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Login</button>
+                    <hr class="my-4">
+                    <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
+                    <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
+                        <svg class="bi me-1" width="16" height="16">
+                            <use xlink:href="#twitter"></use>
+                        </svg>
+                        Login with Google
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
                     {% endif %}
                 </div>
@@ -300,20 +297,19 @@
                         </div>
                     </div>
                     <div class="col-md-12 col-lg-4 mb-4">
-                        <form class="feedback-form" method="post" action="{% url 'feedbackhandler'%}">
-                            {%csrf_token %}
+                        <form class="feedback-form">
                           <div class="app-info">
                             <span class="app-name">
                                 Feedback
                             </span>
                             <p>Give Your valuable Feedback on this website</p>
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email address"
-                                    aria-label="Email address" aria-describedby="button-addon2" name="email" value ="{{user.email}}" required>
+                                <input type="text" class="form-control" placeholder="Email address"
+                                    aria-label="Email address" aria-describedby="button-addon2">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Your Feedback</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="feedback"></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
                             </div>
                             <button class="btn btn-primary" type="submit">Submit</button>
                         </form>
