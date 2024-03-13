@@ -300,19 +300,20 @@
                         </div>
                     </div>
                     <div class="col-md-12 col-lg-4 mb-4">
-                        <form class="feedback-form">
+                        <form class="feedback-form" method="post" action="{% url 'feedbackhandler'%}">
+                            {%csrf_token %}
                           <div class="app-info">
                             <span class="app-name">
                                 Feedback
                             </span>
                             <p>Give Your valuable Feedback on this website</p>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Email address"
-                                    aria-label="Email address" aria-describedby="button-addon2">
+                                <input type="email" class="form-control" placeholder="Email address"
+                                    aria-label="Email address" aria-describedby="button-addon2" name="email" value ="{{user.email}}" required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Your Feedback</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="feedback"></textarea>
                             </div>
                             <button class="btn btn-primary" type="submit">Submit</button>
                         </form>

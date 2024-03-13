@@ -2,6 +2,9 @@ from django.shortcuts import render , redirect
 from django.http import HttpResponse
 from django.contrib.auth  import authenticate,  login, logout
 from django.contrib import messages
+from .models import feedback
+import re
+
 
 # Create your views here.
 def index(request):
@@ -27,6 +30,29 @@ def loginhandle(request):
 def logouthandle(request):
     logout(request)
     messages.success(request, "Successfully logged out")
-    return redirect('home')   
+    return redirect('home')
+def feedbackhandle(request):
+    if request.method=="POST":
+        email_regex = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+        if request.user.is_authenticated:
+            email=request.user.email
+        else:
+            email = request.POST["email"]
+        feedbackmsg = request.POST["feedback"]
+        if not (re.match(email_regex, email) and email.endswith('@gmail.com')):
+            messages.error(request,"Please Enter a valid Email")
+            return redirect('home')
+        if len(feedbackmsg) > 800 :
+            messages.error(request,"feedback length should not be greater than 600 characters..try again")
+            return redirect('home')
+        if email and feedbackmsg :
+            feedbackentry = feedback(email=email,feedback=feedbackmsg)
+            feedbackentry.save()
+            messages.success(request,"Feedback submitted successfully")
+            return redirect('home')
+        
+       
+        
+
 
      
