@@ -186,11 +186,10 @@
                     </div>
                     <div class="form-floating mb-3">
                         <div class="input-group">
-                            {% comment %} <label for="floatingPassword">Password</label> {% endcomment %}
                             <input type="password" class="form-control rounded-3" name="password" id="floatingPassword"
                                 placeholder="Enter Your Password" required>
                             
-                            <button class="btn btn-outline-secondary" type="button" onclick="togglePasswordVisibility();">
+                            <button class="btn btn-outline-secondary" type="button"  style="opacity:0.7;" onclick="togglePasswordVisibility();">
                                 <i class="fas fa-eye" id="show_eye"></i>
                                 <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
                             </button>
