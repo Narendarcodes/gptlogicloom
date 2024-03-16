@@ -27,12 +27,14 @@ def checkanswerc2(request, slug):
         if answers:
             if option1 == answers.que1 and option2 == answers.que2:
                 user_profile = Profile.objects.filter(user=request.user).first()
-                if user_profile.c2progress < answers.prgrscontribution :
-                  user_profile.c2progress = answers.prgrscontribution
-                  user_profile.save()
-                else:
-                    pass 
-                messages.success(request, "Well Done! That was an Awesome response")
+                if user_profile is not None:
+                   if user_profile.c2progress < answers.prgrscontribution :
+                     user_profile.c2progress = answers.prgrscontribution
+                     user_profile.save()
+                     messages.success(request, "Well Done! "+user_profile.name + " That was an Awesome response")
+                   else:
+                    messages.success(request, "Well Done! That was an Awesome response Please Login to Save your progress")   
+                
             else:
                 messages.error(request, "Wrong Answers. Try Again!")
         else:
