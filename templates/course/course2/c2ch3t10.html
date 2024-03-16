@@ -19,16 +19,16 @@
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         {%endfor%}
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <!-- Navbar -->
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <!-- Navbar brand -->
-    
+
         <a class="navbar-brand" href="{% url 'home' %}" style=" font-family: Arial, Helvetica, sans-serif;margin-left:15px"><span class="app-name">
             <strong><span class="app-initial">Logic</span>Loom</strong>
         </span></a>
         <!-- Text for desktop resolutions -->
         <span class="navbar-text mx-auto d-lg-block">
-          Nesting of if..else statements
+     Do while Statement
         </span>
         
         <!-- Offcanvas Trigger Button for Low-resolution devices -->
@@ -125,32 +125,35 @@
     
     <div class="container">
       <div class="topicstart">
-        <h2> Nested ifelse statements </h2><!--topic name between p tag-->
+        <h2> do while statements </h2><!--topic name between p tag-->
+       <img src="{%static 'course/images/c2ch3t10img1.jpg'%}" id="flow" class="img-fluid" >
       </div>
-      {% load static%}
-      <img src="{% static 'course/images/c2ch3t4img1.jpg'%}"  class="img-fluid">
+      <p>The do…while in C is a loop statement used to repeat some part of the code till the given condition is fulfilled. It is a form of an exit-controlled or post-tested loop where the test condition is checked after executing the body of the loop. Due to this, the statements in the do…while loop will always be executed at least once no matter what the condition is.
+
+      </p> 
      <h2>Syntax:</h2>
-     <p>
-      if (condition1) {<br>
-          // code block for condition1 <br>
-          if (condition2) {<br>
-              // code block for condition2 inside condition1<br>
-          } else {<br>
-              // code block for else inside condition1<br>
-          }<br>
-      } else {<br>
-          // code block for else outside condition1<br>
-      }
+     <pre>
+      do {
+
+        // body of do-while loop    
+        
+    } while (condition);
+    
+    
+     </pre>
+     <h2>Explaination:</h2>
+     <pre>
+     <p>How does the do…while Loop works?
+
+      The working of the do…while loop is explained below:
+      1.	When the program control first comes to the do…while loop, the body of the loop is executed first and then the test condition/expression is checked, unlike other loops where the test condition is checked first. Due to this property, the do…while loop is also called exit controlled or post-tested loop.
+      2.	When the test condition is evaluated as true, the program control goes to the start of the loop and the body is executed once more.
+      3.	The above process repeats till the test condition is true.
+      4.	When the test condition is evaluated as false, the program controls move on to the next statements after the do…while loop.
       
-     </p>
-     <h2>
-      Explanation:
-     </h2>
-     <ul class="custom-list">
-              <li> Including numerous if-else statements inside an if and else statement is called nesting. The second if and else statements are said to be nested inside the first if and else statement.</li>
-              <li>When we enter the if block, the else block is ignored and if we enter the else block, the if block is ignored. Nested if else follow the same working. </li>
-              <li>C language allows nesting of if-else statements to facilitate better decision making. </li>
-                </ul>
+      As with the while loop in C, initialization and updation is not a part of the do…while loop syntax. We have to do that explicitly before and in the loop respectively.
+      </p></pre>
+     
     <h3>Sample code:</h3>
     <div class="card1">
       <div class="header">
@@ -171,51 +174,56 @@
       </div>
       <div class="code-container">
         <textarea readonly="" name="code" id="code" class="area">
-         
           #include <stdio.h>
-          int main() {
-              int x = 10;
-              int y = 20;
-              if (x == 10) {
-                  if (y == 20) {
-                      printf("x is 10 and y is 20\n");
-                  }
-              }
+            int main()
+            {
+              int N = 5, i = 1;
+              do {
+                printf("%d\tx\t%d\t=\t%d\n", N, i, N * i);
+              } while (i++ < 10);
               return 0;
-          }
-          
+            }
+            
               
   
      </textarea >
       </div>
     </div>
-    <h3>Output:</h3>
-    <div class="card1">
-      <div class="header">
-        <div class="top">
-          <div class="circle">
-            <span class="red circle2"></span>
-          </div>
-          <div class="circle">
-            <span class="yellow circle2"></span>
-          </div>
-          <div class="circle">
-            <span class="green circle2"></span>
-          </div>
-          <div class="title">
-            <p id="title2">output.c</p>
-          </div>
-        </div>
-      </div>
-      <div class="code-container">
-        <textarea readonly="" name="code" id="code" class="area">
-          x is 10 and y is 20
-
-  
-     </textarea
-        >
-      </div>
+<h3>output:</h3>
+<div class="card1">
+<div class="header">
+  <div class="top">
+    <div class="circle">
+      <span class="red circle2"></span>
     </div>
+    <div class="circle">
+      <span class="yellow circle2"></span>
+    </div>
+    <div class="circle">
+      <span class="green circle2"></span>
+    </div>
+    <div class="title">
+      <p id="title2">output.c</p>
+    </div>
+  </div>
+</div>
+<div class="code-container">
+  <textarea readonly="" name="code" id="code" class="area">
+    5    x    1    =    5
+    5    x    2    =    10
+    5    x    3    =    15
+    5    x    4    =    20
+    5    x    5    =    25
+    5    x    6    =    30
+    5    x    7    =    35
+    5    x    8    =    40
+    5    x    9    =    45
+    5    x    10    =    50
+    
+
+</textarea>
+</div>
+</div>
         <div>
           <h2>Resources :</h2>
           
@@ -230,7 +238,7 @@
             ></iframe>
           </div>
         </div>
-      
+    
     
     
         <div class="card">
@@ -243,82 +251,72 @@
               <div class="mcqs mt-5">
             
                     <form action="{% url 'checkanswerc2' slug='c2ch4t10' %}" method='post'>{% csrf_token %}
-                        <p><span>Q1. </span>What is the output of C Program.? <pre>
-                          int main()
-                          {
-                              if( 10 > 9 )
-                                  printf("Singapore\n");
-                              else if(4%2 == 0)
-                                  printf("England\n");
-                                  printf("Poland");
-                              return 0;
-                          }</pre>
+                        <p><span>Q1. </span>Which loop is guaranteed to execute at least one time?
                           
                           </p>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
                             <label class="form-check-label" for="q1_option1">
-                                 A.  Singapore
+                                 A. for
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
                             <label class="form-check-label" for="q1_option2">
-                              B.  Singapore Poland
+                              B.  while
                             </label>
                         </div>
                         <div class="form-check">
                           <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option1" required>
                           <label class="form-check-label" for="q1_option1">
-                               C.  Singapore England Poland
+                               C.  do while
                           </label>
                       </div>
                       <div class="form-check">
                           <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option2">
                           <label class="form-check-label" for="q1_option2">
-                            D.England Poland
+                            D.None of the above
                           </label>
                       </div>
                     
-                        <p><span>Q2. </span>Determine output:<pre>
-                          int main() {
-                              int p = 8, q = 10;
+                        <p><span>Q2. </span> If the following loop is implemented
+                         <pre>void main() {
+                          int num = 0;
+                          do {
+                          - - num;
+                          printf(“%d”, num);
+                          num ++;
+                          }
+                          while(num >= 0);
+                          }
+                          </pre>
                           
-                              if (p > q) {
-                                  if (p < 15)
-                                      printf("M");
-                              } else {
-                                  printf("N");
-                              }
-                          
-                              return 0;
-                          }</pre>
-                          What will be the output of this code?
+                         
                           
                           </p>
                         
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
                             <label class="form-check-label" for="q2_option1">
-                                A. M
+                                A. A run time error will be reported
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
                             <label class="form-check-label" for="q2_option2">
-                               B.N
-                            </label>
+                               B.The program will not enter into the loop
+                                                          </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
                             <label class="form-check-label" for="q2_option3">
-                                 C.Compilation error
-                            </label>
+                                 C.The loop will run infinitely many times
+                                                            </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
                             <label class="form-check-label" for="q2_option4">
-                               D.No output
+                               D.There will be a compilation error reported
                             </label>
                         </div>
                         <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
@@ -331,8 +329,8 @@
           
     
         <div id="navigation" class="mt-4 text-center">
-          <a href="{% url 'course2' slug='c2ch3t3'%}" class="btn btn-secondary">Prev</a>
-          <a href="{% url 'course2' slug='c2ch3t5'%}" class="btn btn-secondary">Next</a>
+          <a href="{% url 'course2' slug='c2ch3t9'%}" class="btn btn-secondary">Prev</a>
+          <a href="{% url 'course2' slug='c2ch3t11'%}" class="btn btn-secondary">Next</a>
         </div>
     </div>
     

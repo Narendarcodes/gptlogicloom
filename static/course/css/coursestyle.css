@@ -1,0 +1,170 @@
+:root {
+    --theme-col: #2d4bf0;
+}
+.app-name .app-initial {
+    color: var(--theme-col);
+   
+}
+body {
+  font-family: 'Boogaloo', cursive;
+  background-color: #f8f9fa;
+  /* Light gray background color */
+  color: #495057;
+  /* Darker gray text color for the entire website */
+  margin: 0;
+  /* Remove default margin */
+  padding: 0;
+  /* Remove default padding */
+}
+
+.main-header {
+  background-color: #007bff;
+  /* Bootstrap primary color */
+  color: #fff;
+  /* White text color */
+  padding: 15px;
+}
+
+.navbar-text {
+  font-size: 1.5em;
+  color: #007bff;
+  /* Bootstrap primary color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  /* Center the text horizontally */
+  flex-grow: 1;
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    font-size: 1.2em;
+    /* Adjust font size for smaller screens */
+  }
+
+  @media (max-width: 576px) {
+    font-size: 1em;
+    /* Further adjust font size for even smaller screens */
+  }
+}
+
+/* Add responsive styles for the header */
+.navbar-brand {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+/* Adjust padding for smaller screens */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 10px;
+  }
+
+  .navbar-text {
+    font-size: 1.2em;
+  }
+}
+
+/* Adjust offcanvas styles for low-resolution devices */
+@media (min-width: 992px) {
+  .offcanvas {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 1050;
+    /* Make sure offcanvas is above other content */
+    padding-right: 0;
+    padding-left: 0;
+    overflow-y: auto;
+    background-color: #fff;
+    border-right: 1px solid rgba(0, 0, 0, .2);
+    transform: translateX(0);
+    transition: transform .3s ease-in-out;
+  }
+}
+
+h2 {
+  color: #007bff;
+}
+
+/* Adjust margin for messages */
+.alert {
+  margin-bottom: 0;
+  /* Remove bottom margin */
+}
+
+/* Add margin between YouTube video and MCQ's card */
+.mcqs {
+  margin-top: 20px;
+  /* Add margin at the top */
+}
+
+.card1 {
+  background-color: #333;
+  color: #fff;
+  /* Set text color to white */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+}
+
+.header {
+  padding-bottom: 10px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.circle .red {
+  background-color: red;
+}
+
+.circle .yellow {
+  background-color: yellow;
+}
+
+.circle .green {
+  background-color: green;
+}
+
+.title {
+  flex-grow: 1;
+}
+
+#title2 {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  /* Change font to Arial */
+}
+
+.code-container {
+  margin-top: 10px;
+}
+
+.area {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: 'SMontserrat', sans-serif;
+  font-size: 14px;
+  resize: none;
+}
+.img-fluid
+{
+    max-width:400px;
+    padding:5px;
+}

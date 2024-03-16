@@ -1,42 +1,41 @@
-  <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C programming</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    {%load static%}
-    <link rel="stylesheet" href="{% static 'course/css/coursestyle.css'%}"/>
-</head>
-
-<body>
-    {% for message in messages  %} 
-    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-      <strong>Message : </strong> {{ message }}
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    {%endfor%}
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <!-- Navbar brand -->
-
-        <a class="navbar-brand" href="{% url 'home' %}" style=" font-family: Arial, Helvetica, sans-serif;margin-left:15px"><span class="app-name">
-            <strong><span class="app-initial">Logic</span>Loom</strong>
-        </span></a>
-        <!-- Text for desktop resolutions -->
-        <span class="navbar-text mx-auto d-lg-block">
-          if else Statement
-        </span>
-        
-        <!-- Offcanvas Trigger Button for Low-resolution devices -->
-        <button class="btn btn-primary ms-auto" type="button" data-bs-toggle="offcanvas"  data-bs-target="#offcanvasWithBothOptions">
-            Open Menu
-        </button>
-    </nav>
-
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>C programming</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        {%load static%}
+        <link rel="stylesheet" href="{% static 'course/css/coursestyle.css'%}"/>
+    </head>
+    
+    <body>
+        {% for message in messages  %} 
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+          <strong>Message : </strong> {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {%endfor%}
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <!-- Navbar brand -->
+    
+            <a class="navbar-brand" href="{% url 'home' %}" style=" font-family: Arial, Helvetica, sans-serif;margin-left:15px"><span class="app-name">
+                <strong><span class="app-initial">Logic</span>Loom</strong>
+            </span></a>
+            <!-- Text for desktop resolutions -->
+            <span class="navbar-text mx-auto d-lg-block">
+              Jumps in Loops
+            </span>
+            
+            <!-- Offcanvas Trigger Button for Low-resolution devices -->
+            <button class="btn btn-primary ms-auto" type="button" data-bs-toggle="offcanvas"  data-bs-target="#offcanvasWithBothOptions">
+                Open Menu
+            </button>
+        </nav>
     <!-- Offcanvas Body -->
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" 
     aria-labelledby="offcanvasWithBothOptionsLabel">
@@ -124,28 +123,25 @@
 <!--Matrix operations-->
 
 <div class="container">
-  
   <div class="topicstart">
-    <h2> if else statements </h2><!--topic name between p tag-->
-  </div>
- 
- <h2>Syntax:</h2>
+    <h2> jumps in loops</h2><!--topic name between p tag-->
+    
+  </div> 
+  
+  <p>In C programming, "Jumps in loops" refer to keywords that alter the normal flow of control within a program. These statements allow you to transfer control from one part of your code to another. There are three primary jump statements in C: break, continue, and goto.</p>
+  <h3>Flow chart</h3>
+ <h2>Syntax for break:</h2>
  <p>
-  if (condition) {<br>
-      // code to execute if the condition is true <br>
-  } else {<br>
-      // code to execute if the condition is false <br>
-  }
+  break; 
  </p>
- {% load static%}
- <img src="{% static 'course/images/c2ch3t3img1.jpg'%}"  class="img-fluid">
  <h2>
   Explanation:
  </h2>
+ <h3>break Statement in C:</h3>
  <ul class="custom-list">
-          <li> The if-else statement is a decision-making statement that is used to decide whether the part of the code will be executed or not based on the specified condition (test expression).</li>
-          <li>If the given condition is true, then the code inside the if block is executed, otherwise the code inside the else block is executed. </li>
-            </ul>
+          <li>Purpose: The break statement is used to exit or terminate a loop (such as for, while, or do-while) or a switch statement prematurely.</li>
+      <li>When encountered inside a loop or switch statement, the break statement immediately exits the loop or switch, transferring control to the statement immediately following the loop or switch.</li>
+  </ul>
 <h3>Sample code:</h3>
 <div class="card1">
   <div class="header">
@@ -167,48 +163,134 @@
   <div class="code-container">
     <textarea readonly="" name="code" id="code" class="area">
       #include <stdio.h>
-
-          int main() {
-              int x = 10;
-          
-              if (x > 5) {
-                  printf("x is greater than 5\n");
-              } else {
-                  printf("x is not greater than 5\n");
-              }
-          
-              return 0;
+          int main() 
+         { 
+         int i;
+          for (i = 1; i <= 10; ++i) 
+         {
+          if (i == 5)
+          {
+          printf("Break at i = 5\n");
+          break; // Exit loop when i is 5
           }
+          printf("i = %d\n", i);
+          }
+          printf("Loop ended\n"); 
+         return 0;
+          } 
+         
           
 
  </textarea >
+</div>
+</div>
+<h3>Output:</h3>
+<div class="card1">
+<div class="header">
+  <div class="top">
+    <div class="circle">
+      <span class="red circle2"></span>
+    </div>
+    <div class="circle">
+      <span class="yellow circle2"></span>
+    </div>
+    <div class="circle">
+      <span class="green circle2"></span>
+    </div>
+    <div class="title">
+      <p id="title2">output.c</p>
+    </div>
   </div>
+</div>
+<div class="code-container">
+  <textarea readonly="" name="code" id="code" class="area">
+      i = 1
+      i = 2
+      i = 3
+      i = 4 
+     Break at i = 5
+     Loop ended
+     
+</textarea
+  >
+</div>
+</div>
+<h3>continue statement in c</h3>
+<h4>flowchart</h4>
+<img src=".png" id="flow" >
+<h2>syntax for continue</h2>
+<p>continue;</p>
+<h2>Explaination</h2>
+<ul class="custom-list">
+<li>Purpose: continue is a control statement used to skip the current iteration of a loop (for, while, do-while) and proceed to the next iteration.</li>
+<li>It moves the control to the loop's increment expression (in case of for loops) or condition checking (in case of while or do-while loops).</li>
+<li>It doesn’t execute the remaining code within the loop for the current iteration</li>
+</ul>
+<div class="card1">
+<div class="header">
+<div class="top">
+  <div class="circle">
+    <span class="red circle2"></span>
+  </div>
+  <div class="circle">
+    <span class="yellow circle2"></span>
+  </div>
+  <div class="circle">
+    <span class="green circle2"></span>
+  </div>
+  <div class="title">
+    <p id="title2">Program.c</p>
+  </div>
+</div>
+</div>
+<div class="code-container">
+<textarea readonly="" name="code" id="code" class="area">
+  #include <stdio.h>
+      int main() {
+          for (int i = 1; i <= 5; ++i) {
+              if (i == 3 || i == 4) {
+                  printf("Skipping iteration %d\n", i);
+                  continue;
+              }
+              printf("Executing iteration %d\n", i);
+          }
+          return 0;
+      }
+      
+
+</textarea
+>
+</div>
 </div>
 <h3>output:</h3>
 <div class="card1">
-  <div class="header">
-    <div class="top">
-      <div class="circle">
-        <span class="red circle2"></span>
-      </div>
-      <div class="circle">
-        <span class="yellow circle2"></span>
-      </div>
-      <div class="circle">
-        <span class="green circle2"></span>
-      </div>
-      <div class="title">
-        <p id="title2">output.c</p>
-      </div>
-    </div>
+<div class="header">
+<div class="top">
+  <div class="circle">
+    <span class="red circle2"></span>
   </div>
-  <div class="code-container">
-    <textarea readonly="" name="code" id="code" class="area">
-x is greater than 5
+  <div class="circle">
+    <span class="yellow circle2"></span>
+  </div>
+  <div class="circle">
+    <span class="green circle2"></span>
+  </div>
+  <div class="title">
+    <p id="title2">output.c</p>
+  </div>
+</div>
+</div>
+<div class="code-container">
+<textarea readonly="" name="code" id="code" class="area">
+  Executing iteration 1
+  Executing iteration 2
+  Skipping iteration 3
+  Skipping iteration 4
+  Executing iteration 5
+  
 
- </textarea
-    >
-  </div>
+</textarea>
+</div>
 </div>
     <div>
       <h2>Resources :</h2>
@@ -236,78 +318,62 @@ x is greater than 5
           <div class="mcqs mt-5">
         
                 <form action="{% url 'checkanswerc2' slug='c2ch4t10' %}" method='post'>{% csrf_token %}
-                    <p><span>Q1. </span>What is the output of the C Program.? 
-                      <pre>
-                      int main()
-                      {
-                          if( 4 < 5 )
-                              printf("Hurray..\n");
-                              printf("Yes");
-                          else
-                              printf("England")
+                    <p><span>Q1. </span>The continue statment cannot be used with ________
                       
-                          return 0;
-                      }</pre>
                       </p>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
                         <label class="form-check-label" for="q1_option1">
-                             A.  Hurray..Yes
+                             A. for
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
                         <label class="form-check-label" for="q1_option2">
-                          B.  Hurray.. Yes
+                          B.   while
                         </label>
                     </div>
                     <div class="form-check">
                       <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option1" required>
                       <label class="form-check-label" for="q1_option1">
-                           C.  Compiler Error
+                           C.  do while
                       </label>
                   </div>
                   <div class="form-check">
                       <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option2">
                       <label class="form-check-label" for="q1_option2">
-                        D.None of the above
+                        D.switch
                       </label>
                   </div>
                 
-                    <p><span>Q2. </span>What is the output of the C Program.?<pre> 
-                      int main()
-                      {
-                          if( 10 < 9 )
-                              printf("Hurray..\n");
-                          else if(4 > 2)
-                              printf("England");
+                    <p><span>Q2. </span>In the context of "break" and "continue" statements in C, pick the best statement.
                       
-                          return 0;
-                      }</pre>
+                     
+                      
                       </p>
                     
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
                         <label class="form-check-label" for="q2_option1">
-                            A. England
+                            A. "break" and "continue" can be used in "for", "while", "do-while" loop body and "switch" body
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
                         <label class="form-check-label" for="q2_option2">
-                           B.Hurray..
-                        </label>
+                           B."break" and "continue" can be used in "for", "while" and "do-while" loop body. But only "break" can be used in "switch" body
+                                                      </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
                         <label class="form-check-label" for="q2_option3">
-                             C.Compiler error for missing else
-                        </label>
+                             C."break" and "continue" can be used in "for", "while" and "do-while" loop body. Besides, "continue" and "break" can be used in "switch" and "if-else" body
+                                                        </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
                         <label class="form-check-label" for="q2_option4">
-                           D.None of the above
+                           D. "break" can be used in "for", "while" and "do-while" loop body
                         </label>
                     </div>
                     <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
@@ -320,8 +386,8 @@ x is greater than 5
       
 
     <div id="navigation" class="mt-4 text-center">
-      <a href="{% url 'course2' slug='c2ch3t2'%}" class="btn btn-secondary">Prev</a>
-      <a href="{% url 'course2' slug='c2ch3t4'%}" class="btn btn-secondary">Next</a>
+      <a href="{% url 'course2' slug='c2ch3t11'%}" class="btn btn-secondary">Prev</a>
+      <a href="{% url 'course2' slug='c2ch3t13'%}" class="btn btn-secondary">Next</a>
     </div>
 </div>
 
