@@ -50,6 +50,8 @@ def feedbackhandle(request):
             feedbackentry = feedback(email=email,feedback=feedbackmsg)
             feedbackentry.save()
             messages.success(request,"Feedback submitted successfully")
+        else:
+            messages.error(request,"Please fill out the fields")
             return redirect('home')
         
        
