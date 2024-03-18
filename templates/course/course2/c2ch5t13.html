@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     {%load static%}
-    <link rel="stylesheet" href="{% static 'course/css/coursestyle.css'%}"/>
+      <link rel="stylesheet" href="{% static 'course/css/coursestyle.css'%}"/>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
         </span></a>
         <!-- Text for desktop resolutions -->
         <span class="navbar-text mx-auto d-lg-block">
-            Different Steps Involved in Problem Solving
+           functions
         </span>
         
         <!-- Offcanvas Trigger Button for Low-resolution devices -->
@@ -36,7 +36,6 @@
             Open Menu
         </button>
     </nav>
-
     <!-- Offcanvas Body -->
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" 
     aria-labelledby="offcanvasWithBothOptionsLabel">
@@ -124,91 +123,79 @@
 <!--Matrix operations-->
 
 <div class="container">
-    
-    <h1>Other Features of Strings </h1>
-    <ul class="custom-list">
-        <li>In C, strings are represented as arrays of characters, and there are several features and functions associated with working with strings.</li>
-        <li> Here are some key aspects:</li>
-        <li><b>Null-terminated:</b><br>C strings are null-terminated, meaning they end with a null character ('\0'). This character is used to indicate the end of the string. </li>
-        <li><b>String functions:</b><br>C provides standard library functions for string manipulation, such as strlen (to find the length), strcpy (to copy strings), strcat (to concatenate strings), and many more.</li>
-        <li><b>Array of characters:</b><br>Strings are essentially arrays of characters, and individual characters in a string can be accessed using array notation.</li>
-        <li><b>String input/output: </b><br>You can use printf and scanf functions to input and output strings. The %s format specifier is commonly used for strings.</li>
-        <li><b>String literals:</b><br>Strings can be represented as string literals, enclosed in double quotes. For example: "Hello, World!".</li>
-        <li>Here's a simple example demonstrating some of these features:</li>
+  
+<h2> Passing Strings to Functions in C</h2>
+ <div class="mt-4"></div>
+<ul class="custom-list">
+<li>Passing strings to functions in C involves sending the memory address of the first character of the string to the function rather than passing the entire string itself.</li>
+<li> C does not have built-in string types, so strings are represented as arrays of characters, and passing the array's address allows functions to manipulate the original string.</li>
+<li>Syntax:
+<br>
+Function Declaration:<br>
+void myFunction(char *str);<br>
+Function Definition:<br>
+void myFunction(char *str) {<br>
+// Function body<br>
+}<br>
+Function Call:<br>
+char myString[] = "Hello, World!";<br>
+myFunction(myString);<br>
+</li>
+<li>Strings in C are represented as arrays of characters, and their name is a pointer to the first character.</li>
+<li>When passing a string to a function, use a pointer parameter to receive the memory address of the first character of the string.</li>
+<li>The function can now access and modify the original string through the provided pointer.</li>
+<li>Any changes made to the string within the function are reflected outside the function since the function operates on the original memory.</li>
+<li>Passing by reference is more efficient than passing by value for large strings because it avoids copying the entire string.</li>
 
-        
-        
-    <div class="card1">
-                <div class="header">
-                  <div class="top">
-                    <div class="circle">
-                      <span class="red circle2"></span>
-                    </div>
-                    <div class="circle">
-                      <span class="yellow circle2"></span>
-                    </div>
-                    <div class="circle">
-                      <span class="green circle2"></span>
-                    </div>
-                    <div class="title">
-                      <p id="title2">Program.c</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="code-container">
-                  <textarea readonly="" name="code" id="code" class="area">
-                    #include <stdio.h>
-                        #include <string.h>
-                        int main() {
-                            // String literal
-                            char greeting[] = "Hello, World!";
-                            // Output the string
-                            printf("String: %s\n", greeting);
-                            // Find the length of the string
-                            int length = strlen(greeting);
-                            printf("Length: %d\n", length);
-                            // Accessing individual characters
-                            for (int i = 0; i < length; ++i) {
-                                printf("Character at index %d: %c\n", i, greeting[i]);
-                            }
-                            return 0;
-                        }
-                                
-                    </textarea>
-                                      
-                                    </div>
-                                  </div>
-                        <p>Output:<br>
-                        String: Hello, World!<br>
-                        Length: 13<br>
-                        Character at index 0: H<br>
-                        Character at index 1: e<br>
-                        Character at index 2: l<br>
-                        Character at index 3: l<br>
-                        Character at index 4: o<br>
-                        Character at index 5: ,<br>
-                        Character at index 6:  <br>
-                        Character at index 7: W<br>
-                        Character at index 8: o<br>
-                        Character at index 9: r<br>
-                        Character at index 10: l<br>
-                        Character at index 11: d<br>
-                        Character at index 12: !<br>
-                        </p>
-                         </ul>
-                        
-                        
-                        
-                             
 
-    <div class="container">
-   
-        <h2 class="mt-4">Resources :</h2>
-        <div class="fluid-yt">
-            <!--replace youtube link-->
-            <iframe src="https://www.youtube.com/embed/LA2LIBZGink?si=xUBD2PzjaelEfcLO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class="card">
+      <div class="header">
+        <div class="top">
+          <div class="circle">
+            <span class="red circle2"></span>
+          </div>
+          <div class="circle">
+            <span class="yellow circle2"></span>
+          </div>
+          <div class="circle">
+            <span class="green circle2"></span>
+          </div>
+          <div class="title">
+            <p id="title2">Program.c</p>
+          </div>
         </div>
+      </div>
+      <div class="code-container">
+        <textarea readonly="" name="code" id="code" class="area">
+#include <stdio.h>
+// Function to modify the passed string
+void modifyString(char *str) {
+// Appending " (modified)" to the string
+strcat(str, " (modified)");
+}
+int main() {
+// Declare and initialize a string
+char myString[] = "Hello, World";
+// Print the original string
+printf("Original String: %s\n", myString);
+// Call the function to modify the string
+modifyString(myString);
+// Print the modified string
+printf("Modified String: %s\n", myString);
+return 0;
+}
+
+     </textarea>
+      </div>
     </div>
+<p>Output:<br>
+Original String: Hello, World<br>
+Modified String: Hello, World (modified)<br>
+</p>
+</ul>
+    <div>
+    
     <div class="card">
         <div class="card-header">
           Featured
@@ -218,58 +205,67 @@
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <div class="mcqs mt-5">
         
-                <form action="{% url 'checkanswerc2' slug='c2ch4t18' %}" method='post'>{% csrf_token %}
-                    <p><span>Q1. </span><p>Choose a correct statement about C String.<br>
-                                            char ary[] = "Hello......!";</p>
-
+                <form action="{% url 'checkanswer' slug='c2ch4t10' %}" method='post'>{% csrf_token %}
+                    <p><span>Q1.How are strings typically passed to functions in C?
+                    </span> </p>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
                         <label class="form-check-label" for="q1_option1">
-                             A. Character array, ary is a string   
+                            A) By using the return statement
+
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
                         <label class="form-check-label" for="q1_option2">
-                          B. ary has no Null character at the end   
+                            B) By passing each character as a separate argument
+
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
                         <label class="form-check-label" for="q1_option3">
-                           C. String size is not mentioned     
+                            C) By passing the string's memory address (pointer)
+  
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option4">
                         <label class="form-check-label" for="q1_option4">
-                            D. String can not contain special characters    
+                            D) By including the string definition inside the function
+
                         </label>
                     </div>
-                    <p><span>Q2. </span>Which of the following is the variable type defined in header string.h?</p>
+                
+                    <p><span>Q2.Which function prototype correctly represents a function that takes a string as an argument in C?
+                    </span> </p>
                     
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
                         <label class="form-check-label" for="q2_option1">
-                            A. sizet   
+                            A) void processString(char str[])
+
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
                         <label class="form-check-label" for="q2_option2">
-                           B. size  
+                            B) void processString(char *str)
+
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
                         <label class="form-check-label" for="q2_option3">
-                             C. size_t      
+                            C) void processString(string str)
+
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
                         <label class="form-check-label" for="q2_option4">
-                           D. size-t    
+                            D) char[] processString(char str)
+
                         </label>
                     </div>
                     <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
@@ -282,9 +278,9 @@
       
 
     <div id="navigation" class="mt-4 text-center">
-        <a href="{% url 'course2' slug='c2ch4t17'%}" class="btn btn-secondary">Prev</a>
-        <a href="{% url 'course2' slug='c2ch5t'%}" class="btn btn-secondary">Next</a>
-    </div>
+      <a href="{% url 'course2' slug='c2ch5t12'%}" class="btn btn-secondary">Prev</a>
+      <a href="{% url 'course2' slug='c2ch5t14'%}" class="btn btn-secondary">Next</a>
+  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

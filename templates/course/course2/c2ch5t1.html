@@ -28,7 +28,7 @@
         </span></a>
         <!-- Text for desktop resolutions -->
         <span class="navbar-text mx-auto d-lg-block">
-            Different Steps Involved in Problem Solving
+           functions
         </span>
         
         <!-- Offcanvas Trigger Button for Low-resolution devices -->
@@ -124,91 +124,68 @@
 <!--Matrix operations-->
 
 <div class="container">
-    
-    <h1>Other Features of Strings </h1>
-    <ul class="custom-list">
-        <li>In C, strings are represented as arrays of characters, and there are several features and functions associated with working with strings.</li>
-        <li> Here are some key aspects:</li>
-        <li><b>Null-terminated:</b><br>C strings are null-terminated, meaning they end with a null character ('\0'). This character is used to indicate the end of the string. </li>
-        <li><b>String functions:</b><br>C provides standard library functions for string manipulation, such as strlen (to find the length), strcpy (to copy strings), strcat (to concatenate strings), and many more.</li>
-        <li><b>Array of characters:</b><br>Strings are essentially arrays of characters, and individual characters in a string can be accessed using array notation.</li>
-        <li><b>String input/output: </b><br>You can use printf and scanf functions to input and output strings. The %s format specifier is commonly used for strings.</li>
-        <li><b>String literals:</b><br>Strings can be represented as string literals, enclosed in double quotes. For example: "Hello, World!".</li>
-        <li>Here's a simple example demonstrating some of these features:</li>
-
+  <div class="mt-4"></div>
+        <ul class="custom-list">
+        <p>
+        In C programming, user-defined functions allow you to create modular and reusable code. To introduce a user-defined function, follow these steps:
+        </p>
+        <li><b>Function Declaration:</b><br>Declare the function prototype at the beginning of your program or in a header file.This informs the compiler about the function's name, return type, and parameters.<br>// Function declaration<br>
+            int addNumbers(int a, int b);</li>
         
         
-    <div class="card1">
-                <div class="header">
-                  <div class="top">
-                    <div class="circle">
-                      <span class="red circle2"></span>
+        
+        <li><b>Function Definition:</b><br>Define the function by providing its implementation. This is where you specify what the function does.<br>
+            // Function definition<br>
+            int addNumbers(int a, int b) {<br>
+                return a + b;<br>
+            }<br>
+        </li>
+        <li><b>Function Call:</b><br>Call the function in your program whenever you need its functionality.<br>
+            int result = addNumbers(5, 7);
+        <div class="card1">
+                    <div class="header">
+                      <div class="top">
+                        <div class="circle">
+                          <span class="red circle2"></span>
+                        </div>
+                        <div class="circle">
+                          <span class="yellow circle2"></span>
+                        </div>
+                        <div class="circle">
+                          <span class="green circle2"></span>
+                        </div>
+                        <div class="title">
+                          <p id="title2">Program.c</p>
+                        </div>
+                      </div>
                     </div>
-                    <div class="circle">
-                      <span class="yellow circle2"></span>
-                    </div>
-                    <div class="circle">
-                      <span class="green circle2"></span>
-                    </div>
-                    <div class="title">
-                      <p id="title2">Program.c</p>
+                    <div class="code-container">
+                      <textarea readonly="" name="code" id="code" class="area">
+        #include <stdio.h>
+        // Function declaration
+        int addNumbers(int a, int b);
+        int main() {
+            // Function call
+            int result = addNumbers(5, 7);
+            // Output the result
+            printf("Sum: %d\n", result);
+            return 0;
+        }
+        // Function definition
+        int addNumbers(int a, int b) {
+            return a + b;
+        }
+        
+                   </textarea>
                     </div>
                   </div>
-                </div>
-                <div class="code-container">
-                  <textarea readonly="" name="code" id="code" class="area">
-                    #include <stdio.h>
-                        #include <string.h>
-                        int main() {
-                            // String literal
-                            char greeting[] = "Hello, World!";
-                            // Output the string
-                            printf("String: %s\n", greeting);
-                            // Find the length of the string
-                            int length = strlen(greeting);
-                            printf("Length: %d\n", length);
-                            // Accessing individual characters
-                            for (int i = 0; i < length; ++i) {
-                                printf("Character at index %d: %c\n", i, greeting[i]);
-                            }
-                            return 0;
-                        }
-                                
-                    </textarea>
-                                      
-                                    </div>
-                                  </div>
-                        <p>Output:<br>
-                        String: Hello, World!<br>
-                        Length: 13<br>
-                        Character at index 0: H<br>
-                        Character at index 1: e<br>
-                        Character at index 2: l<br>
-                        Character at index 3: l<br>
-                        Character at index 4: o<br>
-                        Character at index 5: ,<br>
-                        Character at index 6:  <br>
-                        Character at index 7: W<br>
-                        Character at index 8: o<br>
-                        Character at index 9: r<br>
-                        Character at index 10: l<br>
-                        Character at index 11: d<br>
-                        Character at index 12: !<br>
-                        </p>
-                         </ul>
-                        
-                        
-                        
-                             
+        <p>Output:<br>
+        Sum: 12
+        </p>
+        </li>
+         </ul>
+        <div>        
 
-    <div class="container">
-   
-        <h2 class="mt-4">Resources :</h2>
-        <div class="fluid-yt">
-            <!--replace youtube link-->
-            <iframe src="https://www.youtube.com/embed/LA2LIBZGink?si=xUBD2PzjaelEfcLO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
     <div class="card">
         <div class="card-header">
           Featured
@@ -218,58 +195,60 @@
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <div class="mcqs mt-5">
         
-                <form action="{% url 'checkanswerc2' slug='c2ch4t18' %}" method='post'>{% csrf_token %}
-                    <p><span>Q1. </span><p>Choose a correct statement about C String.<br>
-                                            char ary[] = "Hello......!";</p>
-
+                <form action="{% url 'checkanswer' slug='c2ch4t10' %}" method='post'>{% csrf_token %}
+                    <p><span>Q1. What is the main advantage of using user-defined functions in programming?</span>question1</p>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
                         <label class="form-check-label" for="q1_option1">
-                             A. Character array, ary is a string   
+                             A.What is the main advantage of using user-defined functions in programming?
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
                         <label class="form-check-label" for="q1_option2">
-                          B. ary has no Null character at the end   
+                          B.They make the code more complex and harder to understand 
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
                         <label class="form-check-label" for="q1_option3">
-                           C. String size is not mentioned     
+                           C.They limit the flexibility of the program
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option4">
                         <label class="form-check-label" for="q1_option4">
-                            D. String can not contain special characters    
+                            D. They can only be used for mathematical operations
                         </label>
                     </div>
-                    <p><span>Q2. </span>Which of the following is the variable type defined in header string.h?</p>
+                
+                    <p><span>Q2.What is a primary advantage of using user-defined functions for code maintenance? </span>question2</p>
                     
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
                         <label class="form-check-label" for="q2_option1">
-                            A. sizet   
+                            A. They make it difficult to modify and update the code
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
                         <label class="form-check-label" for="q2_option2">
-                           B. size  
+                           B.They expose all the implementation details to the user
+
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
                         <label class="form-check-label" for="q2_option3">
-                             C. size_t      
+                             C. They encapsulate specific tasks, making it easier to modify and maintain code
+
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
                         <label class="form-check-label" for="q2_option4">
-                           D. size-t    
+                           D.They automatically handle errors and exceptions
+
                         </label>
                     </div>
                     <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
@@ -282,9 +261,9 @@
       
 
     <div id="navigation" class="mt-4 text-center">
-        <a href="{% url 'course2' slug='c2ch4t17'%}" class="btn btn-secondary">Prev</a>
-        <a href="{% url 'course2' slug='c2ch5t'%}" class="btn btn-secondary">Next</a>
-    </div>
+      <a href="{% url 'course2' slug='c2ch4t18'%}" class="btn btn-secondary">Prev</a>
+      <a href="{% url 'course2' slug='c2ch5t2'%}" class="btn btn-secondary">Next</a>
+  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

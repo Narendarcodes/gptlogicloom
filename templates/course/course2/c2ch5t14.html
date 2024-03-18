@@ -28,7 +28,7 @@
         </span></a>
         <!-- Text for desktop resolutions -->
         <span class="navbar-text mx-auto d-lg-block">
-            Different Steps Involved in Problem Solving
+           functions
         </span>
         
         <!-- Offcanvas Trigger Button for Low-resolution devices -->
@@ -36,7 +36,6 @@
             Open Menu
         </button>
     </nav>
-
     <!-- Offcanvas Body -->
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" 
     aria-labelledby="offcanvasWithBothOptionsLabel">
@@ -124,91 +123,84 @@
 <!--Matrix operations-->
 
 <div class="container">
-    
-    <h1>Other Features of Strings </h1>
-    <ul class="custom-list">
-        <li>In C, strings are represented as arrays of characters, and there are several features and functions associated with working with strings.</li>
-        <li> Here are some key aspects:</li>
-        <li><b>Null-terminated:</b><br>C strings are null-terminated, meaning they end with a null character ('\0'). This character is used to indicate the end of the string. </li>
-        <li><b>String functions:</b><br>C provides standard library functions for string manipulation, such as strlen (to find the length), strcpy (to copy strings), strcat (to concatenate strings), and many more.</li>
-        <li><b>Array of characters:</b><br>Strings are essentially arrays of characters, and individual characters in a string can be accessed using array notation.</li>
-        <li><b>String input/output: </b><br>You can use printf and scanf functions to input and output strings. The %s format specifier is commonly used for strings.</li>
-        <li><b>String literals:</b><br>Strings can be represented as string literals, enclosed in double quotes. For example: "Hello, World!".</li>
-        <li>Here's a simple example demonstrating some of these features:</li>
+  <h2>The Scope, Visibility, and Lifetime of Variables in C</h2>
+  <div class="mt-4"></div>
+<ul class="custom-list">
+<li><b>Scope of a Variable:</b> The scope of a variable in C refers to the region of the program where the variable can be accessed. It defines where the variable is valid and can be used.</li>
 
-        
-        
-    <div class="card1">
-                <div class="header">
-                  <div class="top">
-                    <div class="circle">
-                      <span class="red circle2"></span>
-                    </div>
-                    <div class="circle">
-                      <span class="yellow circle2"></span>
-                    </div>
-                    <div class="circle">
-                      <span class="green circle2"></span>
-                    </div>
-                    <div class="title">
-                      <p id="title2">Program.c</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="code-container">
-                  <textarea readonly="" name="code" id="code" class="area">
-                    #include <stdio.h>
-                        #include <string.h>
-                        int main() {
-                            // String literal
-                            char greeting[] = "Hello, World!";
-                            // Output the string
-                            printf("String: %s\n", greeting);
-                            // Find the length of the string
-                            int length = strlen(greeting);
-                            printf("Length: %d\n", length);
-                            // Accessing individual characters
-                            for (int i = 0; i < length; ++i) {
-                                printf("Character at index %d: %c\n", i, greeting[i]);
-                            }
-                            return 0;
-                        }
-                                
-                    </textarea>
-                                      
-                                    </div>
-                                  </div>
-                        <p>Output:<br>
-                        String: Hello, World!<br>
-                        Length: 13<br>
-                        Character at index 0: H<br>
-                        Character at index 1: e<br>
-                        Character at index 2: l<br>
-                        Character at index 3: l<br>
-                        Character at index 4: o<br>
-                        Character at index 5: ,<br>
-                        Character at index 6:  <br>
-                        Character at index 7: W<br>
-                        Character at index 8: o<br>
-                        Character at index 9: r<br>
-                        Character at index 10: l<br>
-                        Character at index 11: d<br>
-                        Character at index 12: !<br>
-                        </p>
-                         </ul>
-                        
-                        
-                        
-                             
+<li><b>Visibility of a Variable:</b> Visibility determines whether a variable is accessible or hidden from other parts of the program. Variables can have local or global visibility based on their declaration.</li>
 
-    <div class="container">
-   
-        <h2 class="mt-4">Resources :</h2>
-        <div class="fluid-yt">
-            <!--replace youtube link-->
-            <iframe src="https://www.youtube.com/embed/LA2LIBZGink?si=xUBD2PzjaelEfcLO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<li><b>Lifetime of a Variable:</b> The lifetime of a variable is the duration during which the variable exists in memory. It starts when the variable is declared and ends when it goes out of scope or the program terminates.</li>
+<li>Syntax:<br>
+Local Variable:<br>
+void functionName() {<br>
+int localVar; // local variable<br>
+// code<br>
+}<br>
+Global Variable:<br>
+int globalVar; // global variable<br>
+void main() {<br>
+// code<br>
+}<br>
+Static Variable:<br>
+void functionName() {<br>
+static int staticVar; // static variable<br>
+// code<br>
+}</li>
+<div class="card1">
+      <div class="header">
+        <div class="top">
+          <div class="circle">
+            <span class="red circle2"></span>
+          </div>
+          <div class="circle">
+            <span class="yellow circle2"></span>
+          </div>
+          <div class="circle">
+            <span class="green circle2"></span>
+          </div>
+          <div class="title">
+            <p id="title2">Program.c</p>
+          </div>
         </div>
+      </div>
+      <div class="code-container">
+        <textarea readonly="" name="code" id="code" class="area">
+#include <stdio.h>
+// Global variable with global scope
+int globalVar = 10;
+void myFunction() {
+// Local variable with local scope
+int localVar = 5;
+// Static variable with local scope
+static int staticVar = 20;
+printf("Local Variable: %d\n", localVar);
+printf("Global Variable: %d\n", globalVar);
+printf("Static Variable: %d\n", staticVar);
+}
+int main() {
+// Accessing global variable in the main function
+printf("Global Variable in main: %d\n", globalVar);
+// Calling a function that uses local, global, and static variables
+myFunction();
+// Uncommenting the line below would result in a compilation error
+// printf("Local Variable outside function: %d\n", localVar);
+return 0;
+}
+     </textarea>
+      </div>
     </div>
+<p>Output:<br>
+Global Variable in main: 10<br>
+Local Variable: 5<br>
+Global Variable: 10<br>
+Static Variable: 20
+<br>
+</p>
+</ul>
+    <div>
+     
+
     <div class="card">
         <div class="card-header">
           Featured
@@ -218,58 +210,67 @@
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <div class="mcqs mt-5">
         
-                <form action="{% url 'checkanswerc2' slug='c2ch4t18' %}" method='post'>{% csrf_token %}
-                    <p><span>Q1. </span><p>Choose a correct statement about C String.<br>
-                                            char ary[] = "Hello......!";</p>
-
+                <form action="{% url 'checkanswer' slug='c2ch4t10' %}" method='post'>{% csrf_token %}
+                    <p><span>Q1.In C programming, what is the scope of a global variable?
+                    </span> </p>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
                         <label class="form-check-label" for="q1_option1">
-                             A. Character array, ary is a string   
+                            A) Limited to the function where it is declared
+
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
                         <label class="form-check-label" for="q1_option2">
-                          B. ary has no Null character at the end   
+                            B) Limited to the block where it is declared
+
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
                         <label class="form-check-label" for="q1_option3">
-                           C. String size is not mentioned     
+                            C) Accessible throughout the entire program
+   
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option4">
                         <label class="form-check-label" for="q1_option4">
-                            D. String can not contain special characters    
+                            D) Limited to the file where it is declared
+
                         </label>
                     </div>
-                    <p><span>Q2. </span>Which of the following is the variable type defined in header string.h?</p>
+                
+                    <p><span>Q2.In C, what is the lifetime of an automatic variable (declared inside a function)?
+                    </span> </p>
                     
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
                         <label class="form-check-label" for="q2_option1">
-                            A. sizet   
+                            A) Until the end of the program
+
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
                         <label class="form-check-label" for="q2_option2">
-                           B. size  
+                            B) Until the end of the block or function where it is declared
+
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
                         <label class="form-check-label" for="q2_option3">
-                             C. size_t      
+                            C) Throughout the entire program
+
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
                         <label class="form-check-label" for="q2_option4">
-                           D. size-t    
+                            D) Until explicitly deallocated using free() function
+
                         </label>
                     </div>
                     <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
@@ -282,8 +283,8 @@
       
 
     <div id="navigation" class="mt-4 text-center">
-        <a href="{% url 'course2' slug='c2ch4t17'%}" class="btn btn-secondary">Prev</a>
-        <a href="{% url 'course2' slug='c2ch5t'%}" class="btn btn-secondary">Next</a>
+        <a href="{% url 'course2' slug='c2ch5t13'%}" class="btn btn-secondary">Prev</a>
+        <a href="{% url 'course2' slug='c2ch5t15'%}" class="btn btn-secondary">Next</a>
     </div>
 </div>
 
