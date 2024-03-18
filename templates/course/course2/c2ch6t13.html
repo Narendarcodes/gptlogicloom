@@ -95,7 +95,7 @@
           }
         }
     
-        h2 {
+        h2,h1 {
           color: #007bff;
         }
         pre{
@@ -196,7 +196,8 @@
         </span></a>
         <!-- Text for desktop resolutions -->
         <span class="navbar-text mx-auto d-lg-block">
-            Structure Initialization
+            Copying and comparing structure Variables
+
         </span>
         
         <!-- Offcanvas Trigger Button for Low-resolution devices -->
@@ -291,11 +292,9 @@
     </div>
     <div class="container">
         
-         
-       <p>In C, you can initialize a structure either at the time of declaration or later using an assignment. Here's an overview of both methods:</p>
-       <h2>•	Initialization at Declaration:</h2>
-       <p>When you declare a structure, you can provide initial values for its members in the same line. Here's an example:</p>
-          <li><b>Examples :</b><br>
+        <p>When you want to copy the contents of one structure variable into another, you can use the assignment operator (=). This will copy each member from the source structure to the destination structure.</p>
+
+           <li><b>Examples :</b><br>
             <div class="card1">
                 <div class="header">
                     <div class="top">
@@ -322,25 +321,33 @@
                                 int y;
                             };
                             int main() {
-                                // Initialize a structure at declaration
+                                // Declare and initialize a structure
                                 struct Point p1 = {3, 7};
-                                // Access and print the values
-                                printf("Coordinates: (%d, %d)\n", p1.x, p1.y);
+                                // Copy the structure
+                                struct Point p2 = p1;
+                                // Access and print values from both structures
+                                printf("Coordinates of p1: (%d, %d)\n", p1.x, p1.y);
+                                printf("Coordinates of p2: (%d, %d)\n", p2.x, p2.y);
                                 return 0;
                             }
-            
                </textarea>
                 </div>
             </div><br>
         </li>
-        
+        <h3>Output:</h3>
+     <pre>
+      Coordinates of p1: (3, 7)
+      Coordinates of p2: (3, 7)
+      In this example, p1 is copied to p2 using the assignment operator.
+     </pre>
+     
+     
+     <h1>Comparing Structure Variables:</h1>
+     <p>Comparing structures involves comparing their individual members. You need to compare each member of the structures to determine if they are equal.</p>
        
-        <p>In this example, the structure Point has two members (x and y), and they are initialized with the values 3 and 7, respectively.</p>
 
      
-        <h2>•	Initialization after Declaration:</h2>
-        <p>You can also initialize a structure after declaration using the assignment operator. Here's an example:</p>
-        <li><b>Examples :</b><br>
+       <li><b>Examples :</b><br>
             <div class="card1">
                 <div class="header">
                     <div class="top">
@@ -359,24 +366,29 @@
                     </div>
                 </div>
                 <div class="code-container">
-                    <textarea readonly="" name="code" id="code" class="form-control form-control-sm" style="height: 250px; width: 80%;">
-                        #include <stdio.h>
-                            // Define a structure
-                            struct Point {
-                                int x;
-                                int y;
-                            };
-                            int main() {
-                                // Declare a structure
-                                struct Point p1;
-                                // Initialize the structure after declaration
-                                p1.x = 5;
-                                p1.y = 10;
-                                // Access and print the values
-                                printf("Coordinates: (%d, %d)\n", p1.x, p1.y);
-                                return 0;
+                    <textarea readonly="" name="code" id="code" class="form-control form-control-sm" style="height: 250px; width: 80%;"> #include <stdio.h>
+                        #include <stdbool.h>
+                        // Define a structure
+                        struct Point {
+                            int x;
+                            int y;
+                        };
+                        // Function to compare two Point structures
+                        bool comparePoints(struct Point p1, struct Point p2) {
+                            return (p1.x == p2.x) && (p1.y == p2.y);
+                        }
+                        int main() {
+                            // Declare and initialize two structures
+                            struct Point p1 = {3, 7};
+                            struct Point p2 = {3, 7};
+                            // Compare structures
+                            if (comparePoints(p1, p2)) {
+                                printf("The points are equal.\n");
+                            } else {
+                                printf("The points are not equal.\n");
                             }
-                            
+                            return 0;
+                        }
                </textarea>
                 </div>
             </div><br>
@@ -384,16 +396,16 @@
         
       <h3>Output:</h3>
       <pre>
-        Coordinates: (5, 10)
-        In this example, the structure Point is declared first, and then its members x and y are initialized with the values 5 and 10, respectively.
-        
+        The points are equal.
+  In this example, the comparePoints function checks if the x and y members of the two structures are equal. The result is used to determine whether the structures are equal.
+
       
       </pre>
 
         <div >
             <h2 class="mt-4">Resources :</h2>
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe src="https://www.youtube.com/embed/WUbp4gHR6_8?si=pOyPunVvi8LN24Hg" class="embed-responsive-item"></iframe>
+                <iframe src="https://www.youtube.com/embed/BXB_k77KsIY?si=_VXW1XPtbpRvaFQY" class="embed-responsive-item"></iframe>
             </div>
         </div>
         <div class="card" style="margin-top:20px;">
@@ -405,93 +417,79 @@
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <div class="mcqs mt-5">
               
-                    <form action="{% url 'checkanswerc2' slug='c2ch6t12' %}" method='post'>{% csrf_token %}
-                        <p><span>Q1. </span>struct Point {
+                    <form action="{% url 'checkanswerc2' slug='c2ch6t13' %}" method='post'>{% csrf_token %}
+                        <p><span>Q1. </span><pre>struct Point {
                             int x;
                             int y;
                         };
                         int main() {
-                            struct Point p = {1, 2};
-                            printf("%d, %d", p.x, p.y);
-                            return 0;
+                            struct Point p1 = {3, 7};
+                            struct Point p2;
+                                return 0;
                         }
+                        What is the correct way to copy the content of p1 to p2?</pre>
                         </p>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
                             <label class="form-check-label" for="q1_option1">
-                                A. 1, 2  
+                                A. p2 = p1;
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
                             <label class="form-check-label" for="q1_option2">
-                                B. 0, 0
+                                B. p2 = &p1;
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
                             <label class="form-check-label" for="q1_option3">
-                                C. Compilation Error
+                                C. &p2 = p1;
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option4">
                             <label class="form-check-label" for="q1_option4">
-                                D. Runtime Error
+                                D. memcpy(&p2, &p1, sizeof(struct Point));
+                            
                             </label>
                         </div>
                     
-                        <p><span>Q2. </span>struct Student {
-                            char name[20];
-                            int age;
-                            float marks;
+                        <p><span>Q2. </span><pre>struct Temperature {
+                            int degrees;
+                            char scale;
                         };
-                        int main() {
-                            struct Student s = {.name="John", .age=20, .marks=85.5};
-                            printf("%s, %d years, %.2f marks", s.name, s.age, s.marks);
+                        int compareTemperatures(struct Temperature t1, struct Temperature t2) {
                             return 0;
                         }
+                        int main() {
+                            struct Temperature temp1 = {25, 'C'};
+                            struct Temperature temp2 = {25, 'F'};
+                            compareTemperatures(temp1, temp2);
+                            return 0;
+                        }
+                          How can you correctly compare two Temperature structures, t1 and t2?</pre>
                         </p>
                         
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
                             <label class="form-check-label" for="q2_option1">
-                                A. John, 20 years, 85.50 marks  
+                                A.  if (t1 == t2)
+                            
+                                
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
                             <label class="form-check-label" for="q2_option2">
-                                B. John, 0 years, 0.00 marks 
+                                B.    if (t1.degrees == t2.degrees && t1.scale == t2.scale)
+                                
+                                
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
                             <label class="form-check-label" for="q2_option3">
-                                C. Compilation Error
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
-                            <label class="form-check-label" for="q2_option4">
-                                D. Runtime Error
-                            </label>
-                        </div>
-                        <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
-                    </form>
-                </div>       
-            </div>
-          </div>
-       
+                                C.    if (compare(t1, t2) == 0)
+                               
         
-          
-
-        <div id="navigation" class="mt-4 text-center">
-            <a href="{% url 'course2' slug='c2ch6t11'%}" class="btn btn-secondary">Prev</a>
-            <a href="{% url 'course2' slug='c2ch6t13'%}" class="btn btn-secondary">Next</a>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
