@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C programming</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        :root {
+            --theme-col: #2d4bf0;
+        }
+        .app-name .app-initial {
+            color: var(--theme-col);
+           
+        }
+        body {
+          font-family: 'Boogaloo', cursive;
+          background-color: #f8f9fa;
+          /* Light gray background color */
+          color: #495057;
+          /* Darker gray text color for the entire website */
+          margin: 0;
+          /* Remove default margin */
+          padding: 0;
+          /* Remove default padding */
+        }
+    
+        .main-header {
+          background-color: #007bff;
+          /* Bootstrap primary color */
+          color: #fff;
+          /* White text color */
+          padding: 15px;
+        }
+    
+        .navbar-text {
+          font-size: 1.5em;
+          color: #007bff;
+          /* Bootstrap primary color */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          text-align: center;
+          /* Center the text horizontally */
+          flex-grow: 1;
+    
+          /* Responsive styles */
+          @media (max-width: 768px) {
+            font-size: 1.2em;
+            /* Adjust font size for smaller screens */
+          }
+    
+          @media (max-width: 576px) {
+            font-size: 1em;
+            /* Further adjust font size for even smaller screens */
+          }
+        }
+    
+        /* Add responsive styles for the header */
+        .navbar-brand {
+          margin-right: 0;
+          margin-bottom: 0;
+        }
+    
+        /* Adjust padding for smaller screens */
+        @media (max-width: 768px) {
+          .main-header {
+            padding: 10px;
+          }
+    
+          .navbar-text {
+            font-size: 1.2em;
+          }
+        }
+    
+        /* Adjust offcanvas styles for low-resolution devices */
+        @media (min-width: 992px) {
+          .offcanvas {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            z-index: 1050;
+            /* Make sure offcanvas is above other content */
+            padding-right: 0;
+            padding-left: 0;
+            overflow-y: auto;
+            background-color: #fff;
+            border-right: 1px solid rgba(0, 0, 0, .2);
+            transform: translateX(0);
+            transition: transform .3s ease-in-out;
+          }
+        }
+    
+        h2 {
+          color: #007bff;
+        }
+        pre{
+            font-family: 'boogaloo',cursive;
+        }
+    
+        /* Adjust margin for messages */
+        .alert {
+          margin-bottom: 0;
+          /* Remove bottom margin */
+        }
+    
+        /* Add margin between YouTube video and MCQ's card */
+        .mcqs {
+          margin-top: 20px;
+          /* Add margin at the top */
+        }
+    
+        .card1 {
+          background-color: #333;
+          color: #fff;
+          /* Set text color to white */
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          margin: 20px;
+        }
+    
+        .header {
+          padding-bottom: 10px;
+        }
+    
+        .top {
+          display: flex;
+          align-items: center;
+        }
+    
+        .circle {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+    
+        .circle .red {
+          background-color: red;
+        }
+    
+        .circle .yellow {
+          background-color: yellow;
+        }
+    
+        .circle .green {
+          background-color: green;
+        }
+    
+        .title {
+          flex-grow: 1;
+        }
+    
+        #title2 {
+          font-size: 18px;
+          font-weight: bold;
+          font-family: Arial, sans-serif;
+          /* Change font to Arial */
+        }
+    
+        .code-container {
+          margin-top: 10px;
+        }
+    
+        .area {
+          width: 100%;
+          height: 300px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 10px;
+          font-family: 'SMontserrat', sans-serif;
+          font-size: 14px;
+          resize: none;
+        }
+
+      </style>
+</head>
+<body>
+    {% for message in messages  %} 
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      <strong>Message : </strong> {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {%endfor%}
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Navbar brand -->
+       
+        <a class="navbar-brand" href="{% url 'home' %}" style=" font-family: Arial, Helvetica, sans-serif;margin-left:15px"><span class="app-name">
+            <strong><span class="app-initial">Logic</span>Loom</strong>
+        </span></a>
+        <!-- Text for desktop resolutions -->
+        <span class="navbar-text mx-auto d-lg-block">
+            Recursion
+        </span>
+        
+        <!-- Offcanvas Trigger Button for Low-resolution devices -->
+        <button class="btn btn-primary ms-auto" type="button" data-bs-toggle="offcanvas"  data-bs-target="#offcanvasWithBothOptions">
+            Open Menu
+        </button>
+    </nav>
+  
+
+    <!-- Offcanvas Body -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" 
+    aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Getting Started With C</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" style="color:black">Home</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 1 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                       
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 2 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 3 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                      
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 4 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 5 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 6 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <pre><h3>Example:-</h3>
+            void fun(int n)
+            {
+              fun(n-1);
+              printf(“%d”,n);
+            }
+          
+            Here we are calling the function.we haven’t given any base condition so the above program will be go to infinite loop.
+            </pre>
+          
+           <li><b>Examples :</b><br>
+            <div class="card1">
+                <div class="header">
+                    <div class="top">
+                        <div class="circle">
+                            <span class="red circle2"></span>
+                        </div>
+                        <div class="circle">
+                            <span class="yellow circle2"></span>
+                        </div>
+                        <div class="circle">
+                            <span class="green circle2"></span>
+                        </div>
+                        <div class="title">
+                            <p id="title2">Program.c</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-container">
+                    <textarea readonly="" name="code" id="code" class="form-control form-control-sm" style="height: 250px; width: 80%;">
+                       
+                        #include <stdio.h>
+                            // Recursive function to calculate factorial
+                            int factorial(int n) {
+                                // Base case: factorial of 0 is 1
+                                if (n == 0 || n == 1) {
+                                    return 1;
+                                } else {
+                                    // Recursive case: n! = n * (n-1)!
+                                    return n * factorial(n - 1); //this is recursive call
+                                }
+                            }
+                            
+                            int main() {
+                                int num = 5;
+                            
+                                // Call the recursive function
+                                int result = factorial(num);
+                            
+                                // Display the result
+                                printf("Factorial of %d is %d\n", num, result);
+                            
+                                return 0;
+                            }
+                              
+                         
+               </textarea>
+                </div>
+            </div><br>
+        </li>
+        <h3>Output:</h3>
+        <pre>
+            Factorial of 5 is 120</pre> 
+
+
+            <pre>
+                <h2>Explanation</h2>
+                1. Main Function Call (`factorial(5)`)
+             - Call `factorial(5)`
+             - `n = 5`, not a base case, so it calls `factorial(4)`.
+          
+          2. First Recursive Call (`factorial(4)`)
+             - Call `factorial(4)`
+             - `n = 4`, not a base case, so it calls `factorial(3)`.
+          
+          3. Second Recursive Call (`factorial(3)`)
+             - Call `factorial(3)`
+             - `n = 3`, not a base case, so it calls `factorial(2)`.
+          
+          4. Third Recursive Call (`factorial(2)`)
+             - Call `factorial(2)`
+             - `n = 2`, not a base case, so it calls `factorial(1)`.
+          
+          5. Fourth Recursive Call (`factorial(1)`)
+             - Call `factorial(1)`
+             - `n = 1`, a base case, returns 1.
+          
+          6. Back to Third Call (`factorial(2)` returns 2 * 1)
+             - `factorial(1)` result (1) is multiplied by 2, returns 2.
+          
+          7. Back to Second Call (`factorial(3)` returns 3 * 2)
+             - `factorial(2)` result (2) is multiplied by 3, returns 6.
+          
+          8. Back to First Call (`factorial(4)` returns 4 * 6)
+             - `factorial(3)` result (6) is multiplied by 4, returns 24.
+          
+          9. Back to Main Call (factorial(5) returns 5 * 24)
+             - `factorial(4)`result (24) is multiplied by 5, returns 120.
+          
+          10. Result Displayed in main Function
+              - Print: "Factorial of 5 is 120."
+          
+          
+               </pre>
+          
+
+               <h3>In detail Explanation of recursion </h3>  
+           <li><b>Examples :</b><br>
+            <div class="card1">
+                <div class="header">
+                    <div class="top">
+                        <div class="circle">
+                            <span class="red circle2"></span>
+                        </div>
+                        <div class="circle">
+                            <span class="yellow circle2"></span>
+                        </div>
+                        <div class="circle">
+                            <span class="green circle2"></span>
+                        </div>
+                        <div class="title">
+                            <p id="title2">Program.c</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-container">
+                    <textarea readonly="" name="code" id="code" class="form-control form-control-sm" style="height: 250px; width: 80%;">
+                       
+                        #include<stdio.h>
+                            int fun(int n)
+                            {	
+                            
+                              If(n==0)
+                              {
+                                return 0;
+                            }
+                            fun(n-1);
+                            printf(“%d ”,n);
+                            }
+                            void main()
+                            {
+                              fun(5);
+                            } 
+                              
+                         
+               </textarea>
+                </div>
+            </div><br>
+        </li>
+          
+        <h3>Output:</h3>
+        <pre>
+          1 2 3 4 5
+        </pre>
+        <h2>Explanation</h2>
+        <pre>
+          Function calls:
+        First from main fun(5) calls with 5  value .
+        Iteration1:-
+        Checking if statement if n==0 if not execute the remaining statement
+        1. fun(5-1)-->fun(4)
+          Below we left with printf(“%d”,n); that  statement is push to the stack see the below diagram
+        Iteration2:-
+        Checking if statement if n==0 if not execute the remaining statement
+        2. fun(4-1)-->fun(3)
+          Same as above the printf statement is push to the stack
+        Iteration3:-
+        Checking if statement if n==0 if not execute the remaining statement
+        3.fun(3-1)--> fun(2)
+          Same as above the printf statement is push to the stack
+        Iteration4:-
+        Checking if statement if n==0 if not execute the remaining statement
+        4.fun(2-1)-->fun(1)
+          Same as above the printf statement is push to the stack
+        Iteration5:-
+        Checking if statement if n==0 if not execute the remaining statement
+        5.fun(1-1)-->fun(0)
+        Iteration6:-
+          if(n==0)
+         condition is true so the function will return 0
+         then the remaining statements which are in statck will be executed sequentially .
+        
+        </pre>
+       
+        <div >
+            <h2 class="mt-4">Resources :</h2>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe  src="https://www.youtube.com/embed/kepBmgvWNDw?si=uERN0OxMhBcidM3X" class="embed-responsive-item"></iframe>
+            </div>
+        </div>
+        <div class="card" style="margin-top:20px;">
+            <div class="card-header">
+              Test Your Knowledge
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Choose The </h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <div class="mcqs mt-5">
+              
+                    <form action="{% url 'checkanswerc2' slug='c2ch6t16' %}" method='post'>{% csrf_token %}
+                        <p><span>Q1. </span><pre>Consider the following recursive function in C:
+                            int fun(int n) {
+                                if (n <= 1)
+                                    return 1;
+                                else
+                                    return n * fun(n - 1);
+                            }
+                            What does this function compute?
+                        </pre> </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
+                            <label class="form-check-label" for="q1_option1">
+                                A.  Exponential function
+                            
+                                  
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
+                            <label class="form-check-label" for="q1_option2">
+                                B.  Factorial of a number
+                                
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
+                            <label class="form-check-label" for="q1_option3">
+                                C.   Square root
+                  
