@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C programming</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'course/css/coursestyle.css'%}"/>
+</head>
+
+<body>
+    {% for message in messages  %} 
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      <strong>Message : </strong> {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {%endfor%}
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Navbar brand -->
+        {% comment %} <a class="navbar-brand"href="{% url 'home' %}" style="margin-left:10px">Home</a> {% endcomment %}
+        <a class="navbar-brand" href="{% url 'home' %}" style=" font-family: Arial, Helvetica, sans-serif;margin-left:15px"><span class="app-name">
+            <strong><span class="app-initial">Logic</span>Loom</strong>
+        </span></a>
+        <!-- Text for desktop resolutions -->
+        <span class="navbar-text mx-auto d-lg-block">
+            Different Steps Involved in Problem Solving
+        </span>
+        
+        <!-- Offcanvas Trigger Button for Low-resolution devices -->
+        <button class="btn btn-primary ms-auto" type="button" data-bs-toggle="offcanvas"  data-bs-target="#offcanvasWithBothOptions">
+            Open Menu
+        </button>
+    </nav>
+
+    <!-- Offcanvas Body -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" 
+    aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Getting Started With C</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" style="color:black">Home</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 1 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                       
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 2 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 3 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                      
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 4 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 5 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 6 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+<!--Algorithm and its Characteristics.-->
+<!--Matrix operations-->
+
+<div class="container">
+    
+    <h1>Arithmetic Operations on Characters</h1>
+    <ul class="custom-list">
+        <li>In C, we can perform arithmetic operations on characters because each character is represented by its ASCII value.</li>
+        <li>For example, if you have a character 'A', its ASCII value is 65.</li>
+        <li>Here's a simple example:</li>
+        
+    <div class="card1">
+                <div class="header">
+                  <div class="top">
+                    <div class="circle">
+                      <span class="red circle2"></span>
+                    </div>
+                    <div class="circle">
+                      <span class="yellow circle2"></span>
+                    </div>
+                    <div class="circle">
+                      <span class="green circle2"></span>
+                    </div>
+                    <div class="title">
+                      <p id="title2">Program.c</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="code-container">
+                  <textarea readonly="" name="code" id="code" class="area">
+                    #include <stdio.h>
+                        int main() {
+                            char char1 = 'A';
+                            char char2 = 'B';
+                            int result = char2 - char1; // Subtracting ASCII values
+                            printf("Result: %d\n", result);
+                            return 0;
+                        }
+                    </textarea>
+                                      
+                                    </div>
+                                  </div>
+                        <p>Output:<br>
+                        Result: 1
+                        </p>
+                        <li>In this example, subtracting the ASCII values of 'A' and 'B' will give you the result of 1. </li>
+                        <li>You can perform addition, subtraction, multiplication, or division on characters based on their ASCII values. </li>
+                        <li>Keep in mind that the result will be an integer.</li>
+                         </ul>
+                       
+            
+
+     <div class="container">
+   
+
+
+        <h2 class="mt-4">Resources :</h2>
+        <div class="fluid-yt">
+            <!--replace youtube link-->
+            <iframe src="https://www.youtube.com/embed/LA2LIBZGink?si=xUBD2PzjaelEfcLO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+          Featured
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <div class="mcqs mt-5">
+        
+                <form action="{% url 'checkanswer' slug='c2ch4t12' %}" method='post'>{% csrf_token %}
+                    <p><span>Q1. </span><p>What is the output of C Program with Strings.?<br>
+                        int main()<br>
+                        {<br>
+                            char ary[]=”Discovery Channel”;<br>
+                            printf(“%s”,ary);<br>
+                            return 0;<br>
+                        }<br>
+                                            </p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
+                        <label class="form-check-label" for="q1_option1">
+                             A. D 
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
+                        <label class="form-check-label" for="q1_option2">
+                          B. Discovery Channel  
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
+                        <label class="form-check-label" for="q1_option3">
+                           C. Discovery   
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option4">
+                        <label class="form-check-label" for="q1_option4">
+                            D. Discovery 
+                        </label>
+                    </div>
+                
+                    <p><span>Q2. </span>What is the output of C Program with Strings.?<br>
+                        int main()<br>
+                        {<br>
+                            char str[]={'g','l','o','b','e'};<br>
+                            printf("%s",str);<br>
+                            return 0;<br>
+                        }</p>
+                    
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
+                        <label class="form-check-label" for="q2_option1">
+                            A. g 
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
+                        <label class="form-check-label" for="q2_option2">
+                           B. globe  
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
+                        <label class="form-check-label" for="q2_option3">
+                             C. globe\0   
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
+                        <label class="form-check-label" for="q2_option4">
+                           D. None of the above  
+                        </label>
+                    </div>
+                    <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
+                </form>
+            </div>  
+        
+      </div>
+   
+    </div>
+      
+
+    <div id="navigation" class="mt-4 text-center">
+        <a href="{% url 'course2' slug='c2ch4t11'%}" class="btn btn-secondary">Prev</a>
+        <a href="{% url 'course2' slug='c2ch4t13'%}" class="btn btn-secondary">Next</a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

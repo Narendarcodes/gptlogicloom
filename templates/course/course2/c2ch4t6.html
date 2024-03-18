@@ -1,4 +1,3 @@
-<!--Bitwise Operators-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,175 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <style>
-        :root {
-            --theme-col: #2d4bf0;
-        }
-        .app-name .app-initial {
-            color: var(--theme-col);
-           
-        }
-        body {
-          font-family: 'Boogaloo', cursive;
-          background-color: #f8f9fa;
-          /* Light gray background color */
-          color: #495057;
-          /* Darker gray text color for the entire website */
-          margin: 0;
-          /* Remove default margin */
-          padding: 0;
-          /* Remove default padding */
-        }
-    
-        .main-header {
-          background-color: #007bff;
-          /* Bootstrap primary color */
-          color: #fff;
-          /* White text color */
-          padding: 15px;
-        }
-    
-        .navbar-text {
-          font-size: 1.5em;
-          color: #007bff;
-          /* Bootstrap primary color */
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 100%;
-          text-align: center;
-          /* Center the text horizontally */
-          flex-grow: 1;
-    
-          /* Responsive styles */
-          @media (max-width: 768px) {
-            font-size: 1.2em;
-            /* Adjust font size for smaller screens */
-          }
-    
-          @media (max-width: 576px) {
-            font-size: 1em;
-            /* Further adjust font size for even smaller screens */
-          }
-        }
-    
-        /* Add responsive styles for the header */
-        .navbar-brand {
-          margin-right: 0;
-          margin-bottom: 0;
-        }
-    
-        /* Adjust padding for smaller screens */
-        @media (max-width: 768px) {
-          .main-header {
-            padding: 10px;
-          }
-    
-          .navbar-text {
-            font-size: 1.2em;
-          }
-        }
-    
-        /* Adjust offcanvas styles for low-resolution devices */
-        @media (min-width: 992px) {
-          .offcanvas {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            z-index: 1050;
-            /* Make sure offcanvas is above other content */
-            padding-right: 0;
-            padding-left: 0;
-            overflow-y: auto;
-            background-color: #fff;
-            border-right: 1px solid rgba(0, 0, 0, .2);
-            transform: translateX(0);
-            transition: transform .3s ease-in-out;
-          }
-        }
-    
-        h2 {
-          color: #007bff;
-        }
-    
-        /* Adjust margin for messages */
-        .alert {
-          margin-bottom: 0;
-          /* Remove bottom margin */
-        }
-    
-        /* Add margin between YouTube video and MCQ's card */
-        .mcqs {
-          margin-top: 20px;
-          /* Add margin at the top */
-        }
-    
-        .card1 {
-          background-color: #333;
-          color: #fff;
-          /* Set text color to white */
-          border-radius: 10px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          padding: 20px;
-          margin: 20px;
-        }
-    
-        .header {
-          padding-bottom: 10px;
-        }
-    
-        .top {
-          display: flex;
-          align-items: center;
-        }
-    
-        .circle {
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          margin-right: 10px;
-        }
-    
-        .circle .red {
-          background-color: red;
-        }
-    
-        .circle .yellow {
-          background-color: yellow;
-        }
-    
-        .circle .green {
-          background-color: green;
-        }
-    
-        .title {
-          flex-grow: 1;
-        }
-    
-        #title2 {
-          font-size: 18px;
-          font-weight: bold;
-          font-family: Arial, sans-serif;
-          /* Change font to Arial */
-        }
-    
-        .code-container {
-          margin-top: 10px;
-        }
-    
-        .area {
-          width: 100%;
-          height: 300px;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          padding: 10px;
-          font-family: 'SMontserrat', sans-serif;
-          font-size: 14px;
-          resize: none;
-        }
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'course/css/coursestyle.css'%}"/>
 
-      </style>
 </head>
+
 <body>
     {% for message in messages  %} 
     <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
@@ -188,6 +23,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <!-- Navbar brand -->
+        {% comment %} <a class="navbar-brand"href="{% url 'home' %}" style="margin-left:10px">Home</a> {% endcomment %}
         <a class="navbar-brand" href="{% url 'home' %}" style=" font-family: Arial, Helvetica, sans-serif;margin-left:15px"><span class="app-name">
             <strong><span class="app-initial">Logic</span>Loom</strong>
         </span></a>
@@ -201,6 +37,7 @@
             Open Menu
         </button>
     </nav>
+
     <!-- Offcanvas Body -->
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" 
     aria-labelledby="offcanvasWithBothOptionsLabel">
@@ -274,7 +111,7 @@
                         chapter 6 Name
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                      <li><a class="dropdown-item" href="#">topic1name</a></li>
                         <li><a class="dropdown-item" href="#">topic2name</a></li>
                         
                         <li><a class="dropdown-item" href="#">topic3name</a></li>
@@ -285,27 +122,95 @@
         </div>
     </div>
     <div class="container">
-        <h2 class="mt-4">Bitwise operators</h2>
-        <ul class="list-unstyled">
-            <li>Bitwise operators are used for low-level manipulation of individual bits in integers. </li>
-<li><b>Bitwise AND (&):</b> Performs a bitwise AND operation between corresponding bits of two operands.</li>
-
-<li><b>Bitwise OR (|): </b>Performs a bitwise OR operation between corresponding bits of two operands.
-</li>
-<li><b>Bitwise XOR (^):</b> Performs a bitwise XOR (exclusive OR) operation between corresponding bits of two operands.
-</li>
-<li><b>Bitwise NOT (~): </b>Flips each bit of the operand, changing 0 to 1 and 1 to 0.</li>
-
-<li><b>Left Shift (<<):</b> Shifts the bits of the left operand to the left by the number of positions specified by the right operand.
-</li>
-<li><b>Right Shift (>>): </b>Shifts the bits of the left operand to the right by the number of positions specified by the right operand.</li>
+        
+        <h2 class="mt-4">Multi-dimensional array</h2>
+        <div class="topicstart">
+            <p>Multi-Dimensional Arrays</p>
+        </div>
+        <ul class="custom-list">
+            <li>In C programming, a multi-dimensional array is essentially an array of arrays.</li> 
+            <li>It can be thought of as a table with rows and columns, where each element can be accessed using multiple indices. </li>
+            <li>The most common multi-dimensional array is a 2D array, but C also supports arrays with more than two dimensions.</li>
+            <li>In C, the syntax to declare a multi-dimensional array involves specifying the dimensions within the square brackets. 
+            </li>
+            <li> Here’s the general syntax:<br>
+            data_type array_name[size1][size2]…[sizeN];
+            </li>
+            <li>It’s important to note that when initializing the array at the time of declaration, you can use nested curly braces to specify the initial values. </li>
+            <li>Here’s an example of a 3D array:</li>
         </ul>
-        <div >
+        <div class="card">
+            <div class="header">
+              <div class="top">
+                <div class="circle">
+                  <span class="red circle2"></span>
+                </div>
+                <div class="circle">
+                  <span class="yellow circle2"></span>
+                </div>
+                <div class="circle">
+                  <span class="green circle2"></span>
+                </div>
+                <div class="title">
+                  <p id="title2">Program.c</p>
+                </div>
+              </div>
+            </div>
+            <div class="code-container">
+              <textarea readonly="" name="code" id="code" class="area">
+                #include <stdio.h>
+                int main() {
+                    // Declare a 3D array with dimensions 2x3x4
+                    int cube[2][3][4] = {
+                        {
+                            {1, 2, 3, 4},
+                            {5, 6, 7, 8},
+                            {9, 10, 11, 12}
+                        },
+                        {
+                            {13, 14, 15, 16},
+                            {17, 18, 19, 20},
+                            {21, 22, 23, 24}
+                        }
+                    };
+
+                    // Access and print elements of the 3D array
+                    for (int i= 0; i < 2; i++) {
+                        for (int j = 0; j < 3; j++) {
+                            for (int k = 0; k < 4; k++) {
+                                printf(“%d\t”, cube[i][j][k]);
+                            }
+                            printf(“\n”);
+                        }
+                        printf(“\n”);
+                    }
+
+                    return 0;
+                }
+             </textarea>
+              
+            </div>
+          </div>
+<p>Output:<br>
+1       2       3       4<br>
+5       6       7       8<br>
+9       10      11      12<br><br>
+
+13      14      15      16<br>
+17      18      19      20<br>
+21      22      23      24<br>
+</p>
+<li>In this example, int cube[2][3][4] declares a 3D array with dimensions 2x3x4, and the nested loops iterate over each element, printing its value.</li>
+ </ul>
+
+        <div>
             <h2 class="mt-4">Resources :</h2>
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe  src="https://www.youtube.com/embed/LA2LIBZGink?si=xUBD2PzjaelEfcLO" class="embed-responsive-item"></iframe>
+                <!--replace youtube link-->
+                <iframe src="https://www.youtube.com/embed/CIRGjwYgdT4?si=Q43Rt9vXbAbJsYX8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
+
         <div class="card" style="margin-top:20px;">
             <div class="card-header">
               Test Your Knowledge
@@ -315,74 +220,80 @@
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <div class="mcqs mt-5">
               
-                    <form action="{% url 'checkanswerc2' slug='c2ch2t4' %}" method='post'>{% csrf_token %}
-                        <p><span>Q1. </span>A variable name can have ?</p>
+                    <form action="{% url 'checkanswerc2' slug='c2ch4t6' %}" method='post'>{% csrf_token %}
+                        <p><span>Q1. </span>Choose a correct statement about a C Multidimensional array.
+                        </p>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
                             <label class="form-check-label" for="q1_option1">
-                                A. Any special symbol  
+                                A.  First Dimension size is optional when initializing the array at the same time.    
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
                             <label class="form-check-label" for="q1_option2">
-                                B. Blank space
+                                B. Last Dimension size is optional when initializing the array at the same time.  
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
                             <label class="form-check-label" for="q1_option3">
-                                C. Comma ( , )   
+                                C. It is a must to specify all dimensions of a multidimensional array.   
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option4">
                             <label class="form-check-label" for="q1_option4">
-                                D. Underscore 
+                                D. Memory locations of elements of a multidimensional array is not sequential. 
                             </label>
                         </div>
                     
-                        <p><span>Q2. </span>Which pair of symbols is used to define the scope of functions, loops, and other code blocks in C?</p>
+                        <p><span>Q2. </span>A multidimensional array of dimension N is a collection of.?
+                            </p>
                         
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
                             <label class="form-check-label" for="q2_option1">
-                                A. ( ) 
+                                A. Single Dimensional Arrays
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
                             <label class="form-check-label" for="q2_option2">
-                                B. { } 
+                                B. N dimensional arrays
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
                             <label class="form-check-label" for="q2_option3">
-                                C. [ ] 
+                                C.  N-1 dimension arrays 
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
                             <label class="form-check-label" for="q2_option4">
-                                D. &lt; &gt;
+                                D. N-2 dimension arrays
                             </label>
                         </div>
                         <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
                     </form>
                 </div>       
             </div>
-          </div>
+        </div>
        
         
           
 
         <div id="navigation" class="mt-4 text-center">
-            <a href="{% url 'course2' slug='c2ch2t3'%}" class="btn btn-secondary">Prev</a>
-            <a href="{% url 'course2' slug='c2ch2t5'%}" class="btn btn-secondary">Next</a>
+            <a href="{% url 'course2' slug='c2ch4t4'%}" class="btn btn-secondary">Prev</a>
+            <a href="{% url 'course2' slug='c2ch4t7'%}" class="btn btn-secondary">Next</a>
         </div>
     </div>
 
+    </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
