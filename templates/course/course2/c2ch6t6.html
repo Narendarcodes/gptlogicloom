@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C programming</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        :root {
+            --theme-col: #2d4bf0;
+        }
+        .app-name .app-initial {
+            color: var(--theme-col);
+           
+        }
+        body {
+          font-family: 'Boogaloo', cursive;
+          background-color: #f8f9fa;
+          /* Light gray background color */
+          color: #495057;
+          /* Darker gray text color for the entire website */
+          margin: 0;
+          /* Remove default margin */
+          padding: 0;
+          /* Remove default padding */
+        }
+    
+        .main-header {
+          background-color: #007bff;
+          /* Bootstrap primary color */
+          color: #fff;
+          /* White text color */
+          padding: 15px;
+        }
+    
+        .navbar-text {
+          font-size: 1.5em;
+          color: #007bff;
+          /* Bootstrap primary color */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          text-align: center;
+          /* Center the text horizontally */
+          flex-grow: 1;
+    
+          /* Responsive styles */
+          @media (max-width: 768px) {
+            font-size: 1.2em;
+            /* Adjust font size for smaller screens */
+          }
+    
+          @media (max-width: 576px) {
+            font-size: 1em;
+            /* Further adjust font size for even smaller screens */
+          }
+        }
+    
+        /* Add responsive styles for the header */
+        .navbar-brand {
+          margin-right: 0;
+          margin-bottom: 0;
+        }
+    
+        /* Adjust padding for smaller screens */
+        @media (max-width: 768px) {
+          .main-header {
+            padding: 10px;
+          }
+    
+          .navbar-text {
+            font-size: 1.2em;
+          }
+        }
+    
+        /* Adjust offcanvas styles for low-resolution devices */
+        @media (min-width: 992px) {
+          .offcanvas {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            z-index: 1050;
+            /* Make sure offcanvas is above other content */
+            padding-right: 0;
+            padding-left: 0;
+            overflow-y: auto;
+            background-color: #fff;
+            border-right: 1px solid rgba(0, 0, 0, .2);
+            transform: translateX(0);
+            transition: transform .3s ease-in-out;
+          }
+        }
+    
+        h2 {
+          color: #007bff;
+        }
+        pre{
+            font-family: 'boogaloo',cursive;
+        }
+    
+        /* Adjust margin for messages */
+        .alert {
+          margin-bottom: 0;
+          /* Remove bottom margin */
+        }
+    
+        /* Add margin between YouTube video and MCQ's card */
+        .mcqs {
+          margin-top: 20px;
+          /* Add margin at the top */
+        }
+    
+        .card1 {
+          background-color: #333;
+          color: #fff;
+          /* Set text color to white */
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          margin: 20px;
+        }
+    
+        .header {
+          padding-bottom: 10px;
+        }
+    
+        .top {
+          display: flex;
+          align-items: center;
+        }
+    
+        .circle {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+    
+        .circle .red {
+          background-color: red;
+        }
+    
+        .circle .yellow {
+          background-color: yellow;
+        }
+    
+        .circle .green {
+          background-color: green;
+        }
+    
+        .title {
+          flex-grow: 1;
+        }
+    
+        #title2 {
+          font-size: 18px;
+          font-weight: bold;
+          font-family: Arial, sans-serif;
+          /* Change font to Arial */
+        }
+    
+        .code-container {
+          margin-top: 10px;
+        }
+    
+        .area {
+          width: 100%;
+          height: 300px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 10px;
+          font-family: 'SMontserrat', sans-serif;
+          font-size: 14px;
+          resize: none;
+        }
+
+      </style>
+</head>
+<body>
+    {% for message in messages  %} 
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      <strong>Message : </strong> {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {%endfor%}
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Navbar brand -->
+       
+        <a class="navbar-brand" href="{% url 'home' %}" style=" font-family: Arial, Helvetica, sans-serif;margin-left:15px"><span class="app-name">
+            <strong><span class="app-initial">Logic</span>Loom</strong>
+        </span></a>
+        <!-- Text for desktop resolutions -->
+        <span class="navbar-text mx-auto d-lg-block">
+            Nested structure
+        </span>
+        
+        <!-- Offcanvas Trigger Button for Low-resolution devices -->
+        <button class="btn btn-primary ms-auto" type="button" data-bs-toggle="offcanvas"  data-bs-target="#offcanvasWithBothOptions">
+            Open Menu
+        </button>
+    </nav>
+  
+    <!-- Offcanvas Body -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" 
+    aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Getting Started With C</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" style="color:black">Home</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 1 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                       
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 2 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 3 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                      
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 4 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 5 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 6 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        
+            <p> In C programming, a nested structure refers to a structure that is defined within another structure. This allows you to create a hierarchical or layered organization of data. There are two main types of nested structures in </p>
+
+  <h5 >1)By separate nested structure</h5>
+   <b>Syntax:</b>
+  struct Inner {
+      // Inner structure members
+      int innerVar;
+  };
+  
+  struct Outer {
+      // Outer structure members
+      int outerVar;
+      struct Inner nestedStruct; // Member structure
+  };
+  
+  <h5>2)By embedded nested structure</h5>
+  <b>Syntax: </b>
+  struct Outer {
+      // Outer structure members
+      int outerVar;
+      struct Inner {
+          // Inner structure members
+          int innerVar;
+      } nestedStruct; // Member structure
+  };
+  
+            </pre>
+          
+          <h2 class="mt-4">Explanation</h2>
+  <pre>Outer structure contains an instance of the Inner structure as a member. <br>
+    Accessing members: outerInstance.nestedStruct.innerVar
+    </pre>
+
+    <li><b>Examples :</b><br>
+        <div class="card1">
+            <div class="header">
+                <div class="top">
+                    <div class="circle">
+                        <span class="red circle2"></span>
+                    </div>
+                    <div class="circle">
+                        <span class="yellow circle2"></span>
+                    </div>
+                    <div class="circle">
+                        <span class="green circle2"></span>
+                    </div>
+                    <div class="title">
+                        <p id="title2">Program.c</p>
+                    </div>
+                </div>
+            </div>
+            <div class="code-container">
+                <textarea readonly="" name="code" id="code" class="form-control form-control-sm" style="height: 250px; width: 80%;">
+                    #include <stdio.h>
+
+                        struct Inner {
+                            int innerVar;
+                        };
+                        
+                        struct Outer {
+                            int outerVar;
+                            struct Inner nestedStruct;
+                        };
+                        
+                        int main() {
+                            struct Outer outerInstance = {10, {20}};
+                            printf("Outer Variable: %d\n", outerInstance.outerVar);
+                            printf("Inner Variable: %d\n", outerInstance.nestedStruct.innerVar);
+                            return 0;
+                        }
+                               
+                     
+                   
+        
+           </textarea>
+            </div>
+        </div><br>
+    </li>
+    <pre>
+        <h3>Output</h3>
+        Outer Variable: 10
+        Inner Variable: 20
+        
+    </pre>
+        
+
+        <div >
+            <h2 class="mt-4">Resources :</h2>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.youtube.com/embed/cAgj7aVjCp4?si=cCs42MeayauUVoI3" class="embed-responsive-item"></iframe>
+            </div>
+        </div>
+        <div class="card" style="margin-top:20px;">
+            <div class="card-header">
+              Test Your Knowledge
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Choose The </h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <div class="mcqs mt-5">
+              
+                    <form action="{% url 'checkanswerc2' slug='c2ch6t6' %}" method='post'>{% csrf_token %}
+                        <p><span>Q1. </span>If you have a nested structure named Car inside another structure named Owner, how would you declare a variable named myCar of type struct Owner? </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
+                            <label class="form-check-label" for="q1_option1">
+                                A. struct myCar Car;
+                                  
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
+                            <label class="form-check-label" for="q1_option2">
+                                B.  struct Car myCar;
+                                
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
+                            <label class="form-check-label" for="q1_option3">
+                                C.  struct Owner myCar;
+                                 
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option4">
+                            <label class="form-check-label" for="q1_option4">
+                                D. Owner.myCar Car;
+                                 
+                            </label>
+                        </div>
+                    
+                        <p><span>Q2. </span>Suppose you have a nested structure named Address inside another structure named Person. How would you initialize the street member of the address structure for a variable named someone of type struct Person? </p>
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
+                            <label class="form-check-label" for="q2_option1">
+                                A. someone.street = "Main Street";
+                                
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
+                            <label class="form-check-label" for="q2_option2">
+                                B.  someone.Address.street = "Main Street";
+                                
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
+                            <label class="form-check-label" for="q2_option3">
+                                C.  someone.address.street = "Main Street";
+                                
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
+                            <label class="form-check-label" for="q2_option4">
+                                D.   someone->address.street = "Main Street";
+                               
+                            </label>
+                        </div>
+                        <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
+                    </form>
+                </div>       
+            </div>
+          </div>
+       
+        
+          
+
+        <div id="navigation" class="mt-4 text-center">
+            <a href="{% url 'course2' slug='c2ch6t5'%}" class="btn btn-secondary">Prev</a>
+            <a href="{% url 'course2' slug='c2ch6t7'%}" class="btn btn-secondary">Next</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
