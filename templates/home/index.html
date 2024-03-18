@@ -322,7 +322,7 @@
                             <div class="form-group">
                                 {%if user.is_authenticated%}
                                 <input type="text" class="form-control" placeholder="Email address"
-                                    aria-label="Email address" aria-describedby="button-addon2" name="email" value={{user.email}}required>
+                                    aria-label="Email address" aria-describedby="button-addon2" name="email" value="{{user.email}}"required>
                                 {%else%}
                                 <input type="text" class="form-control" placeholder="Email address"
                                 aria-label="Email address" aria-describedby="button-addon2" name="email" required>
