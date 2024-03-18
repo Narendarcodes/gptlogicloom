@@ -52,7 +52,9 @@ def feedbackhandle(request):
             messages.success(request,"Feedback submitted successfully")
         else:
             messages.error(request,"Please fill out the fields")
-            return redirect('home')
+        return redirect('home')
+    else:
+        return redirect('error404')
         
        
         
