@@ -31,6 +31,7 @@ def logouthandle(request):
     logout(request)
     messages.success(request, "Successfully logged out")
     return redirect('home')
+
 def feedbackhandle(request):
     if request.method=="POST":
         email_regex = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
