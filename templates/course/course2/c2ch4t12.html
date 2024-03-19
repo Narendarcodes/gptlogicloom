@@ -195,7 +195,7 @@
         </span></a>
         <!-- Text for desktop resolutions -->
         <span class="navbar-text mx-auto d-lg-block">
-            Different Steps Involved in Problem Solving
+          Write Strings to Screen 
         </span>
         
         <!-- Offcanvas Trigger Button for Low-resolution devices -->
@@ -292,11 +292,10 @@
 
 <div class="container">
     
-    <h1>Arithmetic Operations on Characters</h1>
+    <h1>Write Strings to Screen</h1>
     <ul class="custom-list">
-        <li>In C, we can perform arithmetic operations on characters because each character is represented by its ASCII value.</li>
-        <li>For example, if you have a character 'A', its ASCII value is 65.</li>
-        <li>Here's a simple example:</li>
+        <li>To write strings to the screen in C, you can use the printf() function from the standard input-output library.</li>
+        <li>Here's a simple C program that demonstrates how to write strings to the screen using the printf() function:</li>
         
     <div class="card1">
                 <div class="header">
@@ -317,24 +316,30 @@
                 </div>
                 <div class="code-container">
                   <textarea readonly="" name="code" id="code" class="area">
-                    #include <stdio.h>
-                        int main() {
-                            char char1 = 'A';
-                            char char2 = 'B';
-                            int result = char2 - char1; // Subtracting ASCII values
-                            printf("Result: %d\n", result);
-                            return 0;
-                        }
+                    int main() {
+                      char greeting[] = "Hello, world!";
+                  
+                      // Writing the string to the screen
+                      printf("%s\n", greeting);
+                  
+                      return 0;
+                  }
+                  
                     </textarea>
                                       
                                     </div>
                                   </div>
                         <p>Output:<br>
-                        Result: 1
+                       
                         </p>
-                        <li>In this example, subtracting the ASCII values of 'A' and 'B' will give you the result of 1. </li>
-                        <li>You can perform addition, subtraction, multiplication, or division on characters based on their ASCII values. </li>
-                        <li>Keep in mind that the result will be an integer.</li>
+                        <li>Hello, world!</li>
+                        <li>Explanation:</li>
+                            <li>- We include the standard input-output library (stdio.h).</li>
+                            <li>- We declare a character array greeting and initialize it with the string "Hello, world!".</li>
+                            <li> - We use the printf() function to print the string stored in greeting to the screen. The %s format specifier is used to indicate that a string will be printed, and \n is used to add a newline after printing the string.</li>
+                            <li>- Finally, the return 0; statement indicates that the program executed successfully.</li>
+                           
+                      
                          </ul>
                        
             
@@ -358,7 +363,7 @@
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <div class="mcqs mt-5">
         
-                <form action="{% url 'checkanswer' slug='c2ch4t12' %}" method='post'>{% csrf_token %}
+                <form action="{% url 'checkanswerc2' slug='c2ch4t12' %}" method='post'>{% csrf_token %}
                     <p><span>Q1. </span><p>What is the output of C Program with Strings.?<br>
                         int main()<br>
                         {<br>

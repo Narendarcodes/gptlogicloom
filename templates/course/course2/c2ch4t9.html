@@ -196,7 +196,7 @@
         </span></a>
         <!-- Text for desktop resolutions -->
         <span class="navbar-text mx-auto d-lg-block">
-            Different Steps Involved in Problem Solving
+          Character Arrays and Strings
         </span>
         
         <!-- Offcanvas Trigger Button for Low-resolution devices -->
@@ -293,11 +293,11 @@
 
 <div class="container">
     
-    <h1>Arithmetic Operations on Characters</h1>
+    <h1>Character Arrays and Strings</h1>
     <ul class="custom-list">
-        <li>In C, we can perform arithmetic operations on characters because each character is represented by its ASCII value.</li>
-        <li>For example, if you have a character 'A', its ASCII value is 65.</li>
-        <li>Here's a simple example:</li>
+        <li>In C, character arrays and strings are closely related. </li>
+        <li>A character array is simply an array of characters, where each element of the array holds a single character. It's typically used to represent strings in C.</li>
+        <li>Here's a simple program demonstrating character arrays and strings in C:</li>
         
     <div class="card1">
                 <div class="header">
@@ -319,23 +319,51 @@
                 <div class="code-container">
                   <textarea readonly="" name="code" id="code" class="area">
                     #include <stdio.h>
-                        int main() {
-                            char char1 = 'A';
-                            char char2 = 'B';
-                            int result = char2 - char1; // Subtracting ASCII values
-                            printf("Result: %d\n", result);
-                            return 0;
-                        }
+
+                      int main() {
+                          // Declaring and initializing a character array
+                          char str1[] = "Hello";
+                      
+                          // Declaring a character array without initializing
+                          char str2[6];
+                          str2[0] = 'W';
+                          str2[1] = 'o';
+                          str2[2] = 'r';
+                          str2[3] = 'l';
+                          str2[4] = 'd';
+                          str2[5] = '\0'; // Null-terminate the string
+                      
+                          // Printing character arrays
+                          printf("String 1: %s\n", str1);
+                          printf("String 2: %s\n", str2);
+                      
+                          // Accessing individual characters
+                          printf("First character of string 1: %c\n", str1[0]);
+                          printf("Third character of string 2: %c\n", str2[2]);
+                      
+                          // Modifying characters in a string
+                          str1[0] = 'h';
+                          str2[3] = 'L';
+                      
+                          // Printing modified strings
+                          printf("Modified String 1: %s\n", str1);
+                          printf("Modified String 2: %s\n", str2);
+                      
+                          return 0;
+                      }
+                      
                     </textarea>
                                       
                                     </div>
                                   </div>
-                        <p>Output:<br>
-                        Result: 1
-                        </p>
-                        <li>In this example, subtracting the ASCII values of 'A' and 'B' will give you the result of 1. </li>
-                        <li>You can perform addition, subtraction, multiplication, or division on characters based on their ASCII values. </li>
-                        <li>Keep in mind that the result will be an integer.</li>
+                        <p>Output:<br>                    </p>
+                        <li>String 1: Hello</li>
+                          <li>String 2: World</li>
+                          <li>First character of string 1: H</li>
+                          <li>Third character of string 2: r</li>
+                          <li>Modified String 1: hello</li>
+                          <li>Modified String 2: WorLd</li>
+                           
                          </ul>
                        
             
@@ -359,7 +387,7 @@
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <div class="mcqs mt-5">
         
-                <form action="{% url 'checkanswer' slug='c2ch4t9' %}" method='post'>{% csrf_token %}
+                <form action="{% url 'checkanswerc2' slug='c2ch4t9' %}" method='post'>{% csrf_token %}
                     <p><span>Q1. </span><p>What is the ASCII value of NULL or \0.?
                                             </p>
                     <div class="form-check">
