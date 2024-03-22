@@ -1,0 +1,24 @@
+<!-- badges/templates/badges/badge_page.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badge Page</title>
+</head>
+<body>
+    <h1>Welcome to Your Badge Page</h1>
+    <p>You have earned {{ user_progress.progress }} points.</p>
+    <h2>Badges Earned:</h2>
+    <ul>
+        {% for badge in badges %}
+            <li>
+                <h3>{{ badge.name }}</h3>
+                <p>{{ badge.description }}</p>
+                <img src="{{ badge.image.url }}" alt="{{ badge.name }}">
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'profilepage.apps.ProfilepageConfig',
     'course.apps.CourseConfig',
-    'contestapp'
+    'contestapp',
+    'badges',
 ]
 
 MIDDLEWARE = [
