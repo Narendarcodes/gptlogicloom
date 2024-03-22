@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #495057;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .leaderboard {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            padding: 20px;
+            overflow-y: auto; /* Enable vertical scrolling */
+            max-height: calc(5 * 50px + 2 * 20px + 2 * 1px); /* Height for 5 rows */
+        }
+        .leaderboard h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .table-wrap {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .country-flag {
+            max-width: 30px;
+            height: auto;
+            vertical-align: middle;
+        }
+        @media (max-width: 768px) {
+            .table-wrap {
+                overflow-x: scroll;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="leaderboard">
+            <h2>Leaderboard</h2>
+            <div class="table-wrap">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>User</th>
+                            <th>Score</th>
+                            <th>Time</th>
+                            <th>Country</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Your leaderboard rows go here -->
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td><a href="/yaminig3006" target="_blank">yaminig3006</a></td>
+                            <td>30.00</td>
+                            <td>35:23:33</td>
+                            <td class="text-center"><img class="country-flag" src="https://hrcdn.net/hackerrank/static/flags/IN.png" alt="India" title="India"></td>
+                        </tr>
+                        <!-- Repeat the above row structure for other leaderboard entries -->
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td><a href="/gollanarendar201" target="_blank">gollanarendar201</a></td>
+                            <td>30.00</td>
+                            <td>35:23:53</td>
+                            <td class="text-center"><img class="country-flag" src="https://hrcdn.net/hackerrank/static/flags/IN.png" alt="India" title="India"></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td><a href="/jakkaanjali02" target="_blank">jakkaanjali02</a></td>
+                            <td>30.00</td>
+                            <td>35:31:39</td>
+                            <td class="text-center"><img class="country-flag" src="https://hrcdn.net/hackerrank/static/flags/IN.png" alt="India" title="India"></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td><a href="/pranithapebbeti" target="_blank">pranithapebbeti</a></td>
+                            <td>30.00</td>
+                            <td>35:41:42</td>
+                            <td class="text-center"><img class="country-flag" src="https://hrcdn.net/hackerrank/static/flags/IN.png" alt="India" title="India"></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td><a href="/yaminig3006" target="_blank">yaminig3006</a></td>
+                            <td>30.00</td>
+                            <td>35:23:33</td>
+                            <td class="text-center"><img class="country-flag" src="https://hrcdn.net/hackerrank/static/flags/IN.png" alt="India" title="India"></td>
+                        </tr>
+                        <!-- Repeat the above row structure for other leaderboard entries -->
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td><a href="/gollanarendar201" target="_blank">gollanarendar201</a></td>
+                            <td>30.00</td>
+                            <td>35:23:53</td>
+                            <td class="text-center"><img class="country-flag" src="https://hrcdn.net/hackerrank/static/flags/IN.png" alt="India" title="India"></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td><a href="/jakkaanjali02" target="_blank">jakkaanjali02</a></td>
+                            <td>30.00</td>
+                            <td>35:31:39</td>
+                            <td class="text-center"><img class="country-flag" src="https://hrcdn.net/hackerrank/static/flags/IN.png" alt="India" title="India"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
