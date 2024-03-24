@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C programming</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    {%load static%}
+   <link rel="stylesheet" href="{% static 'course/css/coursestyle.css'%}"/>
+</head>
+
+<body>
+ 
+    {% for message in messages  %} 
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      <strong>Message : </strong> {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {%endfor%}
+    <!-- Navbar -->
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Navbar brand -->
+        {% comment %} <a class="navbar-brand"href="{% url 'home' %}" style="margin-left:10px">Home</a> {% endcomment %}
+        <a class="navbar-brand" href="{% url 'home' %}" style=" font-family: Arial, Helvetica, sans-serif;margin-left:15px"><span class="app-name">
+            <strong><span class="app-initial">Logic</span>Loom</strong>
+        </span></a>
+   
+        <!-- Text for desktop resolutions -->
+        <span class="navbar-text mx-auto d-lg-block">
+         
+      Where do we use C?
+        </span>
+        
+        <!-- Offcanvas Trigger Button for Low-resolution devices -->
+        <button class="btn btn-primary ms-auto" type="button" data-bs-toggle="offcanvas"  data-bs-target="#offcanvasWithBothOptions">
+            Open Menu
+        </button>
+    </nav>
+
+    <!-- Offcanvas Body -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" 
+    aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Getting Started With C</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" style="color:black">Home</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 1 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                       
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 2 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 3 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                      
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 4 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 5 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 6 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    
+
+        <h6>Development of Video Games :</h6>
+
+        <div class="eg"> {% load static%}
+            <img src="{% static 'course/course2/images/c2ch1t1img1.jpg'%}" id="img3">
+        </div>
+
+
+        <h6>Applications using graphical user interfaces :</h6>
+        <div class="eg">
+            <img src="{% static 'course/course2/images/c2ch1t1img2.jpg'%}" id="img3">
+        </div>
+
+
+        <h6>Databases and computer operating systems :</h6>
+        <div class="eg">
+            <img src="{% static 'course/course2/images/c2ch1t1img3.jpg'%}" id="img3">
+        </div>
+
+
+        <h6>Browsers on the internet :</h6>
+        <div class="eg">
+            <img src="{% static 'course/course2/images/c2ch1t1img4.jpg'%}" id="img3">
+        </div>
+
+
+        <h6>Computational and graphical methods :</h6>
+        <div class="eg">
+            <img src="{% static 'course/course2/images/c2ch1t1img5.jpg'%}" id="img3">
+        </div>
+
+        <h6>Banking :</h6>
+        <div class="eg">
+            <img src="{% static 'course/course2/images/c2ch1t1img6.jpg'%}" id="img3">
+        </div>
+
+        <h6>Cloud computing and distributed systems :</h6>
+        <div class="eg">
+            <img src="{% static 'course/course2/images/c2ch1t1img7.jpg'%}" id="img3">
+        </div>
+
+
+        <h6>Compilers :</h6>
+        <div class="eg">
+            <img src="{% static 'course/course2/images/c2ch1t1img8.jpg'%}" id="img3">
+        </div>
+
+        <h6>Integrated software libraries for enterprises :</h6>
+        <div class="eg">
+            <img src="{% static 'course/course2/images/c2ch1t1img9.jpg'%}" id="img3">
+
+        </div>
+
+        <h6>Server applications on a large scale :</h6>
+        <div class="eg">
+            <img src="{% static 'course/course2/images/c2ch1t1img10.jpg'%}" id="img3">
+        </div>
+
+
+        <h6>Compilers of code :</h6>
+        <div class="eg">
+            <img src="{% static 'course/course2/images/c2ch1t1img11.jpg'%}" id="img3">
+        </div>
+        <div >
+            <h2 class="mt-4">Resources :</h2>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe  src="https://www.youtube.com/embed/LA2LIBZGink?si=xUBD2PzjaelEfcLO" class="embed-responsive-item"></iframe>
+            </div>
+        </div>
+        <div class="card" style="margin-top:20px;">
+            <div class="card-header">
+             Assess Your Understanding
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Answer the following Two questions: </h5>
+              <div class="mcqs mt-5">
+            
+                    <form action="{% url 'checkanswerc2' slug='c2ch4t1' %}" method='post'>{% csrf_token %}
+                        <p><span>Q1. Which of the following is incorrect?</span></p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
+                            <label class="form-check-label" for="q1_option1">
+                                 A. Artificial Intelligence
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
+                            <label class="form-check-label" for="q1_option2">
+                              B. Data Science
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
+                            <label class="form-check-label" for="q1_option3">
+                               C. Embedded Systems                                  
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option4">
+                            <label class="form-check-label" for="q1_option4">
+                                D. Augumented Reality
+                            </label>
+                        </div>
+                    
+                        <p><span>Q2. What aspect of C programming makes it suitable for embedded systems development?</span></p>
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
+                            <label class="form-check-label" for="q2_option1">
+                                A. Dynamic memory allocation 
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
+                            <label class="form-check-label" for="q2_option2">
+                               B. Garbage collection
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
+                            <label class="form-check-label" for="q2_option3">
+                                 C. Low-level hardware access
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
+                            <label class="form-check-label" for="q2_option4">
+                               D Automatic type conversion
+                            </label>
+                        </div>
+                        <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
+                    </form>
+                </div>  
+            
+          </div>
+       
+        </div>
+
+        <div id="navigation" class="mt-4 text-center">
+            <a href="{% url 'course2' slug='c2ch1t'%}" class="btn btn-secondary">Prev</a>
+            <a href="{% url 'course2' slug='c2ch1t2'%}" class="btn btn-secondary">Next</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

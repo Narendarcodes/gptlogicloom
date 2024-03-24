@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C programming</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    {%load static%}
+   <link rel="stylesheet" href="{% static 'course/css/coursestyle.css'%}"/>
+</head>
+
+<body>
+ 
+    {% for message in messages  %} 
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      <strong>Message : </strong> {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {%endfor%}
+    <!-- Navbar -->
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Navbar brand -->
+        {% comment %} <a class="navbar-brand"href="{% url 'home' %}" style="margin-left:10px">Home</a> {% endcomment %}
+        <a class="navbar-brand" href="{% url 'home' %}" style=" font-family: Arial, Helvetica, sans-serif;margin-left:15px"><span class="app-name">
+            <strong><span class="app-initial">Logic</span>Loom</strong>
+        </span></a>
+   
+        
+        <!-- Text for desktop resolutions -->
+        <span class="navbar-text mx-auto d-lg-block">
+           History of C
+        </span>
+        
+        <!-- Offcanvas Trigger Button for Low-resolution devices -->
+        <button class="btn btn-primary ms-auto" type="button" data-bs-toggle="offcanvas"  data-bs-target="#offcanvasWithBothOptions">
+            Open Menu
+        </button>
+    </nav>
+
+    <!-- Offcanvas Body -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" 
+    aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Getting Started With C</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" style="color:black">Home</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 1 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                       
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 2 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 3 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                      
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 4 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 5 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 6 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="eg">{% load static%}
+            <img src="{% static 'course/course2/images/c2ch1t3img1.jpg'%}" id="img3">
+        </div>
+    
+    <h6>Algol(1960) :</h6>
+    <ul class="custom-list">
+      <li>ALGOL is a High-Level language invented by the International Group in 1960. </li>
+       <li>It was the 1st language to follow the Structure Programming Concept.</li>
+       <li>This language become more famous in Europe but not that much in the US.</li>
+      </ul>    
+    <h6>BCPL (1967):</h6>
+    <ul class="custom-list">
+      <li>Taking forward the concept of ALGOL, Martin Richards has invented BCPL (Basic Combined Programming Language) in 1967. </li>
+       <li>Both languages were simply used for Academic purposes.</li>
+    </ul>
+<h6>B (1970):</h6>
+    <ul class="custom-list">
+      <li>Ken Thompson in the year 1970 had invented the language call B. </li>
+       <li>It was also called as Simple B language. He had developed this language by taking forward the concepts of BCPL. </li>
+<li>This was also mainly used for Academic purposes</li>
+    </ul>
+<h6>Traditional C (1972):</h6>
+    <ul class="custom-list">
+      <li>The first version of C was developed by Dennis Ritchie at Bell Labs and was used to rewrite the Unix operating system and its utilities.</li>
+    </ul>
+<h6>C or C89 (1989):</h6>
+    <ul class="custom-list">
+      <li>The ISO standard for C was often referred to as "C89".</li>
+    </ul>
+<h6>ANSI/ISO C (1990):</h6>
+    <ul class="custom-list">
+      <li>In 1990, the ISO C standard was updated to include new features, such as improved type checking, function prototypes, and improved memory management. </li>
+       <li>This updated version of the standard is often referred to as "ANSI/ISO C."</li>
+    </ul>
+<h6>C11 (2011):</h6>
+    <ul class="custom-list">
+      <li>In 2011, the ISO C standard was updated again, adding new features such as multi-threading support and atomic operations. </li>
+       <li>This version of the standard is often referred to as "C11."</li>
+    </ul>
+<h6> C17 (2018):</h6>
+    <ul class="custom-list">
+      <li>The ISO C standard was updated again in 2018, adding new features such as improved support for multithreading and improved memory safety. </li>
+       <li>This version of the standard is often referred to as "C17."</li>
+    </ul>
+    <div>
+      <h2 class="mt-4">Resources :</h2>
+      <div class="fluid-yt">
+          <!--replace youtube link-->
+          <iframe src="https://www.youtube.com/watch?v=kIab1G39v80&pp=ygUMaGlzdG9yeSBvZiBj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+  </div>
+  <div class="card">
+      <div class="card-header">
+        Featured
+      </div>
+      <div class="card" style="margin-top:20px;">
+        <div class="card-header">
+         Assess Your Understanding
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Answer the following Two questions: </h5>
+        <div class="mcqs mt-5">
+          {% comment %} <form action="{% url 'checkanswerc2' slug=c2ch2t1 %}" method='post'>{% csrf_token %} {% endcomment %}
+              <form action="{% url 'checkanswer' slug='c2ch1t3' %}" method='post'>{% csrf_token %}
+                  <p><span>Q1. Which language was the first to follow the Structured Programming Concept? </span></p>
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
+                      <label class="form-check-label" for="q1_option1">
+                          A. Algol
+                      </label>
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
+                      <label class="form-check-label" for="q1_option2">
+                          B. BCPL
+                      </label>
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
+                      <label class="form-check-label" for="q1_option3">
+                          C. B 
+                      </label>
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option4">
+                      <label class="form-check-label" for="q1_option4">
+                          D. Traditional C
+                      </label>
+                  </div>
+              
+                  <p><span>Q2. Who invented BCPL (Basic Combined Programming Language) in 1967?</span></p>
+                  
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
+                      <label class="form-check-label" for="q2_option1">
+                          A. Interantional Group 
+                      </label>
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
+                      <label class="form-check-label" for="q2_option2">
+                          B. Martin Richard
+                      </label>
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
+                      <label class="form-check-label" for="q2_option3">
+                          C. Ken Thompson
+                      </label>
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
+                      <label class="form-check-label" for="q2_option4">
+                          D. Dennis Ritche
+                      </label>
+                  </div>
+                  <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
+              </form>
+              
+      
+    </div>
+ 
+  </div>
+    
+
+  <div id="navigation" class="mt-4 text-center">
+    <a href="{% url 'course2' slug='c2ch1t2'%}" class="btn btn-secondary">Prev</a>
+    <a href="{% url 'course2' slug='c2ch1t4'%}" class="btn btn-secondary">Next</a></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

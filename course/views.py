@@ -2,9 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.utils.html import escape
 from profilepage.models import Profile
-from .models import Answers
+from .models import Answers,userprogress
 from django.contrib.auth.models import AnonymousUser,User
-
 
 def course2content(request):
     return render(request, "course/course2/content.html")
@@ -32,9 +31,11 @@ def checkanswerc2(request, slug):
                  messages.warning(request,"Well Done! That was Awesome response Please Login to save your progress")
                 elif isinstance(request.user,User):
                  user_profile = Profile.objects.filter(user=request.user).first()
-                 if user_profile and user_profile.c2progress < answers.prgrscontribution :
-                    user_profile.c2progress = answers.prgrscontribution
-                    user_profile.save()
+                 user_progress,_ = userprogress.objects.get_or_create(user=request.user)
+                 user_progress.completed_topic.add(answers)
+                 user_profile.c2progress = getprogress(request,'c2')
+                 user_profile.save()
+                 user_progress.save()
                  messages.success(request, f"Well Done! {user_profile.name} That was an Awesome response")
             else:  
                 messages.error(request, "Wrong Answers. Try Again!")
@@ -57,9 +58,11 @@ def checkanswerc1(request, slug):
                  messages.warning(request,"Well Done! That was Awesome response Please Login to save your progress")
                 elif isinstance(request.user,User):
                  user_profile = Profile.objects.filter(user=request.user).first()
-                 if user_profile and user_profile.c1progress < answers.prgrscontribution :
-                    user_profile.c1progress = answers.prgrscontribution
-                    user_profile.save()
+                 user_progress,_ = userprogress.objects.get_or_create(user=request.user)
+                 user_progress.completed_topic.add(answers)
+                 user_profile.c1progress = getprogress(request,'c1')
+                 user_profile.save()
+                 user_progress.save()
                  messages.success(request, f"Well Done! {user_profile.name} That was an Awesome response")
             else:  
                 messages.error(request, "Wrong Answers. Try Again!")
@@ -68,3 +71,9 @@ def checkanswerc1(request, slug):
         
         return redirect(f"../../course1/{slug}")
     
+def getprogress(request, course):
+    user_progress = userprogress.objects.filter(user=request.user, completed_topic__topic__startswith=course)
+    completed_topics = user_progress.count()
+    total_topics = Answers.objects.filter(topic__startswith=course).count()
+    progress = (completed_topics / total_topics) * 100 if total_topics > 0 else 0
+    return progress

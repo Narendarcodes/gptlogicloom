@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Profile
+from course.models import userprogress,Answers
 from django.conf import settings  
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
@@ -158,6 +159,7 @@ def change_password(request):
         messages.success(request, 'Your password was successfully updated!')
         return redirect('profile')
    
+
 
 
 
