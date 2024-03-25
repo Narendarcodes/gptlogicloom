@@ -61,7 +61,8 @@ aria-labelledby="offcanvasWithBothOptionsLabel">
                 <ul class="dropdown-menu">
                     {% for topic in topics %}
                     <li>
-                        <a class="dropdown-item {% if topic.completed == True %}completed{% endif %}" href="#">{{ topic.topic_text }}
+                         <a class="dropdown-item {% if topic.completed %}completed{% endif %}" href="{% url 'course2' slug=topic.topicid%}">{{ topic.topic_text }}</a> 
+                        
                             {% if topic.completed %}
                                 <img src="{% static 'course/images/tickmark.svg' %}" class="svg" alt="Completed">
                             {% endif %}

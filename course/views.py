@@ -29,11 +29,12 @@ def course1(request, slug):
         chapters[chapter].append({
           'chapter': chapter,
           'topic': topic_number,
+          'topicid':topic.topic,
           'topic_text': topic.topictext,
           'completed': istopiccompleted(topic.topic, request)  # Assuming you have a field to indicate completion status
         })
     context = {'chapters': chapters}
-    return render(request, f"course/course1/{slug}.html",chapters)
+    return render(request, f"course/course1/{slug}.html",context)
 
 def course2(request, slug):
     topics = Answers.objects.filter(topic__startswith='c2')
@@ -53,6 +54,7 @@ def course2(request, slug):
         chapters[chapter].append({
           'chapter': chapter,
           'topic': topic_number,
+          'topicid':topic.topic,
           'topic_text': topic.topictext,
           'completed': istopiccompleted(topic.topic, request)  # Assuming you have a field to indicate completion status
         })
