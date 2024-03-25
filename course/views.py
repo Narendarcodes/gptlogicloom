@@ -12,6 +12,13 @@ def course1content(request):
     return render(request, "course/course1/content.html")
 
 def course1(request, slug):
+    topics = Answers.objects.filter(topic__startswith='c1')
+    chapters= {}
+    for topic in topics:
+        chapter = topic.topic.split('ch')
+        if chapter not in chapters:
+            chapters[chapter] = []
+        chapters[chapter].append(topic)
 
     return render(request, f"course/course1/{slug}.html")
 
