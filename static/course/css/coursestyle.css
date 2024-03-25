@@ -168,3 +168,18 @@ h2 {
     max-width:400px;
     padding:5px;
 }
+.dropdown-item.completed {
+  background-color: rgb(184, 243, 184);
+  background-repeat: no-repeat;
+  background-position: left center; /* Adjust position of the tick mark */
+  padding-left: 25px; /* Add padding to ensure space for the tick mark */
+}
+.svg {
+  width: 1.66rem;
+  height: 1.15rem;
+  padding-left: 8px;
+  margin: 0px;
+}
+.dropdown-menu {
+  --bs-dropdown-min-width: 20rem;
+}

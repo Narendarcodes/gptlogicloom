@@ -59,7 +59,7 @@
                         chapter 1 Name
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item completed" href="#">topic1name<img src="{% static "course/images/tickmark.svg" %}" class="svg"></a></li>
                         <li><a class="dropdown-item" href="#">topic2name</a></li>
                        
                         <li><a class="dropdown-item" href="#">topic3name</a></li>
@@ -129,7 +129,8 @@
         <h6>Development of Video Games :</h6>
 
         <div class="eg"> {% load static%}
-            <img src="{% static 'course/course2/images/c2ch1t1img1.jpg'%}" id="img3">
+            
+            <img src="{% static 'course/images/c2ch1t1img1.jpg'%}" id="img3">
         </div>
 
 
@@ -202,7 +203,7 @@
               <h5 class="card-title">Answer the following Two questions: </h5>
               <div class="mcqs mt-5">
             
-                    <form action="{% url 'checkanswerc2' slug='c2ch4t1' %}" method='post'>{% csrf_token %}
+                    <form action="{% url 'checkanswerc2' slug='c2ch1t1' %}" method='post'>{% csrf_token %}
                         <p><span>Q1. Which of the following is incorrect?</span></p>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>

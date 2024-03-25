@@ -12,6 +12,7 @@ def course1content(request):
     return render(request, "course/course1/content.html")
 
 def course1(request, slug):
+
     return render(request, f"course/course1/{slug}.html")
 
 def course2(request, slug):
@@ -40,7 +41,7 @@ def checkanswerc2(request, slug):
             else:  
                 messages.error(request, "Wrong Answers. Try Again!")
         else:
-            return redirect("home:error404")
+            return redirect("home")
         
         return redirect(f"../../course2/{slug}")
 
@@ -67,7 +68,7 @@ def checkanswerc1(request, slug):
             else:  
                 messages.error(request, "Wrong Answers. Try Again!")
         else:
-            return redirect("home:error404")
+            return redirect("home")
         
         return redirect(f"../../course1/{slug}")
     

@@ -3,7 +3,7 @@ from .models import Answers,userprogress
 
 # Register your models here.
 class AnswersAdmin(admin.ModelAdmin):
-    list_display = ['topic','que1','que2']
+    list_display = ['topic','topictext','que1','que2']
 
 class UserprogressAdmin(admin.ModelAdmin):
     list_display = ['user', 'completed_topics']
