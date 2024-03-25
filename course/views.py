@@ -12,11 +12,60 @@ def course1content(request):
     return render(request, "course/course1/content.html")
 
 def course1(request, slug):
+    topics = Answers.objects.filter(topic__startswith='c1')
+    chapters = {}
 
-    return render(request, f"course/course1/{slug}.html")
+    # Group topics by chapters
+    for topic in topics:
+        # Parse topic name to extract chapter and topic numbers
+        _, chapter_topic = topic.topic.split('ch')
+        chapter, topic_number = chapter_topic.split('t')
+
+        # Create chapter key if not exists
+        if chapter not in chapters:
+            chapters[chapter] = []
+
+    # Append topic information to the corresponding chapter
+        chapters[chapter].append({
+          'chapter': chapter,
+          'topic': topic_number,
+          'topic_text': topic.topictext,
+          'completed': istopiccompleted(topic.topic, request)  # Assuming you have a field to indicate completion status
+        })
+    context = {'chapters': chapters}
+    return render(request, f"course/course1/{slug}.html",chapters)
 
 def course2(request, slug):
-    return render(request, f"course/course2/{slug}.html")
+    topics = Answers.objects.filter(topic__startswith='c2')
+    chapters = {}
+
+    # Group topics by chapters
+    for topic in topics:
+        # Parse topic name to extract chapter and topic numbers
+        _, chapter_topic = topic.topic.split('ch')
+        chapter, topic_number = chapter_topic.split('t')
+
+        # Create chapter key if not exists
+        if chapter not in chapters:
+            chapters[chapter] = []
+
+    # Append topic information to the corresponding chapter
+        chapters[chapter].append({
+          'chapter': chapter,
+          'topic': topic_number,
+          'topic_text': topic.topictext,
+          'completed': istopiccompleted(topic.topic, request)  # Assuming you have a field to indicate completion status
+        })
+    context = {'chapters': chapters}
+    return render(request, f"course/course2/{slug}.html", context)
+
+
+def istopiccompleted(topic,request):
+    if isinstance(request.user,AnonymousUser):
+        return False
+    elif isinstance(request.user,User):
+        user_progress = userprogress.objects.filter(user=request.user, completed_topic__topic=topic)
+        return user_progress.exists()
 
 def checkanswerc2(request, slug):
     if request.method == 'POST':

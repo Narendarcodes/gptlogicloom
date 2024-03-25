@@ -168,6 +168,12 @@ h2 {
     max-width:400px;
     padding:5px;
 }
+
+#img3 {
+  /* Inherit the style of .img-fluid */
+  max-width: 400px;
+  padding: 5px;
+}
 .dropdown-item.completed {
   background-color: rgb(184, 243, 184);
   background-repeat: no-repeat;
