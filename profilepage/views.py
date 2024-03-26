@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Profile
+from .models import Profile,Badge
+from course.models import userprogress,Answers
 from django.conf import settings  
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
@@ -161,7 +162,20 @@ def change_password(request):
 
 
 
+def badges(request):
+    user_profile = Profile.objects.filter(user=request.user).first()
+    return render(request, 'badge/badge.html', {'user_profile': user_profile})
 
+
+ 
+def recent_badge(request):
+    # Fetch the user's profile. Adjust this based on your actual implementation.
+    user_profile = Profile.objects.get(user=request.user)
+
+    # Filter badges based on the user's profile and get the most recent one
+    recent_badge = Badge.objects.filter(user_profile=user_profile).order_by('-created_at').first()
+
+    return render(request, 'profile/userprofile.html', {'recent_badge': recent_badge})
 
     
 

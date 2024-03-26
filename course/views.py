@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.utils.html import escape
-from profilepage.models import Profile
+from profilepage.models import Profile,Badge
 from .models import Answers
 from django.contrib.auth.models import AnonymousUser,User
 
@@ -35,6 +35,7 @@ def checkanswerc2(request, slug):
                  if user_profile and user_profile.c2progress < answers.prgrscontribution :
                     user_profile.c2progress = answers.prgrscontribution
                     user_profile.save()
+                    assign_badges2(request, user_profile)
                  messages.success(request, f"Well Done! {user_profile.name} That was an Awesome response")
             else:  
                 messages.error(request, "Wrong Answers. Try Again!")
@@ -60,6 +61,7 @@ def checkanswerc1(request, slug):
                  if user_profile and user_profile.c1progress < answers.prgrscontribution :
                     user_profile.c1progress = answers.prgrscontribution
                     user_profile.save()
+                    assign_badges2(request, user_profile)
                  messages.success(request, f"Well Done! {user_profile.name} That was an Awesome response")
             else:  
                 messages.error(request, "Wrong Answers. Try Again!")
@@ -68,3 +70,25 @@ def checkanswerc1(request, slug):
         
         return redirect(f"../../course1/{slug}")
     
+
+def assign_badge1(request, user_profile):
+    completed_progress = user_profile.c1progress  # Change this for course 2
+    if completed_progress % 10 == 0:
+        milestone = completed_progress // 10
+        badge_name = f"{milestone * 10}% Complete Badge"  # Or any other logic for badge naming
+        badge, created = Badge.objects.get_or_create(name=badge_name)
+        if created:
+            user_profile.badges.add(badge)
+            user_profile.save()
+            messages.info(request, f"Congratulations! You earned a new badge: {badge.name}")
+
+def assign_badges2(request, user_profile):
+    completed_progress = user_profile.c2progress  # Change this for course 2
+    if completed_progress % 10 == 0:
+        milestone = completed_progress // 10
+        badge_name = f"{milestone * 10}% Complete Badge"  # Or any other logic for badge naming
+        badge, created = Badge.objects.get_or_create(name=badge_name)
+        if created:
+            user_profile.badges.add(badge)
+            user_profile.save()
+            messages.info(request, f"Congratulations! You earned a new badge: {badge.name}")
