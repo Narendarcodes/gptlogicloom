@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C programming</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="{% static 'course/css/coursestyle.css'%}"/>
+</head>
+<body>
+    {% for message in messages  %} 
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      <strong>Message : </strong> {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {%endfor%}
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Navbar brand -->
+       
+        <a class="navbar-brand" href="{% url 'home' %}" style=" font-family: Arial, Helvetica, sans-serif;margin-left:15px"><span class="app-name">
+            <strong><span class="app-initial">Logic</span>Loom</strong>
+        </span></a>
+        <!-- Text for desktop resolutions -->
+        <span class="navbar-text mx-auto d-lg-block">
+            Recursion
+        </span>
+        
+        <!-- Offcanvas Trigger Button for Low-resolution devices -->
+        <button class="btn btn-primary ms-auto" type="button" data-bs-toggle="offcanvas"  data-bs-target="#offcanvasWithBothOptions">
+            Open Menu
+        </button>
+    </nav>
+  
+
+    <!-- Offcanvas Body -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" 
+    aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Getting Started With C</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" style="color:black">Home</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 1 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                       
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 2 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 3 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                      
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 4 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 5 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 6 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <pre><h3>Example:-</h3>
+            void fun(int n)
+            {
+              fun(n-1);
+              printf(“%d”,n);
+            }
+          
+            Here we are calling the function.we haven’t given any base condition so the above program will be go to infinite loop.
+            </pre>
+          
+           <li><b>Examples :</b><br>
+            <div class="card1">
+                <div class="header">
+                    <div class="top">
+                        <div class="circle">
+                            <span class="red circle2"></span>
+                        </div>
+                        <div class="circle">
+                            <span class="yellow circle2"></span>
+                        </div>
+                        <div class="circle">
+                            <span class="green circle2"></span>
+                        </div>
+                        <div class="title">
+                            <p id="title2">Program.c</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-container">
+                    <textarea readonly="" name="code" id="code" class="form-control form-control-sm" style="height: 250px; width: 80%;">
+                       
+                        #include <stdio.h>
+                            // Recursive function to calculate factorial
+                            int factorial(int n) {
+                                // Base case: factorial of 0 is 1
+                                if (n == 0 || n == 1) {
+                                    return 1;
+                                } else {
+                                    // Recursive case: n! = n * (n-1)!
+                                    return n * factorial(n - 1); //this is recursive call
+                                }
+                            }
+                            
+                            int main() {
+                                int num = 5;
+                            
+                                // Call the recursive function
+                                int result = factorial(num);
+                            
+                                // Display the result
+                                printf("Factorial of %d is %d\n", num, result);
+                            
+                                return 0;
+                            }
+                              
+                         
+               </textarea>
+                </div>
+            </div><br>
+        </li>
+        <h3>Output:</h3>
+        <pre>
+            Factorial of 5 is 120</pre> 
+
+
+            <pre>
+                <h2>Explanation</h2>
+                1. Main Function Call (`factorial(5)`)
+             - Call `factorial(5)`
+             - `n = 5`, not a base case, so it calls `factorial(4)`.
+          
+          2. First Recursive Call (`factorial(4)`)
+             - Call `factorial(4)`
+             - `n = 4`, not a base case, so it calls `factorial(3)`.
+          
+          3. Second Recursive Call (`factorial(3)`)
+             - Call `factorial(3)`
+             - `n = 3`, not a base case, so it calls `factorial(2)`.
+          
+          4. Third Recursive Call (`factorial(2)`)
+             - Call `factorial(2)`
+             - `n = 2`, not a base case, so it calls `factorial(1)`.
+          
+          5. Fourth Recursive Call (`factorial(1)`)
+             - Call `factorial(1)`
+             - `n = 1`, a base case, returns 1.
+          
+          6. Back to Third Call (`factorial(2)` returns 2 * 1)
+             - `factorial(1)` result (1) is multiplied by 2, returns 2.
+          
+          7. Back to Second Call (`factorial(3)` returns 3 * 2)
+             - `factorial(2)` result (2) is multiplied by 3, returns 6.
+          
+          8. Back to First Call (`factorial(4)` returns 4 * 6)
+             - `factorial(3)` result (6) is multiplied by 4, returns 24.
+          
+          9. Back to Main Call (factorial(5) returns 5 * 24)
+             - `factorial(4)`result (24) is multiplied by 5, returns 120.
+          
+          10. Result Displayed in main Function
+              - Print: "Factorial of 5 is 120."
+          
+          
+               </pre>
+          
+
+               <h3>In detail Explanation of recursion </h3>  
+           <li><b>Examples :</b><br>
+            <div class="card1">
+                <div class="header">
+                    <div class="top">
+                        <div class="circle">
+                            <span class="red circle2"></span>
+                        </div>
+                        <div class="circle">
+                            <span class="yellow circle2"></span>
+                        </div>
+                        <div class="circle">
+                            <span class="green circle2"></span>
+                        </div>
+                        <div class="title">
+                            <p id="title2">Program.c</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-container">
+                    <textarea readonly="" name="code" id="code" class="form-control form-control-sm" style="height: 250px; width: 80%;">
+                       
+                        #include<stdio.h>
+                            int fun(int n)
+                            {	
+                            
+                              If(n==0)
+                              {
+                                return 0;
+                            }
+                            fun(n-1);
+                            printf(“%d ”,n);
+                            }
+                            void main()
+                            {
+                              fun(5);
+                            } 
+                              
+                         
+               </textarea>
+                </div>
+            </div><br>
+        </li>
+          
+        <h3>Output:</h3>
+        <pre>
+          1 2 3 4 5
+        </pre>
+        <h2>Explanation</h2>
+        <pre>
+          Function calls:
+        First from main fun(5) calls with 5  value .
+        Iteration1:-
+        Checking if statement if n==0 if not execute the remaining statement
+        1. fun(5-1)-->fun(4)
+          Below we left with printf(“%d”,n); that  statement is push to the stack see the below diagram
+        Iteration2:-
+        Checking if statement if n==0 if not execute the remaining statement
+        2. fun(4-1)-->fun(3)
+          Same as above the printf statement is push to the stack
+        Iteration3:-
+        Checking if statement if n==0 if not execute the remaining statement
+        3.fun(3-1)--> fun(2)
+          Same as above the printf statement is push to the stack
+        Iteration4:-
+        Checking if statement if n==0 if not execute the remaining statement
+        4.fun(2-1)-->fun(1)
+          Same as above the printf statement is push to the stack
+        Iteration5:-
+        Checking if statement if n==0 if not execute the remaining statement
+        5.fun(1-1)-->fun(0)
+        Iteration6:-
+          if(n==0)
+         condition is true so the function will return 0
+         then the remaining statements which are in statck will be executed sequentially .
+        
+        </pre>
+       
+        <div >
+            <h2 class="mt-4">Resources :</h2>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe  src="https://www.youtube.com/embed/kepBmgvWNDw?si=uERN0OxMhBcidM3X" class="embed-responsive-item"></iframe>
+            </div>
+        </div>
+        <div class="card" style="margin-top:20px;">
+            <div class="card-header">
+              Test Your Knowledge
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Choose The </h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <div class="mcqs mt-5">
+              
+                    <form action="{% url 'checkanswerc2' slug='c2ch6t16' %}" method='post'>{% csrf_token %}
+                        <p><span>Q1. </span><pre>Consider the following recursive function in C:
+                          int fun(int n) {
+                              if (n <= 1)
+                                  return 1;
+                              else
+                                  return n * fun(n - 1);
+                          }
+                          What does this function compute?
+                      </pre> </p>
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
+                          <label class="form-check-label" for="q1_option1">
+                              A.  Exponential function
+                          
+                                
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
+                          <label class="form-check-label" for="q1_option2">
+                              B.  Factorial of a number
+                              
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
+                          <label class="form-check-label" for="q1_option3">
+                              C.   Square root
+                                
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option4">
+                          <label class="form-check-label" for="q1_option4">
+                              D.       Fibonacci sequence
+                          
+                          </label>
+                      </div>
+                  
+                      <p><span>Q2. </span>What is a potential issue with recursive functions in C?</p>
+                      
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
+                          <label class="form-check-label" for="q2_option1">
+                              A.  They are always less efficient than iterative solutions
+                               
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
+                          <label class="form-check-label" for="q2_option2">
+                              B.   They are prone to infinite recursion if not implemented carefully
+                              
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
+                          <label class="form-check-label" for="q2_option3">
+                              C.  They can only be used with integer data types
+                               
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
+                          <label class="form-check-label" for="q2_option4">
+                              D. They cannot handle mathematical operations
+                              
+                          </label>
+                      </div>
+                      <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
+                  </form>
+              </div>       
+          </div>
+        </div>
+     
+      
+        
+
+      <div id="navigation" class="mt-4 text-center">
+          <a href="{% url 'course2' slug='c2ch6t15'%}" class="btn btn-secondary">Prev</a>
+          <a href="{% url 'course2' slug='c2ch6t17'%}" class="btn btn-secondary">Next</a>
+      </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
