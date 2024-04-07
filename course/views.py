@@ -58,7 +58,14 @@ def course2(request, slug):
           'topic_text': topic.topictext,
           'completed': istopiccompleted(topic.topic, request)  # Assuming you have a field to indicate completion status
         })
+        # Sort topics by chapter and topic
+    for chapter in chapters.values():
+        chapter.sort(key=lambda x: (int(x['chapter']), int(x['topic'])))
+
+    # Sort chapters by chapter number
+    chapters = dict(sorted(chapters.items(), key=lambda item: int(item[0])))
     context = {'chapters': chapters}
+  
     return render(request, f"course/course2/{slug}.html", context)
 
 
