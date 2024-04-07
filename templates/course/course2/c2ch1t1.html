@@ -51,7 +51,7 @@ aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" style="color:black">Home</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="color:black">Home</a>
             </li>
             {% for chapter, topics in chapters.items %}
             <li class="nav-item dropdown">
