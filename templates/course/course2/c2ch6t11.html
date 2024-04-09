@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C programming</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="{% static 'course/css/coursestyle.css'%}"/>
+</head>
+<body>
+    {% for message in messages  %} 
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      <strong>Message : </strong> {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {%endfor%}
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Navbar brand -->
+       
+        <a class="navbar-brand" href="{% url 'home' %}" style=" font-family: Arial, Helvetica, sans-serif;margin-left:15px"><span class="app-name">
+            <strong><span class="app-initial">Logic</span>Loom</strong>
+        </span></a>
+        <!-- Text for desktop resolutions -->
+        <span class="navbar-text mx-auto d-lg-block">
+            Unions
+        </span>
+        
+        <!-- Offcanvas Trigger Button for Low-resolution devices -->
+        <button class="btn btn-primary ms-auto" type="button" data-bs-toggle="offcanvas"  data-bs-target="#offcanvasWithBothOptions">
+            Open Menu
+        </button>
+    </nav>
+  
+
+    <!-- Offcanvas Body -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" 
+    aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Getting Started With C</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" style="color:black">Home</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 1 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                       
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 2 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 3 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                      
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 4 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 5 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                        chapter 6 Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">topic1name</a></li>
+                        <li><a class="dropdown-item" href="#">topic2name</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">topic3name</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <p>A union is a user-defined data type that allows you to store different data types in the same memory location. Unlike structures, which allocate memory for each member separately, unions allocate enough memory to hold the largest member. This means that all members share the same memory space.</p>
+ 
+        
+          <li><b>Examples :</b><br>
+            <div class="card1">
+                <div class="header">
+                    <div class="top">
+                        <div class="circle">
+                            <span class="red circle2"></span>
+                        </div>
+                        <div class="circle">
+                            <span class="yellow circle2"></span>
+                        </div>
+                        <div class="circle">
+                            <span class="green circle2"></span>
+                        </div>
+                        <div class="title">
+                            <p id="title2">Program.c</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-container">
+                    <textarea readonly="" name="code" id="code" class="form-control form-control-sm" style="height: 250px; width: 80%;">
+                        #include <stdio.h>
+
+                            // Define a union named MyUnion
+                            union MyUnion {
+                                int intValue;
+                                float floatValue;
+                                char stringValue[20];
+                            };
+                            
+                            int main() {
+                                // Declare a variable of type union MyUnion
+                                union MyUnion myData;
+                            
+                                // Assign values to different members of the union
+                                myData.intValue = 42;
+                                printf("Value of intValue: %d\n", myData.intValue);
+                            
+                                myData.floatValue = 3.14f;
+                                printf("Value of floatValue: %f\n", myData.floatValue);
+                            
+                                // Assign a string to the char array member
+                                snprintf(myData.stringValue, sizeof(myData.stringValue), "Hello, Union!");
+                                printf("Value of stringValue: %s\n", myData.stringValue);
+                            
+                                // Print the sizes of the union and its members
+                                printf("Size of MyUnion: %u bytes\n", sizeof(union MyUnion));
+                                printf("Size of intValue: %u bytes\n", sizeof(myData.intValue));
+                                printf("Size of floatValue: %u bytes\n", sizeof(myData.floatValue));
+                                printf("Size of stringValue: %u bytes\n", sizeof(myData.stringValue));
+                            
+                                return 0;
+                            }  
+            
+               </textarea>
+                </div>
+            </div><br>
+        </li>
+        
+       
+          <h3>Output:</h3>
+    <pre>
+        Value of intValue: 42
+        Value of floatValue: 3.140000
+        Value of stringValue: Hello, Union!
+        Size of MyUnion: 20 bytes
+        Size of intValue: 4 bytes
+        Size of floatValue: 4 bytes
+        Size of stringValue: 20 bytes
+        
+    
+    </pre>
+
+        <div >
+            <h2 class="mt-4">Resources :</h2>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.youtube.com/embed/oySsPUDr35U?si=oHsK_IwnWSmoAEpB"  class="embed-responsive-item"></iframe>
+            </div>
+        </div>
+        <div class="card" style="margin-top:20px;">
+            <div class="card-header">
+              Test Your Knowledge
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Choose The </h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <div class="mcqs mt-5">
+              
+                    <form action="{% url 'checkanswerc2' slug='c2ch6t11' %}" method='post'>{% csrf_token %}
+                        <p><span>Q1. </span>What is a common use case for unions in C?</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
+                            <label class="form-check-label" for="q1_option1">
+                                A.  Storing multiple values simultaneously
+                                
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
+                            <label class="form-check-label" for="q1_option2">
+                                B.  Representing a value that could be of different types, but only one type at a time
+                                
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
+                            <label class="form-check-label" for="q1_option3">
+                                C.  Ensuring efficient memory usage
+                                
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option4">
+                            <label class="form-check-label" for="q1_option4">
+                                D.   Declaring multiple structures
+                               
+                            </label>
+                        </div>
+                    
+                        <p><span>Q2. </span>If you assign a value to the integer member of the union data, what happens to the floating member?
+                            
+                            </p>
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
+                            <label class="form-check-label" for="q2_option1">
+                                A. It retains its previous value
+                                
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
+                            <label class="form-check-label" for="q2_option2">
+                                B.  It becomes zero
+                                
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
+                            <label class="form-check-label" for="q2_option3">
+                                C.   It becomes undefined
+                               
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
+                            <label class="form-check-label" for="q2_option4">
+                                D.  It generates a compilation error
+                                
+                            </label>
+                        </div>
+                        <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
+                    </form>
+                </div>       
+            </div>
+          </div>
+       
+        
+          
+
+        <div id="navigation" class="mt-4 text-center">
+            <a href="{% url 'course2' slug='c2ch6t10'%}" class="btn btn-secondary">Prev</a>
+            <a href="{% url 'course2' slug='c2ch6t12'%}" class="btn btn-secondary">Next</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

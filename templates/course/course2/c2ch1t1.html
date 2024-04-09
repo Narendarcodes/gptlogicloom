@@ -51,7 +51,7 @@ aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" style="color:black">Home</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="color:black">Home</a>
             </li>
             {% for chapter, topics in chapters.items %}
             <li class="nav-item dropdown">
@@ -61,7 +61,7 @@ aria-labelledby="offcanvasWithBothOptionsLabel">
                 <ul class="dropdown-menu">
                     {% for topic in topics %}
                     <li>
-                         <a class="dropdown-item {% if topic.completed %}completed{% endif %}" href="{% url 'course2' slug=topic.topicid%}">{{ topic.topic_text }}</a> 
+                         <a class="dropdown-item {% if topic.completed %}completed{% endif %}" href="{% url 'course2' slug=topic.topicid%}">{{ topic.topic_text }}
                         
                             {% if topic.completed %}
                                 <img src="{% static 'course/images/tickmark.svg' %}" class="svg" alt="Completed">
@@ -144,7 +144,7 @@ aria-labelledby="offcanvasWithBothOptionsLabel">
         <div >
             <h2 class="mt-4">Resources :</h2>
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe  src="https://www.youtube.com/embed/LA2LIBZGink?si=xUBD2PzjaelEfcLO" class="embed-responsive-item"></iframe>
+                <iframe  src="https://www.youtube.com/embed/gEJBFKDkqTE?si=d81gINSSD9_ebkA-" class="embed-responsive-item"></iframe>
             </div>
         </div>
         <div class="card" style="margin-top:20px;">

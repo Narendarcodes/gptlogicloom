@@ -20,12 +20,6 @@ from django.urls import reverse_lazy
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^sgl%p*a=3c9y!-*cdrxh8&j(qtkq&lbitjgt$=*hbz#h4i(-='
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -78,7 +72,7 @@ TEMPLATES = [
 
 
 WSGI_APPLICATION = 'logicloom.wsgi.application'
-
+SECRET_KEY = 'django-insecure-^sgl%p*a=3c9y!-*cdrxh8&j(qtkq&lbitjgt$=*hbz#h4i(-='
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases

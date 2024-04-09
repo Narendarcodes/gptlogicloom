@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    nickname = models.CharField(max_length=30)
-    hackerrank_id = models.CharField(max_length=20)
+    nickname = models.CharField(max_length=30,default='yournickname')
+    hackerrank_id = models.CharField(max_length=20,default='yourhackerrankid')
     c1progress = models.FloatField(default='0')
     c2progress = models.FloatField(default='0')
     name = models.CharField(max_length=50)
