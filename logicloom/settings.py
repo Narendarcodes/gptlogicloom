@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-^sgl%p*a=3c9y!-*cdrxh8&j(qtkq&lbitjgt$=*hbz#h4i(-=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1',]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','logicloom.pythonanywhere.com',]
 
 
 # Application definition
