@@ -36,89 +36,40 @@ Structures within structures
         </button>
     </nav>
   
-    <!-- Offcanvas Body -->
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" 
-    aria-labelledby="offcanvasWithBothOptionsLabel">
-        <div class="offcanvas-header">
-            <h2 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Getting Started With C</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" style="color:black">Home</a>
-                </li>
-                
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
-                        chapter 1 Name
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">topic1name</a></li>
-                        <li><a class="dropdown-item" href="#">topic2name</a></li>
-                       
-                        <li><a class="dropdown-item" href="#">topic3name</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
-                        chapter 2 Name
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">topic1name</a></li>
-                        <li><a class="dropdown-item" href="#">topic2name</a></li>
-                        
-                        <li><a class="dropdown-item" href="#">topic3name</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
-                        chapter 3 Name
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">topic1name</a></li>
-                        <li><a class="dropdown-item" href="#">topic2name</a></li>
-                      
-                        <li><a class="dropdown-item" href="#">topic3name</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
-                        chapter 4 Name
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">topic1name</a></li>
-                        <li><a class="dropdown-item" href="#">topic2name</a></li>
-                        
-                        <li><a class="dropdown-item" href="#">topic3name</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
-                        chapter 5 Name
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">topic1name</a></li>
-                        <li><a class="dropdown-item" href="#">topic2name</a></li>
-                        
-                        <li><a class="dropdown-item" href="#">topic3name</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
-                        chapter 6 Name
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">topic1name</a></li>
-                        <li><a class="dropdown-item" href="#">topic2name</a></li>
-                        
-                        <li><a class="dropdown-item" href="#">topic3name</a></li>
-                    </ul>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
+ <!-- Offcanvas Body -->
+ <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" 
+ aria-labelledby="offcanvasWithBothOptionsLabel">
+     <div class="offcanvas-header">
+         <h2 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Getting Started With C</h2>
+         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+     </div>
+     <div class="offcanvas-body">
+         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+             <li class="nav-item">
+                 <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="color:black">Home</a>
+             </li>
+             {% for chapter, topics in chapters.items %}
+             <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                     Chapter {{ chapter }}
+                 </a>
+                 <ul class="dropdown-menu">
+                     {% for topic in topics %}
+                     <li>
+                          <a class="dropdown-item {% if topic.completed %}completed{% endif %}" href="{% url 'course2' slug=topic.topicid%}">{{ topic.topic_text }}
+                         
+                             {% if topic.completed %}
+                                 <img src="{% static 'course/images/tickmark.svg' %}" class="svg" alt="Completed">
+                             {% endif %}
+                         </a>
+                     </li>
+                     {% endfor %}
+                 </ul>
+             </li>
+             {% endfor %}
+         </ul>
+     </div>
+ </div>
     <div class="container">
         <p>Nested structures in c is a structure within structure.We can declare one structure inside the another structure in the same way  structure members also declared inside structure.</p>
         <pre>Example:-
