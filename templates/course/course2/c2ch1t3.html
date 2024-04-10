@@ -139,7 +139,7 @@ aria-labelledby="offcanvasWithBothOptionsLabel">
           <h5 class="card-title">Answer the following Two questions: </h5>
         <div class="mcqs mt-5">
           {% comment %} <form action="{% url 'checkanswerc2' slug=c2ch2t1 %}" method='post'>{% csrf_token %} {% endcomment %}
-              <form action="{% url 'checkanswer' slug='c2ch1t3' %}" method='post'>{% csrf_token %}
+              <form action="{% url 'checkanswerc2' slug='c2ch1t3' %}" method='post'>{% csrf_token %}
                   <p><span>Q1. Which language was the first to follow the Structured Programming Concept? </span></p>
                   <div class="form-check">
                       <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
