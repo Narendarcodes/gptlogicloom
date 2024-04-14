@@ -56,8 +56,6 @@ def feedbackhandle(request):
     else:
         return redirect('error404')
         
-       
-        
-
+ 
 
      
