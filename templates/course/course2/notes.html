@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C programming</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    {%load static%}
+   <link rel="stylesheet" href="{% static 'course/css/coursestyle.css'%}"/>
+   
   <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+ 
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
@@ -41,20 +54,158 @@
     .loom{
       color:white;
     }
+
+    /* Custom Styles */
+    body {
+      background-color: #f0f0f0;
+    }
+    .toc-container {
+      max-width: 800px;
+      margin: 50px auto;
+    }
+    .toc-card {
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      background: linear-gradient(45deg, #a38fea, #e499ea);
+      border: none;
+    }
+    .toc-card:hover {
+      transform: translateY(-5px);
+    }
+    .toc-title {
+     
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .toc-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .toc-list-item {
+      margin-bottom: 10px;
+    }
+    .toc-list-item a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+      display: block;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background: linear-gradient(45deg, #8cd1f4, #7110cb);
+    }
+
+    .chapter-header {
+        background: linear-gradient(45deg, #4dddbe, #2956eb); /* Gradient background */
+        color: #fff;
+        padding: 50px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        
+      }
+      .chapter-description {
+        margin-bottom: 20px;
+       
+      }
+    .toc-list-item a:hover {
+      background: linear-gradient(45deg, #1e88da, #e796c1);
+      color: #fff;
+    }
+    .toc-card-header {
+      background: linear-gradient(45deg, #2495eb, #cc53ea);
+      color: #bce8e0;
+      border-radius: 15px 15px 0 0;
+      padding: 20px;
+    }
+    .toc-card-body {
+      padding: 20px;
+    }
+    .card-body a {
+      margin-bottom: 5px;
+    }
   </style>
 </head>
+
+
 <body>
+  
+
+ 
+  {% for message in messages  %} 
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Message : </strong> {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {%endfor%}
+  <!-- Navbar -->
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <!-- Navbar brand -->
+      {% comment %} <a class="navbar-brand"href="{% url 'home' %}" style="margin-left:10px">Home</a> {% endcomment %}
+      <a class="navbar-brand" href="{% url 'home' %}" style=" font-family: Arial, Helvetica, sans-serif;margin-left:15px"><span class="app-name">
+          <strong><span class="app-initial">Logic</span>Loom</strong>
+      </span></a>
+ 
+      <!-- Text for desktop resolutions -->
+      <span class="navbar-text mx-auto d-lg-block">
+       
+     Handwritten notes
+      </span>
+      
+      <!-- Offcanvas Trigger Button for Low-resolution devices -->
+      <button class="btn btn-primary ms-auto" type="button" data-bs-toggle="offcanvas"  data-bs-target="#offcanvasWithBothOptions">
+        Open Menu
+    </button>
+</nav>
+  </nav>
+
+<!-- Offcanvas Body -->
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" 
+aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+      <h2 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Getting Started With C</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="color:black">Home</a>
+          </li>
+          {% for chapter, topics in chapters.items %}
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                  Chapter {{ chapter }}
+              </a>
+              <ul class="dropdown-menu">
+                  {% for topic in topics %}
+                  <li>
+                       <a class="dropdown-item {% if topic.completed %}completed{% endif %}" href="{% url 'course2' slug=topic.topicid%}">{{ topic.topic_text }}
+                      
+                          {% if topic.completed %}
+                              <img src="{% static 'course/images/tickmark.svg' %}" class="svg" alt="Completed">
+                          {% endif %}
+                      </a>
+                  </li>
+                  {% endfor %}
+              </ul>
+          </li>
+          {% endfor %}
+      </ul>
+  </div>
+</div>
+
   <div class="header">
-    <strong class="sub-header">
-      <span class="logic">Logic</span>
-      <span class="loom">Loom</span>
-    </strong>
+  
   </div>
   <div class="main">
     <iframe src="https://drive.google.com/file/d/1C7xHaDXchIuhU2GHfyetR58q13f4ekky/preview" width="1000" height="500"></iframe>
   </div>
 
-  <!-- Bootstrap JS (optional, only required if you're using Bootstrap JavaScript components) -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
