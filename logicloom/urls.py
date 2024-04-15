@@ -24,7 +24,7 @@ urlpatterns = [
     path('',include('home.urls')),
     path('profile/',include('profilepage.urls')),
     path('course/',include('course.urls')),
-    path('contenst/',include('contestapp.urls'))
+    path('contest/',include('contestapp.urls'))  
 ]
 
 # Serving media files only during development

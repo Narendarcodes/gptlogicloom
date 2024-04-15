@@ -11,3 +11,11 @@ def contest_page(request):
 def leaderboard_page1(request):
     # Your logic to fetch leaderboard data goes here
     return render(request, 'contests/leaderboard1.html')
+      
+         
+def context1(request):
+    # your view logic here
+    return render(request, 'contests/context1.html')       
+def context2(request):
+    # your view logic here
+    return render(request, 'contests/context2.html')
