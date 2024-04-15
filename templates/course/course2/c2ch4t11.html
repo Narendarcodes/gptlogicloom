@@ -300,7 +300,7 @@ aria-labelledby="offcanvasWithBothOptionsLabel">
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <div class="mcqs mt-5">
         
-                <form action="{% url 'checkanswer' slug='c2ch4t11' %}" method='post'>{% csrf_token %}
+                <form action="{% url 'checkanswerc2' slug='c2ch4t11' %}" method='post'>{% csrf_token %}
                     <p><span>Q1. </span>Which function is safer and recommended for reading strings in C to avoid buffer overflow?</p>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
