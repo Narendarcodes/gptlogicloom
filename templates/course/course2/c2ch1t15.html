@@ -79,13 +79,13 @@ aria-labelledby="offcanvasWithBothOptionsLabel">
 <!--Matrix operations-->
 
 <div class="container">{% load static%}
-    <img src="{% static 'course/images/c2ch1t15img1.png'%}" id="flow"> 
+    <img src="{% static 'course/images/c2ch1t15img1.png'%}" class="img-fluid"> 
 
         
     <div class="topicstart">
   <p>Differences between Linker and Loader</p><!--topic name between p tag-->
 </div>
-<img src="{% static 'course/images/c2ch1t15img2.png'%}" id="flow">
+<img src="{% static 'course/images/c2ch1t15img2.png'%}" class="img-fluid">
         <div>
         <h2 class="mt-4">Resources :</h2>
         <div class="fluid-yt">
@@ -101,7 +101,7 @@ aria-labelledby="offcanvasWithBothOptionsLabel">
           <h5 class="card-title">Answer the following Two questions: </h5>
           <div class="mcqs mt-5">
         
-                <form action="{% url 'checkanswec2' slug='c2ch1t15' %}" method='post'>{% csrf_token %}
+                <form action="{% url 'checkanswerc2' slug='c2ch1t15' %}" method='post'>{% csrf_token %}
                     <p><span>Q1. What is the primary function of a linker?</span></p>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
