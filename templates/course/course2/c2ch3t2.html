@@ -165,15 +165,15 @@ x is greater than 5
         <iframe src="https://www.youtube.com/embed/xyQrVEFz9kw?si=-1FBFRTCZJfJHC5N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 </div>
-
-    <div class="card">
-        <div class="card-header">
-          Featured
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <div class="mcqs mt-5">
+<div class="card" style="margin-top:20px;">
+    <div class="card-header">
+     Assess Your Understanding
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Answer the following Two questions: </h5>
+      <div class="mcqs mt-5">
+    
+        
         
                 <form action="{% url 'checkanswerc2' slug='c2ch3t2' %}" method='post'>{% csrf_token %}
                     <p><span>Q1. </span>If block always need to be assoicated with a else block?</p>
