@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contest Page</title>
     <!-- Bootstrap CSS -->
+    {%load static%}
+      <link rel="stylesheet" href="{% static 'course/css/coursestyle.css'%}"/>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Custom CSS styles can be added here */
         body {
             background-color: #f0f0f0; /* Light Grey */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding-top: 56px; /* Height of navbar */
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
 
         .container {
@@ -24,6 +29,7 @@
             padding: 20px;
             max-width: 600px; /* Limit container width */
             width: 100%; /* Ensure container takes full width */
+            margin-top: 80px; /* Adjust margin-top to make space for navbar */
         }
 
         .contest-card {
@@ -66,11 +72,24 @@
     </style>
 </head>
 <body>
-   
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Navbar brand -->
+         <a class="navbar-brand" href="{% url 'home' %}" style=" font-family: Arial, Helvetica, sans-serif;margin-left:15px"><span class="app-name">
+            <strong><span class="app-initial">Logic</span>Loom</strong>
+        </span></a>
+        <!-- Text for desktop resolutions -->
+        <span class="navbar-text mx-auto d-lg-block">
+            <h2>LOGIC LOOM CONTEST</h2>
+        </span>
+    </nav>
+  
     <div class="container mt-5">
+      
         <div class="row">
+           
             <div class="col-md-12 text-center logic-loom-contest">
-                <h2>LOGIC LOOM CONTEST</h2>
+                <h2>Leaderboard</h2>
                 {% include 'contests/leaderboard1.html' %}
             </div>
         </div>
