@@ -38552,7 +38552,7 @@ table {
 .table-bordered {
     border: 1px solid #dddddd;
     border-collapse: separate;
-    *border-collapse: collapse;
+    border-collapse: collapse;
     border-left: 0;
     border-radius: 4px
 }
@@ -38787,7 +38787,7 @@ table [class*=span],.row-fluid table [class*=span] {
 }
 
 .nav-tabs,.nav-pills {
-    *zoom:1}
+    zoom:1}
 
 .nav-tabs:before,.nav-pills:before,.nav-tabs:after,.nav-pills:after {
     display: table;
@@ -38935,7 +38935,7 @@ table [class*=span],.row-fluid table [class*=span] {
 }
 
 .tabbable {
-    *zoom:1}
+    zoom:1}
 
 .tabbable:before,.tabbable:after {
     display: table;
@@ -39012,7 +39012,7 @@ table [class*=span],.row-fluid table [class*=span] {
 
 .tabs-left>.nav-tabs .active>a,.tabs-left>.nav-tabs .active>a:hover {
     border-color: #ddd transparent #ddd #ddd;
-    *border-right-color: #ffffff
+    border-right-color: #ffffff
 }
 
 .tabs-right>.nav-tabs {
@@ -39032,7 +39032,7 @@ table [class*=span],.row-fluid table [class*=span] {
 
 .tabs-right>.nav-tabs .active>a,.tabs-right>.nav-tabs .active>a:hover {
     border-color: #ddd #ddd #ddd transparent;
-    *border-left-color: #ffffff
+    border-left-color: #ffffff
 }
 
 .CodeMirror {
@@ -39279,7 +39279,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
     padding-bottom: 30px;
     margin-bottom: -32px;
     display: inline-block;
-    *zoom:1;*display: inline
+    zoom:1;display: inline
 }
 
 .CodeMirror-gutter-elt {
@@ -39374,7 +39374,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 }
 
 .CodeMirror span {
-    *vertical-align: text-bottom
+    vertical-align: text-bottom
 }
 
 @media print {
@@ -39556,7 +39556,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
     margin: 0;
     position: relative;
     display: inline-block;
-    zoom:1;*display: inline;
+    zoom:1;display: inline;
     vertical-align: middle
 }
 
@@ -41575,14 +41575,14 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
     border-color: #e6e6e6 #e6e6e6 #bfbfbf;
     border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
-    *background-color: #e6e6e6;
+    background-color: #e6e6e6;
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false)
 }
 
 .has-switch label:hover,.has-switch label:focus,.has-switch label:active,.has-switch label.active,.has-switch label.disabled,.has-switch label[disabled] {
     color: #ffffff;
     background-color: #e6e6e6;
-    *background-color: #d9d9d9
+    background-color: #d9d9d9
 }
 
 .has-switch label:active,.has-switch label.active {
@@ -41616,14 +41616,14 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe6e6e6', endColorstr='#ffffffff', GradientType=0);
     border-color: #ffffff #ffffff #d9d9d9;
     border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
-    *background-color: #ffffff;
+    background-color: #ffffff;
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false)
 }
 
 .has-switch span.switch-right:hover,.has-switch span.switch-right:focus,.has-switch span.switch-right:active,.has-switch span.switch-right.active,.has-switch span.switch-right.disabled,.has-switch span.switch-right[disabled] {
     color: #333333;
     background-color: #ffffff;
-    *background-color: #f2f2f2
+    background-color: #f2f2f2
 }
 
 .has-switch span.switch-right:active,.has-switch span.switch-right.active {
