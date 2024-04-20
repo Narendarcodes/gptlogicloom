@@ -15,6 +15,7 @@ def loginhandle(request):
         # Get the post parameters
         loginusername=request.POST['username']
         loginpassword=request.POST['password']
+        loginusername = loginusername.upper().strip()
 
         user=authenticate(username= loginusername, password= loginpassword)
         if user is not None:
@@ -56,8 +57,6 @@ def feedbackhandle(request):
     else:
         return redirect('error404')
         
-       
-        
-
+ 
 
      

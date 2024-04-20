@@ -62,7 +62,7 @@ aria-labelledby="offcanvasWithBothOptionsLabel">
                          <a class="dropdown-item {% if topic.completed %}completed{% endif %}" href="{% url 'course2' slug=topic.topicid%}">{{ topic.topic_text }}
                         
                             {% if topic.completed %}
-                                <img src="{% static 'course/images/tickmark.svg' %}" class="svg" alt="Completed">
+                                <img-fluid src="{% static 'course/images/tickmark.svg' %}" class="svg" alt="Completed">
                             {% endif %}
                         </a>
                     </li>
@@ -78,7 +78,7 @@ aria-labelledby="offcanvasWithBothOptionsLabel">
 
 
     <div class="eg">{% load static%}
-        <img src="{% static 'course/course2/images/c2ch1t4img1.jpg'%}" id="img3">
+        <img-fluid src="{% static 'course/images/c2ch1t4img1.png'%}" class="img-fluid">
     </div>
 
 <!--add text between li tags-->

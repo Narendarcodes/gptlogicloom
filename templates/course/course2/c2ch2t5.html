@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C programming</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+{%load static%}
+   <link rel="stylesheet" href="{% static 'course/css/coursestyle.css'%}"/>
+           </head>
+    
+    <body>
+       {% for message in messages  %} 
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      <strong>Message : </strong> {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {%endfor%}
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="{% url 'home' %}" style=" font-family: Arial, Helvetica, sans-serif;margin-left:15px"><span class="app-name">
+            <strong><span class="app-initial">Logic</span>Loom</strong>
+        </span></a>
+        <!-- Text for desktop resolutions -->
+        <span class="navbar-text mx-auto d-lg-block">
+            Variables
+        </span>
+        
+        <!-- Offcanvas Trigger Button for Low-resolution devices -->
+        <button class="btn btn-primary ms-auto" type="button" data-bs-toggle="offcanvas"  data-bs-target="#offcanvasWithBothOptions">
+            Open Menu
+        </button>
+    </nav>
+      
+   <!-- Offcanvas Body -->
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" 
+aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+        <h2 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Getting Started With C</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="color:black">Home</a>
+            </li>
+            {% for chapter, topics in chapters.items %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
+                    Chapter {{ chapter }}
+                </a>
+                <ul class="dropdown-menu">
+                    {% for topic in topics %}
+                    <li>
+                         <a class="dropdown-item {% if topic.completed %}completed{% endif %}" href="{% url 'course2' slug=topic.topicid%}">{{ topic.topic_text }}
+                        
+                            {% if topic.completed %}
+                                <img src="{% static 'course/images/tickmark.svg' %}" class="svg" alt="Completed">
+                            {% endif %}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>    <div class="container">
+        <h2 class="mt-4">What Is a Variable in C?</h2>
+        <p>Variables store different kind of data in the computer's memory, and take up a certain amount of space.</p>
+        <ul class="list-unstyled">
+            <li>By storing information in a variable, you can retrieve and manipule it, perform various calculations, or even use it to make decisions in your program.</li>
+            <li>The stored data is given a name, and that is how you are able to access it when you need it.</li>
+        </ul>
+
+        <h2 class="mt-4">How to Declare Variables in C</h2>
+        <ul class="list-unstyled">
+            <li>Before you can use a variable, you need to declare it – this step lets the compiler know that it should allocate some memory fo
+                r it.</li>
+             <li>   C is a strongly typed language, so to declare a variable in C, you first need to specify the type of data the variable will
+                 hold, such as an integer to store a whole number, a floating-point number for numbers with decimal places, or a char for a
+                  single character.</li>
+               <li> That way, during compilation time, the compiler knows if the variable is able to perform the actions it was set out to do.</li>
+                <li> Once you have specified the data type, you give the variable a name.</li>
+               <li> The general syntax for declaring variables looks something like this:data_type variable_name;
+                </li>
+        </ul>
+
+        <p>Let's take the following example:</p>
+        
+            <div class="card1">
+                <div class="header">
+                    <div class="top">
+                        <div class="circle">
+                            <span class="red circle2"></span>
+                        </div>
+                        <div class="circle">
+                            <span class="yellow circle2"></span>
+                        </div>
+                        <div class="circle">
+                            <span class="green circle2"></span>
+                        </div>
+                        <div class="title">
+                            <p id="title2">Program.c</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-container">
+                    <textarea readonly="" name="code" id="code" class="form-control form-control-sm" style="height: 250px; width: 80%;">
+                        #include <stdio.h>
+
+                            int main(void) {
+                            
+                                int age;
+                            }
+                            
+               </textarea>
+                </div>
+            </div><br>
+        
+
+    
+
+        
+            <li>In the example above, I declared a variable named age that will hold integer values.</li>
+        <h2 class="mt-4">What Are the Naming Conventions for Variables in C?</h2>
+        <ul class="list-unstyled">
+            <li>When it comes to variable names, they must begin either with a letter or an underscore.</li>
+            <li>For example, age and _age are valid variable names.
+                Also, they can contain any uppercase or lowercase letters, numbers, or an underscore character. There can be no other special symbols besides an underscore.
+                </li>
+            <li>Lastly, variable names are case-sensitive. For example, age is different from Age.</li>
+            
+        </ul>
+
+        <h2 class="mt-4">How to Initialize Variables in C</h2>
+        <ul class="list-unstyled">
+            <li>Once you've declared a variable, it is a good practice to intialize it,
+                 which involves assigning an initial value to the variable.</li>
+            <li>The general syntax for initialzing a variable looks like this:data_type 
+                variable_name = value;</li>
+            <li>The assignment operator, =, is used to assign the value to the variable_name.
+                Let's take the previous example and assign age a value:
+                </li>
+        </ul>
+        
+            <div class="card1">
+                <div class="header">
+                    <div class="top">
+                        <div class="circle">
+                            <span class="red circle2"></span>
+                        </div>
+                        <div class="circle">
+                            <span class="yellow circle2"></span>
+                        </div>
+                        <div class="circle">
+                            <span class="green circle2"></span>
+                        </div>
+                        <div class="title">
+                            <p id="title2">Program.c</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-container">
+                    <textarea readonly="" name="code" id="code" class="form-control form-control-sm" style="height: 250px; width: 80%;">
+                        #include <stdio.h>
+
+                            int main(void) {
+                                    
+                            int age;
+                                    
+                            age = 29;
+                            }
+                           
+                            
+               </textarea>
+                </div>
+            </div><br>
+        
+        <p>I initialized the variable age by assigning it an integer value of 29.
+            With that said, you can combine the initialization and declaration steps
+             instead of performing them separately:
+            </p>
+            
+                <div class="card1">
+                    <div class="header">
+                        <div class="top">
+                            <div class="circle">
+                                <span class="red circle2"></span>
+                            </div>
+                            <div class="circle">
+                                <span class="yellow circle2"></span>
+                            </div>
+                            <div class="circle">
+                                <span class="green circle2"></span>
+                            </div>
+                            <div class="title">
+                                <p id="title2">Program.c</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-container">
+                        <textarea readonly="" name="code" id="code" class="form-control form-control-sm" style="height: 250px; width: 80%;">
+                            #include <stdio.h>
+
+                                int main(void) {
+                                    
+                                // declaration + initialization
+                               int age = 29;
+                                    }   
+                   </textarea>
+                    </div>
+                </div><br>
+            
+            <h2 class="mt-4">How to Update Variable Values in C</h2>
+        <ul class="list-unstyled">
+            <li>The values of variables can change.</li>
+            <li>For example, you can change the value of age without having to specify its type again.</li>
+            <li>Here is how you would change its value from 29 to 30:</li>
+            </ul>
+            
+                <div class="card1">
+                    <div class="header">
+                        <div class="top">
+                            <div class="circle">
+                                <span class="red circle2"></span>
+                            </div>
+                            <div class="circle">
+                                <span class="yellow circle2"></span>
+                            </div>
+                            <div class="circle">
+                                <span class="green circle2"></span>
+                            </div>
+                            <div class="title">
+                                <p id="title2">Program.c</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-container">
+                        <textarea readonly="" name="code" id="code" class="form-control form-control-sm" style="height: 250px; width: 80%;">
+                            #include <stdio.h>  
+
+                                int main(void) {
+                                                
+                                // the variable age with its original value
+                                int age = 29;
+                                                
+                                // changing the value of age
+                                // the new value will be 30
+                                age = 30;
+                                }  </textarea>
+                    </div>
+                </div><br>
+            
+            <ul>
+                <li>Note that the data type of the new value being assigned must match the declared data type of the variable.</li>
+                <li>If it doesn't, the program will not run as expected. The compiler will raise an error during compilation time.</li>
+            </ul>
+            
+                <div class="card1">
+                    <div class="header">
+                        <div class="top">
+                            <div class="circle">
+                                <span class="red circle2"></span>
+                            </div>
+                            <div class="circle">
+                                <span class="yellow circle2"></span>
+                            </div>
+                            <div class="circle">
+                                <span class="green circle2"></span>
+                            </div>
+                            <div class="title">
+                                <p id="title2">Program.c</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-container">
+                        <textarea readonly="" name="code" id="code" class="form-control form-control-sm" style="height: 250px; width: 80%;">
+                            #include <stdio.h>
+
+                                int main(void) {
+                                            
+                                int age = 29;
+                                /*
+                                trying to assign a floating-point value
+                                to a variable with type int
+                                will cause an error in your program
+                                */
+                                age = 29.5;
+                            }                              
+                                  </textarea>
+                    </div>
+                </div><br>
+            
+            <div >
+            <h2 class="mt-4">Resources :</h2>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe  src="https://www.youtube.com/embed/fO4FwJOShdc?si=ucGmWghOPEz-GrfZ" class="embed-responsive-item"></iframe>
+            </div>
+        </div>
+        <div class="card" style="margin-top:20px;">
+            <div class="card-header">
+              Test Your Knowledge
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Choose The </h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <div class="mcqs mt-5">
+              
+                    <form action="{% url 'checkanswerc2' slug='c2ch2t5' %}" method='post'>{% csrf_token %}
+                        <p><span>Q1. </span>A variable name can have ?</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="A" id="q1_option1" required>
+                            <label class="form-check-label" for="q1_option1">
+                                A. Any special symbol  
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="B" id="q1_option2">
+                            <label class="form-check-label" for="q1_option2">
+                                B. Blank space
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="C" id="q1_option3">
+                            <label class="form-check-label" for="q1_option3">
+                                C. Comma ( , )   
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" value="D" id="q1_option4">
+                            <label class="form-check-label" for="q1_option4">
+                                D. Underscore 
+                            </label>
+                        </div>
+                    
+                        <p><span>Q2. </span>Which pair of symbols is used to define the scope of functions, loops, and other code blocks in C?</p>
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="A" id="q2_option1" required>
+                            <label class="form-check-label" for="q2_option1">
+                                A. ( ) 
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="B" id="q2_option2">
+                            <label class="form-check-label" for="q2_option2">
+                                B. { } 
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="C" id="q2_option3">
+                            <label class="form-check-label" for="q2_option3">
+                                C. [ ] 
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" value="D" id="q2_option4">
+                            <label class="form-check-label" for="q2_option4">
+                                D. &lt; &gt;
+                            </label>
+                        </div>
+                        <input type="submit" class="btn btn-primary" style="margin-top: 15px;">
+                    </form>
+                </div>       
+            </div>
+          </div>
+       
+        
+          
+
+        <div id="navigation" class="mt-4 text-center">
+            <a href="{% url 'course2' slug='c2ch2t4'%}" class="btn btn-secondary">Prev</a>
+            <a href="{% url 'course2' slug='c2ch2t6'%}" class="btn btn-secondary">Next</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
