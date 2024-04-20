@@ -35,6 +35,7 @@ def profileedithandle(request):
         profile_image = request.FILES.get('changedProfileimg')
         changed_nickname = request.POST.get('changedNickName')
         email_regex = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+        name_regex = r'^[a-zA-Z\s.]*$'
         # Get the current user's profile
         user_profile = Profile.objects.get(user=request.user)
         if profile_image:
@@ -67,7 +68,7 @@ def profileedithandle(request):
 
 
 
-        if not changed_name.isalpha():
+        if not re.match(name_regex, changed_name):
             messages.error(request, "The Name should not contain any numbers or special characters")
             return redirect("editprofile")
         
