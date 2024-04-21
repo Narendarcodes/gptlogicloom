@@ -4,13 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta name="google-site-verification" content="qB42UHl1djnt9AXjCFYPYfLT_tg-T4Lj63WzTUf6S9g" />
+
     <title>LogicLoom</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-
 
     <style>
         /* Footer design */
@@ -205,6 +206,7 @@
 
                     <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Login</button>
 
+
                     <!--<hr class="my-4">-->
                     <!--<h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>-->
                     <!--<button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">-->
@@ -213,6 +215,16 @@
                     <!--    </svg>-->
                     <!--    Login with Google-->
                     <!--</button>-->
+
+
+                    {% comment %} <hr class="my-4">
+                    <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
+                    <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
+                        <svg class="bi me-1" width="16" height="16">
+                            <use xlink:href="#twitter"></use>
+                        </svg>
+                        Login with Google
+                    </button> {% endcomment %}
 
                 </form>
             </div>
@@ -240,7 +252,11 @@
                     <img src="{% static 'home/images/pic3.jpg' %}" class="d-block w-100" alt="...">
                 </div>
             </div>
+
         </div>
+
+        </div>
+
         <div class="p-4"></div>
         <div class="container px-1 py-1" id="hanging-icons">
           <h2 class="pb-2 border-bottom">Courses Offered</h2>
