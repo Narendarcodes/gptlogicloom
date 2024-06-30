@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
     <!-- Bootstrap CSS -->
-    {%load static%}
+    <!-- {%load static%} -->
     <link rel="stylesheet" href="{% static 'course/css/leaderboard.css'%}"/>
     <link rel="stylesheet" href="{% static 'course/css/coursestyle.css'%}"/>
-   
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
@@ -19,7 +19,7 @@
         }
         .container {
             margin-top: 50px;
-            
+
         }
         .leaderboard {
             background-color: #fff;
@@ -71,11 +71,11 @@
 </head>
 <body>
     <div class="container">
-       
         <div class="table-wrap">
             <header>
-            
-                
+
+
+
                 <div class="span-flex-2 text-center">
                     <h3>Rank <span class="board-filter hide"><a href="" class="top caret-up caret"></a><a href="" class="bottom caret"></a></span> </h3>
                 </div>
@@ -88,2126 +88,476 @@
                 <div class="small span-flex-3">
                     <h3>Score <span class="board-filter hide"><a href="" class="top caret-up caret"></a><a href="" class="bottom caret"></a></span> </h3>
                 </div>
-                
+
                     <div class="span-flex-2">
                     <h3 rel="tooltip" data-original-title="See the contest rules to understand how it is calculated">Time <span class="board-filter hide"><a href="" class="top caret-up caret"></a><a href="" class="bottom caret"></a></span> </h3>
                 </div>
-                
 
-                
+
+
                     <div class="span-flex-3 text-center">
                         <h3>Country <span class="board-filter hide"><a href="" class="top caret-up caret"></a><a href="" class="bottom caret"></a></span></h3>
                     </div>
-                
-                
-            
+
+
+
             </header>
 
-            <div id="blank-reason-container" style="display: none;">
-                <div class="table-body text-center boundB" style="display: none;">
-                    <p class="emptyState_container blank-reason mlA"></p>
-                </div>
-            </div>
-            <div id="leaders" class="table-body">
-                <div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>1</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs069anjaliyadav last submitted about 10 hours ago" data-value="cs069anjaliyadav" href="/cs069anjaliyadav" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs069anjaliyadav" data-attr2="" data-attr3="" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="1" data-attr10="75">
-                        cs069anjaliyadav
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs069anjaliyadav">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    75.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        55:34
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/_unknown.png" title="" alt="" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>2</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs008nomansiddi1 last submitted about 10 hours ago" data-value="cs008nomansiddi1" href="/cs008nomansiddi1" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs008nomansiddi1" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="2" data-attr10="71.67">
-                        cs008nomansiddi1
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs008nomansiddi1">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    71.67
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        31:56
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div>
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>4</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs017sathvik last submitted about 10 hours ago" data-value="cs017sathvik" href="/cs017sathvik" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs017sathvik" data-attr2="" data-attr3="" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="4" data-attr10="61.67">
-                        cs017sathvik
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs017sathvik">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    61.67
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        54:30
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/_unknown.png" title="" alt="" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>4</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs024karthik last submitted about 10 hours ago" data-value="cs024karthik" href="/cs024karthik" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs024karthik" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="4" data-attr10="61.67">
-                        cs024karthik
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs024karthik">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    61.67
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        59:27
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>6</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="pruthvirajgm865 last submitted about 10 hours ago" data-value="pruthvirajgm865" href="/pruthvirajgm865" target="_blank" data-analytics="LeaderboardUserName" data-attr1="pruthvirajgm865" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="6" data-attr10="55">
-                        pruthvirajgm865
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/pruthvirajgm865">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    55.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        40:45
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>7</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="andekarbargavi21 last submitted about 10 hours ago" data-value="andekarbargavi21" href="/andekarbargavi21" target="_blank" data-analytics="LeaderboardUserName" data-attr1="andekarbargavi21" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="7" data-attr10="50">
-                        andekarbargavi21
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/andekarbargavi21">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    50.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        51:22
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>8</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs123vinay last submitted about 10 hours ago" data-value="cs123vinay" href="/cs123vinay" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs123vinay" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="8" data-attr10="46.67">
-                        cs123vinay
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs123vinay">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    46.67
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        52:34
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
+          <div id="leaders" class="table-body">
             <div class="leaderboard-list-view">
-    
-                <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-            
-                
-                    
-                    <div class="span-flex-2 text-center">
-                        <p>9</p>
-                    </div>
-                    <div class="span-flex-4">
-                        <p>
-                            <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="Cs044abhilash last submitted about 11 hours ago" data-value="Cs044abhilash" href="/Cs044abhilash" target="_blank" data-analytics="LeaderboardUserName" data-attr1="Cs044abhilash" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="3" data-attr10="70">
-                                Cs044abhilash
-                            </a>
-                            
-                            
-                        </p>
-                    </div>
-                    <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                        <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/Cs044abhilash">Compare</a></p>
-                    </div>
-                    <div class="span-flex-3">
-                        <p>
-                            40.00
-                        </p>
-                    </div>
-                    
-                        
-                        <div class="span-flex-2">
-                            <p>
-                                20:17
-                            </p>
-                        </div>
-                    
-                    
-                        <div class="span-flex-3 text-center">
-                            <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                        </div>
-                    
-                    
-                
-            </div>
-            </div><div class="leaderboard-list-view">
-            
-            
-            <div class="span-flex-2 text-center">
-                <p>9</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="23001cs093abhir1 last submitted about 10 hours ago" data-value="23001cs093abhir1" href="/23001cs093abhir1" target="_blank" data-analytics="LeaderboardUserName" data-attr1="23001cs093abhir1" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="9" data-attr10="40">
-                        23001cs093abhir1
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/23001cs093abhir1">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    40.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        08:11
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>9</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="gavuthreasmitha last submitted about 10 hours ago" data-value="gavuthreasmitha" href="/gavuthreasmitha" target="_blank" data-analytics="LeaderboardUserName" data-attr1="gavuthreasmitha" data-attr2="" data-attr3="" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="9" data-attr10="40">
-                        gavuthreasmitha
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/gavuthreasmitha">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    40.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        13:43
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/_unknown.png" title="" alt="" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>9</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="Cs012mehnaaz last submitted about 11 hours ago" data-value="Cs012mehnaaz" href="/Cs012mehnaaz" target="_blank" data-analytics="LeaderboardUserName" data-attr1="Cs012mehnaaz" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="9" data-attr10="40">
-                        Cs012mehnaaz
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/Cs012mehnaaz">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    40.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        15:34
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>9</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs063navyasree last submitted about 11 hours ago" data-value="cs063navyasree" href="/cs063navyasree" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs063navyasree" data-attr2="" data-attr3="" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="9" data-attr10="40">
-                        cs063navyasree
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs063navyasree">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    40.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        15:43
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/_unknown.png" title="" alt="" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>9</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs029kampitha last submitted about 11 hours ago" data-value="cs029kampitha" href="/cs029kampitha" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs029kampitha" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="9" data-attr10="40">
-                        cs029kampitha
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs029kampitha">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    40.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        18:53
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>9</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs117sravani last submitted about 10 hours ago" data-value="cs117sravani" href="/cs117sravani" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs117sravani" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="9" data-attr10="40">
-                        cs117sravani
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs117sravani">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    40.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        44:03
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>15</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="boddulanishaant1 last submitted about 11 hours ago" data-value="boddulanishaant1" href="/boddulanishaant1" target="_blank" data-analytics="LeaderboardUserName" data-attr1="boddulanishaant1" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="15" data-attr10="35">
-                        boddulanishaant1
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/boddulanishaant1">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    35.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        09:42
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>15</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs004mahalaxmi last submitted about 10 hours ago" data-value="cs004mahalaxmi" href="/cs004mahalaxmi" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs004mahalaxmi" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="15" data-attr10="35">
-                        cs004mahalaxmi
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs004mahalaxmi">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    35.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        25:48
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>15</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs032laxmiprasa1 last submitted about 10 hours ago" data-value="cs032laxmiprasa1" href="/cs032laxmiprasa1" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs032laxmiprasa1" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="15" data-attr10="35">
-                        cs032laxmiprasa1
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs032laxmiprasa1">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    35.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        29:51
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>15</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="Cs040akhiranand1 last submitted about 10 hours ago" data-value="Cs040akhiranand1" href="/Cs040akhiranand1" target="_blank" data-analytics="LeaderboardUserName" data-attr1="Cs040akhiranand1" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="15" data-attr10="35">
-                        Cs040akhiranand1
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/Cs040akhiranand1">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    35.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        32:19
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>15</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="sellisaikiran last submitted about 10 hours ago" data-value="sellisaikiran" href="/sellisaikiran" target="_blank" data-analytics="LeaderboardUserName" data-attr1="sellisaikiran" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="15" data-attr10="35">
-                        sellisaikiran
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/sellisaikiran">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    35.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        56:45
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>20</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="sureshpatelanga last submitted about 10 hours ago" data-value="sureshpatelanga" href="/sureshpatelanga" target="_blank" data-analytics="LeaderboardUserName" data-attr1="sureshpatelanga" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="20" data-attr10="30">
-                        sureshpatelanga
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/sureshpatelanga">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    30.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        20:13
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>21</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs077satvika last submitted about 10 hours ago" data-value="cs077satvika" href="/cs077satvika" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs077satvika" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="21" data-attr10="26.67">
-                        cs077satvika
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs077satvika">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    26.67
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        41:42
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>22</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="rakshithagouda19 last submitted about 10 hours ago" data-value="rakshithagouda19" href="/rakshithagouda19" target="_blank" data-analytics="LeaderboardUserName" data-attr1="rakshithagouda19" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="22" data-attr10="20">
-                        rakshithagouda19
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/rakshithagouda19">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    20.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        06:33
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>22</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="sakethkumar39 last submitted about 10 hours ago" data-value="sakethkumar39" href="/sakethkumar39" target="_blank" data-analytics="LeaderboardUserName" data-attr1="sakethkumar39" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="22" data-attr10="20">
-                        sakethkumar39
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/sakethkumar39">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    20.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        07:03
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>22</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="veenasamyakala last submitted about 10 hours ago" data-value="veenasamyakala" href="/veenasamyakala" target="_blank" data-analytics="LeaderboardUserName" data-attr1="veenasamyakala" data-attr2="" data-attr3="" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="22" data-attr10="20">
-                        veenasamyakala
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/veenasamyakala">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    20.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        09:55
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/_unknown.png" title="" alt="" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>22</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs114kadembhavy1 last submitted about 11 hours ago" data-value="cs114kadembhavy1" href="/cs114kadembhavy1" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs114kadembhavy1" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="22" data-attr10="20">
-                        cs114kadembhavy1
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs114kadembhavy1">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    20.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        11:46
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>22</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs065hasini last submitted about 10 hours ago" data-value="cs065hasini" href="/cs065hasini" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs065hasini" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="22" data-attr10="20">
-                        cs065hasini
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs065hasini">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    20.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        11:59
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>22</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="aligetiakhil001 last submitted about 11 hours ago" data-value="aligetiakhil001" href="/aligetiakhil001" target="_blank" data-analytics="LeaderboardUserName" data-attr1="aligetiakhil001" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="22" data-attr10="20">
-                        aligetiakhil001
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/aligetiakhil001">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    20.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        12:42
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>22</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="Sharanyagunnala last submitted about 11 hours ago" data-value="Sharanyagunnala" href="/Sharanyagunnala" target="_blank" data-analytics="LeaderboardUserName" data-attr1="Sharanyagunnala" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="22" data-attr10="20">
-                        Sharanyagunnala
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/Sharanyagunnala">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    20.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        15:19
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>22</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="srirashpippiri51 last submitted about 11 hours ago" data-value="srirashpippiri51" href="/srirashpippiri51" target="_blank" data-analytics="LeaderboardUserName" data-attr1="srirashpippiri51" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="22" data-attr10="20">
-                        srirashpippiri51
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/srirashpippiri51">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    20.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        15:27
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>22</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs053janaki last submitted about 9 hours ago" data-value="cs053janaki" href="/cs053janaki" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs053janaki" data-attr2="" data-attr3="" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="22" data-attr10="20">
-                        cs053janaki
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs053janaki">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    20.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        16:24
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/_unknown.png" title="" alt="" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>22</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs110rohinireddy last submitted about 10 hours ago" data-value="cs110rohinireddy" href="/cs110rohinireddy" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs110rohinireddy" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="22" data-attr10="20">
-                        cs110rohinireddy
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs110rohinireddy">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    20.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        22:21
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>22</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs058savitha last submitted about 11 hours ago" data-value="cs058savitha" href="/cs058savitha" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs058savitha" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="22" data-attr10="20">
-                        cs058savitha
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs058savitha">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    20.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        22:44
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>22</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="Cs118ayesha last submitted about 10 hours ago" data-value="Cs118ayesha" href="/Cs118ayesha" target="_blank" data-analytics="LeaderboardUserName" data-attr1="Cs118ayesha" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="22" data-attr10="20">
-                        Cs118ayesha
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/Cs118ayesha">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    20.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        25:59
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>22</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="Cs097saipraveen last submitted about 10 hours ago" data-value="Cs097saipraveen" href="/Cs097saipraveen" target="_blank" data-analytics="LeaderboardUserName" data-attr1="Cs097saipraveen" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="22" data-attr10="20">
-                        Cs097saipraveen
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/Cs097saipraveen">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    20.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        28:51
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>35</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs028jahnavig31 last submitted about 10 hours ago" data-value="cs028jahnavig31" href="/cs028jahnavig31" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs028jahnavig31" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="35" data-attr10="15">
-                        cs028jahnavig31
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs028jahnavig31">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    15.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        34:23
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>35</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs049dhanush last submitted about 10 hours ago" data-value="cs049dhanush" href="/cs049dhanush" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs049dhanush" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="35" data-attr10="15">
-                        cs049dhanush
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs049dhanush">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    15.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        50:24
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>37</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs108harikashiv1 last submitted about 10 hours ago" data-value="cs108harikashiv1" href="/cs108harikashiv1" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs108harikashiv1" data-attr2="" data-attr3="" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="37" data-attr10="10">
-                        cs108harikashiv1
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs108harikashiv1">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    10.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        08:43
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/_unknown.png" title="" alt="" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>37</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs128deepika last submitted about 10 hours ago" data-value="cs128deepika" href="/cs128deepika" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs128deepika" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="37" data-attr10="10">
-                        cs128deepika
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs128deepika">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    10.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        13:50
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>37</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="23oo1cs119saini1 last submitted about 11 hours ago" data-value="23oo1cs119saini1" href="/23oo1cs119saini1" target="_blank" data-analytics="LeaderboardUserName" data-attr1="23oo1cs119saini1" data-attr2="" data-attr3="" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="37" data-attr10="10">
-                        23oo1cs119saini1
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/23oo1cs119saini1">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    10.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        15:29
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/_unknown.png" title="" alt="" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>37</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="vishwas_dodla991 last submitted about 10 hours ago" data-value="vishwas_dodla991" href="/vishwas_dodla991" target="_blank" data-analytics="LeaderboardUserName" data-attr1="vishwas_dodla991" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="37" data-attr10="10">
-                        vishwas_dodla991
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/vishwas_dodla991">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    10.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        21:21
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>37</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs005dinesh last submitted about 10 hours ago" data-value="cs005dinesh" href="/cs005dinesh" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs005dinesh" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="37" data-attr10="10">
-                        cs005dinesh
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs005dinesh">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    10.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        26:33
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>42</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="shivabhavanikon1 last submitted about 11 hours ago" data-value="shivabhavanikon1" href="/shivabhavanikon1" target="_blank" data-analytics="LeaderboardUserName" data-attr1="shivabhavanikon1" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="42" data-attr10="0">
-                        shivabhavanikon1
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/shivabhavanikon1">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    0.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        00:00
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>42</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs010pandiillas1 last submitted about 11 hours ago" data-value="cs010pandiillas1" href="/cs010pandiillas1" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs010pandiillas1" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="42" data-attr10="0">
-                        cs010pandiillas1
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs010pandiillas1">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    0.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        00:00
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>42</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs020archanared1 last submitted about 11 hours ago" data-value="cs020archanared1" href="/cs020archanared1" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs020archanared1" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="42" data-attr10="0">
-                        cs020archanared1
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs020archanared1">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    0.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        00:00
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>42</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs033shaikballu last submitted about 10 hours ago" data-value="cs033shaikballu" href="/cs033shaikballu" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs033shaikballu" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="42" data-attr10="0">
-                        cs033shaikballu
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs033shaikballu">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    0.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        00:00
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>42</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs090vishnu last submitted about 11 hours ago" data-value="cs090vishnu" href="/cs090vishnu" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs090vishnu" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="42" data-attr10="0">
-                        cs090vishnu
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs090vishnu">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    0.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        00:00
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>42</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="navadeepaadhi99 last submitted about 11 hours ago" data-value="navadeepaadhi99" href="/navadeepaadhi99" target="_blank" data-analytics="LeaderboardUserName" data-attr1="navadeepaadhi99" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="42" data-attr10="0">
-                        navadeepaadhi99
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/navadeepaadhi99">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    0.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        00:00
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>42</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs009cheelasruj1 last submitted about 8 hours ago" data-value="cs009cheelasruj1" href="/cs009cheelasruj1" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs009cheelasruj1" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="42" data-attr10="0">
-                        cs009cheelasruj1
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs009cheelasruj1">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    0.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        00:00
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>42</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs107bhanu last submitted about 11 hours ago" data-value="cs107bhanu" href="/cs107bhanu" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs107bhanu" data-attr2="" data-attr3="India" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="42" data-attr10="0">
-                        cs107bhanu
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/cs107bhanu">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    0.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        00:00
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div><div class="leaderboard-list-view">
-    
-        <div class="row padding-small top bottom leaderboard-row  " style="">
-    
-        
-            
-            <div class="span-flex-2 text-center">
-                <p>42</p>
-            </div>
-            <div class="span-flex-4">
-                <p>
-                    <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="sandhyalavoori91 last submitted about 10 hours ago" data-value="sandhyalavoori91" href="/sandhyalavoori91" target="_blank" data-analytics="LeaderboardUserName" data-attr1="sandhyalavoori91" data-attr2="" data-attr3="" data-attr4="logicloom-contest3" data-attr5="" data-attr6="" data-attr7="5" data-attr8="42" data-attr10="0">
-                        sandhyalavoori91
-                    </a>
-                    
-                    
-                </p>
-            </div>
-            <div class="span-flex-2 compare-link" style="visibility: hidden;">
-                <p><a target="_blank" href="contests/logicloom-contest3/compare/logicloom127/sandhyalavoori91">Compare</a></p>
-            </div>
-            <div class="span-flex-3">
-                <p>
-                    0.00
-                </p>
-            </div>
-            
-                
-                <div class="span-flex-2">
-                    <p>
-                        00:00
-                    </p>
-                </div>
-            
-            
-                <div class="span-flex-3 text-center">
-                    <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/_unknown.png" title="" alt="" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
-                </div>
-            
-            
-        
-    </div>
-    </div>
+
+    <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
+
+
+
+        <div class="span-flex-2 text-center">
+            <p>1</p>
+        </div>
+        <div class="span-flex-4">
+            <p>
+                <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs108harikashiv1 last submitted 25 minutes ago" data-value="cs108harikashiv1" href="/cs108harikashiv1" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs108harikashiv1" data-attr2="" data-attr3="" data-attr4="logicloom-grand-contest" data-attr5="" data-attr6="" data-attr7="5" data-attr8="1" data-attr10="92">
+                    cs108harikashiv1
+                </a>
+
+
+            </p>
+        </div>
+        <div class="span-flex-2 compare-link" style="visibility: hidden;">
+            <p><a target="_blank" href="contests/logicloom-grand-contest/compare/logicloom127/cs108harikashiv1">Compare</a></p>
+        </div>
+        <div class="span-flex-3">
+            <p>
+                92.00
+            </p>
+        </div>
+
+
+            <div class="span-flex-2">
+                <p>
+                    1:22:24
+                </p>
+            </div>
+
+
+            <div class="span-flex-3 text-center">
+                <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/_unknown.png" title="" alt="" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
+            </div>
+
+
+
 </div>
+</div><div class="leaderboard-list-view">
+
+    <div class="row padding-small top bottom leaderboard-row  " style="">
+
+
+
+        <div class="span-flex-2 text-center">
+            <p>2</p>
+        </div>
+        <div class="span-flex-4">
+            <p>
+                <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="dongirirahul8451 last submitted 26 minutes ago" data-value="dongirirahul8451" href="/dongirirahul8451" target="_blank" data-analytics="LeaderboardUserName" data-attr1="dongirirahul8451" data-attr2="" data-attr3="India" data-attr4="logicloom-grand-contest" data-attr5="" data-attr6="" data-attr7="5" data-attr8="2" data-attr10="90">
+                    dongirirahul8451
+                </a>
+
+
+            </p>
+        </div>
+        <div class="span-flex-2 compare-link" style="visibility: hidden;">
+            <p><a target="_blank" href="contests/logicloom-grand-contest/compare/logicloom127/dongirirahul8451">Compare</a></p>
+        </div>
+        <div class="span-flex-3">
+            <p>
+                90.00
+            </p>
+        </div>
+
+
+            <div class="span-flex-2">
+                <p>
+                    1:07:43
+                </p>
+            </div>
+
+
+            <div class="span-flex-3 text-center">
+                <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
+            </div>
+
+
+
+</div>
+</div><div class="leaderboard-list-view">
+
+    <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
+
+
+
+        <div class="span-flex-2 text-center">
+            <p>3</p>
+        </div>
+        <div class="span-flex-4">
+            <p>
+                <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="gavuthreasmitha last submitted 16 minutes ago" data-value="gavuthreasmitha" href="/gavuthreasmitha" target="_blank" data-analytics="LeaderboardUserName" data-attr1="gavuthreasmitha" data-attr2="" data-attr3="" data-attr4="logicloom-grand-contest" data-attr5="" data-attr6="" data-attr7="5" data-attr8="3" data-attr10="88">
+                    gavuthreasmitha
+                </a>
+
+
+            </p>
+        </div>
+        <div class="span-flex-2 compare-link" style="visibility: hidden;">
+            <p><a target="_blank" href="contests/logicloom-grand-contest/compare/logicloom127/gavuthreasmitha">Compare</a></p>
+        </div>
+        <div class="span-flex-3">
+            <p>
+                88.00
+            </p>
+        </div>
+
+
+            <div class="span-flex-2">
+                <p>
+                    1:14:10
+                </p>
+            </div>
+
+
+            <div class="span-flex-3 text-center">
+                <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/_unknown.png" title="" alt="" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
+            </div>
+
+
+
+</div>
+</div><div class="leaderboard-list-view">
+
+    <div class="row padding-small top bottom leaderboard-row  " style="">
+
+
+
+        <div class="span-flex-2 text-center">
+            <p>3</p>
+        </div>
+        <div class="span-flex-4">
+            <p>
+                <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="23001cs093abhir1 last submitted 8 minutes ago" data-value="23001cs093abhir1" href="/23001cs093abhir1" target="_blank" data-analytics="LeaderboardUserName" data-attr1="23001cs093abhir1" data-attr2="" data-attr3="India" data-attr4="logicloom-grand-contest" data-attr5="" data-attr6="" data-attr7="5" data-attr8="3" data-attr10="88">
+                    23001cs093abhir1
+                </a>
+
+
+            </p>
+        </div>
+        <div class="span-flex-2 compare-link" style="visibility: hidden;">
+            <p><a target="_blank" href="contests/logicloom-grand-contest/compare/logicloom127/23001cs093abhir1">Compare</a></p>
+        </div>
+        <div class="span-flex-3">
+            <p>
+                88.00
+            </p>
+        </div>
+
+
+            <div class="span-flex-2">
+                <p>
+                    2:40:09
+                </p>
+            </div>
+
+
+            <div class="span-flex-3 text-center">
+                <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
+            </div>
+
+
+
+</div>
+</div><div class="leaderboard-list-view">
+
+    <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
+
+
+
+        <div class="span-flex-2 text-center">
+            <p>5</p>
+        </div>
+        <div class="span-flex-4">
+            <p>
+                <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs008nomansiddi1 last submitted 8 minutes ago" data-value="cs008nomansiddi1" href="/cs008nomansiddi1" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs008nomansiddi1" data-attr2="" data-attr3="India" data-attr4="logicloom-grand-contest" data-attr5="" data-attr6="" data-attr7="5" data-attr8="5" data-attr10="86">
+                    cs008nomansiddi1
+                </a>
+
+
+            </p>
+        </div>
+        <div class="span-flex-2 compare-link" style="visibility: hidden;">
+            <p><a target="_blank" href="contests/logicloom-grand-contest/compare/logicloom127/cs008nomansiddi1">Compare</a></p>
+        </div>
+        <div class="span-flex-3">
+            <p>
+                86.00
+            </p>
+        </div>
+
+
+            <div class="span-flex-2">
+                <p>
+                    43:46
+                </p>
+            </div>
+
+
+            <div class="span-flex-3 text-center">
+                <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
+            </div>
+
+
+
+</div>
+</div><div class="leaderboard-list-view">
+
+    <div class="row padding-small top bottom leaderboard-row  " style="">
+
+
+
+        <div class="span-flex-2 text-center">
+            <p>6</p>
+        </div>
+        <div class="span-flex-4">
+            <p>
+                <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="punnasravani7 last submitted 6 minutes ago" data-value="punnasravani7" href="/punnasravani7" target="_blank" data-analytics="LeaderboardUserName" data-attr1="punnasravani7" data-attr2="" data-attr3="India" data-attr4="logicloom-grand-contest" data-attr5="" data-attr6="" data-attr7="5" data-attr8="6" data-attr10="82">
+                    punnasravani7
+                </a>
+
+
+            </p>
+        </div>
+        <div class="span-flex-2 compare-link" style="visibility: hidden;">
+            <p><a target="_blank" href="contests/logicloom-grand-contest/compare/logicloom127/punnasravani7">Compare</a></p>
+        </div>
+        <div class="span-flex-3">
+            <p>
+                82.00
+            </p>
+        </div>
+
+
+            <div class="span-flex-2">
+                <p>
+                    2:49:05
+                </p>
+            </div>
+
+
+            <div class="span-flex-3 text-center">
+                <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
+            </div>
+
+
+
+</div>
+</div><div class="leaderboard-list-view">
+
+    <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
+
+
+
+        <div class="span-flex-2 text-center">
+            <p>7</p>
+        </div>
+        <div class="span-flex-4">
+            <p>
+                <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="rakshithagouda19 last submitted 4 minutes ago" data-value="rakshithagouda19" href="/rakshithagouda19" target="_blank" data-analytics="LeaderboardUserName" data-attr1="rakshithagouda19" data-attr2="" data-attr3="India" data-attr4="logicloom-grand-contest" data-attr5="" data-attr6="" data-attr7="5" data-attr8="7" data-attr10="60">
+                    rakshithagouda19
+                </a>
+
+
+            </p>
+        </div>
+        <div class="span-flex-2 compare-link" style="visibility: hidden;">
+            <p><a target="_blank" href="contests/logicloom-grand-contest/compare/logicloom127/rakshithagouda19">Compare</a></p>
+        </div>
+        <div class="span-flex-3">
+            <p>
+                60.00
+            </p>
+        </div>
+
+
+            <div class="span-flex-2">
+                <p>
+                    1:57:55
+                </p>
+            </div>
+
+
+            <div class="span-flex-3 text-center">
+                <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
+            </div>
+
+
+
+</div>
+</div><div class="leaderboard-list-view">
+
+    <div class="row padding-small top bottom leaderboard-row  " style="">
+
+
+
+        <div class="span-flex-2 text-center">
+            <p>8</p>
+        </div>
+        <div class="span-flex-4">
+            <p>
+                <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs077satvika last submitted 17 minutes ago" data-value="cs077satvika" href="/cs077satvika" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs077satvika" data-attr2="" data-attr3="India" data-attr4="logicloom-grand-contest" data-attr5="" data-attr6="" data-attr7="5" data-attr8="8" data-attr10="58">
+                    cs077satvika
+                </a>
+
+
+            </p>
+        </div>
+        <div class="span-flex-2 compare-link" style="visibility: hidden;">
+            <p><a target="_blank" href="contests/logicloom-grand-contest/compare/logicloom127/cs077satvika">Compare</a></p>
+        </div>
+        <div class="span-flex-3">
+            <p>
+                58.00
+            </p>
+        </div>
+
+
+            <div class="span-flex-2">
+                <p>
+                    1:50:59
+                </p>
+            </div>
+
+
+            <div class="span-flex-3 text-center">
+                <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
+            </div>
+
+
+
+</div>
+</div><div class="leaderboard-list-view">
+
+    <div class="row padding-small top bottom leaderboard-row  row-alt " style="">
+
+
+
+        <div class="span-flex-2 text-center">
+            <p>9</p>
+        </div>
+        <div class="span-flex-4">
+            <p>
+                <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs128deepika last submitted 28 minutes ago" data-value="cs128deepika" href="/cs128deepika" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs128deepika" data-attr2="" data-attr3="India" data-attr4="logicloom-grand-contest" data-attr5="" data-attr6="" data-attr7="5" data-attr8="9" data-attr10="52">
+                    cs128deepika
+                </a>
+
+
+            </p>
+        </div>
+        <div class="span-flex-2 compare-link" style="visibility: hidden;">
+            <p><a target="_blank" href="contests/logicloom-grand-contest/compare/logicloom127/cs128deepika">Compare</a></p>
+        </div>
+        <div class="span-flex-3">
+            <p>
+                52.00
+            </p>
+        </div>
+
+
+            <div class="span-flex-2">
+                <p>
+                    37:56
+                </p>
+            </div>
+
+
+            <div class="span-flex-3 text-center">
+                <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/IN.png" title="India" alt="India" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
+            </div>
+
+
+
+</div>
+</div><div class="leaderboard-list-view">
+
+    <div class="row padding-small top bottom leaderboard-row  " style="">
+
+
+
+        <div class="span-flex-2 text-center">
+            <p>10</p>
+        </div>
+        <div class="span-flex-4">
+            <p>
+                <a class="cursor leaderboard-hackername rg_5" data-action="hacker-modal" rel="tooltip" title="cs053janaki last submitted 10 minutes ago" data-value="cs053janaki" href="/cs053janaki" target="_blank" data-analytics="LeaderboardUserName" data-attr1="cs053janaki" data-attr2="" data-attr3="" data-attr4="logicloom-grand-contest" data-attr5="" data-attr6="" data-attr7="5" data-attr8="10" data-attr10="40">
+                    cs053janaki
+                </a>
+
+
+            </p>
+        </div>
+        <div class="span-flex-2 compare-link" style="visibility: hidden;">
+            <p><a target="_blank" href="contests/logicloom-grand-contest/compare/logicloom127/cs053janaki">Compare</a></p>
+        </div>
+        <div class="span-flex-3">
+            <p>
+                40.00
+            </p>
+        </div>
+
+
+            <div class="span-flex-2">
+                <p>
+                    02:47
+                </p>
+            </div>
+
+
+            <div class="span-flex-3 text-center">
+                <img class="flag" rel="tooltip" src="https://hrcdn.net/hackerrank/static/flags/_unknown.png" title="" alt="" onerror="this.onerror=null; this.src='https://hrcdn.net/hackerrank/static/flags/_unknown.png';">
+            </div>
+
+
+
+</div>
+</div></div>
+
+</div>
+</div></div>
+</div>
+        <button id="download-csv" class="btn btn-primary mt-3">Download CSV</button>
+    </div>
+
+    <script>
+        document.getElementById('download-csv').addEventListener('click', function () {
+            var csv = [];
+            var rows = document.querySelectorAll('.leaderboard-list-view .row');
+
+            csv.push('Rank,User,Score,Time,Country');
+
+            rows.forEach(function (row) {
+                var rank = row.querySelector('.span-flex-2.text-center p').innerText;
+                var user = row.querySelector('.span-flex-4 p a').innerText;
+                var score = row.querySelector('.span-flex-3 p').innerText;
+                var time = row.querySelector('.span-flex-2 p').innerText;
+                var country = row.querySelector('.span-flex-3.text-center img').src.split('/').pop().split('.')[0];
+
+                csv.push(rank + ',' + user + ',' + score + ',' + time + ',' + country);
+            });
+
+            var csvContent = 'data:text/csv;charset=utf-8,' + csv.join('\n');
+            var encodedUri = encodeURI(csvContent);
+            var link = document.createElement('a');
+            link.setAttribute('href', encodedUri);
+            link.setAttribute('download', 'leaderboard.csv');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>
